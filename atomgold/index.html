@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtomGold - Secure Digital Gold Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFF9E6',
+                            100: '#FFF0B3',
+                            200: '#FFE066',
+                            300: '#FFD700',
+                            400: '#D4AF37',
+                            500: '#B8960C',
+                            600: '#9A7B0A',
+                            700: '#7C6208',
+                            800: '#5E4A06',
+                            900: '#403204',
+                        },
+                        dark: {
+                            50: '#2A2A3E',
+                            100: '#222236',
+                            200: '#1A1A2E',
+                            300: '#151525',
+                            400: '#10101C',
+                            500: '#0A0A14',
+                            600: '#06060E',
+                            700: '#030308',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
+                        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'slide-right': 'slideRight 0.6s ease-out forwards',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'bounce-gentle': 'bounceGentle 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes pulseGold {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            }
+
+            to {
+                text-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        @keyframes bounceGentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0A14;
+            color: #E8E8F0;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37, #B8960C);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37, #B8960C);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .gold-border {
+            border-image: linear-gradient(135deg, #D4AF37, #FFD700) 1;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card:hover {
+            background: rgba(26, 26, 46, 0.8);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(10, 10, 20, 1) 0%, #0A0A14 100%);
+        }
+
+        .noise-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .divider-gold {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+
+        .step-line {
+            background: linear-gradient(180deg, #D4AF37, rgba(212, 175, 55, 0.1));
+        }
+
+        .pricing-highlight {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.03));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0A0A14;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-gold:hover::before {
+            left: 100%;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline-gold {
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #D4AF37;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        .security-icon {
+            transition: all 0.3s ease;
+        }
+
+        .security-icon:hover {
+            transform: scale(1.05);
+            border-color: rgba(212, 175, 55, 0.5);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A0A14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+
+        .testimonial-card {
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding-top: 12px;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #D4AF37;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+
+            20% {
+                opacity: 0.6;
+                transform: translateY(-20px) scale(1);
+            }
+
+            80% {
+                opacity: 0.3;
+                transform: translateY(-80px) scale(0.5);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .counter-value {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+
+<body class="noise-overlay">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center">
+                        <span class="font-display font-bold text-dark-500 text-lg">A</span>
+                    </div>
+                    <span class="font-display text-2xl font-bold gold-gradient">AtomGold</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#how-it-works"
+                        class="text-gray-300 hover:text-gold-300 transition-colors text-sm font-medium">How It Works</a>
+                    <a href="#offers"
+                        class="text-gray-300 hover:text-gold-300 transition-colors text-sm font-medium">Offers</a>
+                    <a href="#features"
+                        class="text-gray-300 hover:text-gold-300 transition-colors text-sm font-medium">Features</a>
+                    <a href="#security"
+                        class="text-gray-300 hover:text-gold-300 transition-colors text-sm font-medium">Security</a>
+                    <a href="#faq"
+                        class="text-gray-300 hover:text-gold-300 transition-colors text-sm font-medium">FAQ</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#signup" class="btn-outline-gold px-5 py-2.5 rounded-lg text-sm font-semibold">Log In</a>
+                    <a href="#signup" class="btn-gold px-5 py-2.5 rounded-lg text-sm font-semibold">Get Started</a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobileMenuBtn" class="md:hidden text-gold-300 p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="mobile-menu fixed top-0 right-0 bottom-0 w-72 z-[60] glass-card border-l border-gold-400/20 p-6">
+        <div class="flex justify-end mb-8">
+            <button id="mobileMenuClose" class="text-gold-300 p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-4">
+            <a href="#how-it-works"
+                class="mobile-link text-gray-300 hover:text-gold-300 transition-colors text-lg font-medium py-2">How It
+                Works</a>
+            <a href="#offers"
+                class="mobile-link text-gray-300 hover:text-gold-300 transition-colors text-lg font-medium py-2">Offers</a>
+            <a href="#features"
+                class="mobile-link text-gray-300 hover:text-gold-300 transition-colors text-lg font-medium py-2">Features</a>
+            <a href="#security"
+                class="mobile-link text-gray-300 hover:text-gold-300 transition-colors text-lg font-medium py-2">Security</a>
+            <a href="#faq"
+                class="mobile-link text-gray-300 hover:text-gold-300 transition-colors text-lg font-medium py-2">FAQ</a>
+            <div class="divider-gold my-4"></div>
+            <a href="#signup" class="btn-outline-gold px-5 py-3 rounded-lg text-sm font-semibold text-center">Log In</a>
+            <a href="#signup" class="btn-gold px-5 py-3 rounded-lg text-sm font-semibold text-center">Get Started</a>
+        </div>
+    </div>
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center hero-gradient overflow-hidden" id="hero">
+        <!-- Floating particles -->
+        <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+
+        <!-- Decorative elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-gold-400/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-gold-400/3 rounded-full blur-3xl animate-float"
+            style="animation-delay: -3s;"></div>
+
+        <!-- Gold line decorations -->
+        <div
+            class="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gold-400/10 to-transparent">
+        </div>
+        <div
+            class="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gold-400/5 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-400/30 bg-gold-400/5 mb-6"
+                        style="animation: fadeUp 0.8s ease-out forwards;">
+                        <span class="w-2 h-2 rounded-full bg-gold-300 animate-pulse"></span>
+                        <span class="text-gold-300 text-sm font-medium">Limited Time Offer — Up to 100% Free Gold</span>
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+                        style="animation: fadeUp 0.8s ease-out 0.1s both;">
+                        Get up to<br>
+                        <span class="gold-gradient animate-glow">100% Free Gold</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-400 mb-4 font-display italic"
+                        style="animation: fadeUp 0.8s ease-out 0.2s both;">
+                        on Every Buy Order
+                    </p>
+
+                    <p class="text-gray-400 text-base sm:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                        style="animation: fadeUp 0.8s ease-out 0.3s both;">
+                        The most secure platform to buy, sell and store digital gold with RBI-approved vaults and
+                        instant transactions.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+                        style="animation: fadeUp 0.8s ease-out 0.4s both;">
+                        <a href="#signup"
+                            class="btn-gold px-8 py-4 rounded-xl text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center">
+                            Start Investing Now
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#how-it-works"
+                            class="btn-outline-gold px-8 py-4 rounded-xl text-base font-semibold flex items-center gap-2 w-full sm:w-auto justify-center">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            Learn More
+                        </a>
+                    </div>
+
+                    <!-- Trust badges -->
+                    <div class="flex items-center gap-6 mt-10 justify-center lg:justify-start"
+                        style="animation: fadeUp 0.8s ease-out 0.5s both;">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i>
+                            <span class="text-gray-400 text-sm">RBI Approved</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="lock" class="w-5 h-5 text-gold-400"></i>
+                            <span class="text-gray-400 text-sm">256-bit Encrypted</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="users" class="w-5 h-5 text-gold-400"></i>
+                            <span class="text-gray-400 text-sm">10K+ Users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative flex items-center justify-center" style="animation: fadeIn 1s ease-out 0.5s both;">
+                    <div class="relative w-80 h-80 sm:w-96 sm:h-96">
+                        <!-- Rotating ring -->
+                        <div class="absolute inset-0 rounded-full border border-gold-400/20 animate-spin-slow"></div>
+                        <div class="absolute inset-4 rounded-full border border-gold-400/10 animate-spin-slow"
+                            style="animation-direction: reverse;"></div>
+                        <div class="absolute inset-8 rounded-full border border-dashed border-gold-400/10 animate-spin-slow"
+                            style="animation-duration: 30s;"></div>
+
+                        <!-- Center gold coin -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-48 h-48 sm:w-56 sm:h-56 rounded-full gold-gradient-bg flex items-center justify-center animate-pulse-gold">
+                                <div
+                                    class="w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-dark-500 flex items-center justify-center border-2 border-gold-400/30">
+                                    <div class="text-center">
+                                        <div class="font-display text-5xl sm:text-6xl font-bold gold-gradient">Au</div>
+                                        <div class="text-gold-400/60 text-xs tracking-[0.3em] uppercase mt-1">Digital
+                                            Gold</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating stats -->
+                        <div class="absolute top-4 right-4 glass-card rounded-xl px-4 py-3 animate-bounce-gentle">
+                            <div class="text-gold-300 text-xs font-medium">Live Rate</div>
+                            <div class="text-white font-bold counter-value" id="goldRate">₹7,245/g</div>
+                        </div>
+
+                        <div class="absolute bottom-8 left-0 glass-card rounded-xl px-4 py-3 animate-bounce-gentle"
+                            style="animation-delay: -1.5s;">
+                            <div class="text-gold-300 text-xs font-medium">Bonus</div>
+                            <div class="text-white font-bold">Up to 100%</div>
+                        </div>
+
+                        <div class="absolute top-1/2 -left-2 glass-card rounded-xl px-4 py-3 animate-bounce-gentle"
+                            style="animation-delay: -2.5s;">
+                            <div class="text-gold-300 text-xs font-medium">Security</div>
+                            <div class="text-white font-bold flex items-center gap-1"><i data-lucide="shield-check"
+                                    class="w-3 h-3 text-gold-400"></i> RBI Vault</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-gentle">
+            <span class="text-gold-400/60 text-xs tracking-widest uppercase">Scroll</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-gold-400/60"></i>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-400 to-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Simple Process</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                    How <span class="gold-gradient">AtomGold</span> Works
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Three simple steps to start your digital gold journey
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connecting line (desktop) -->
+                <div
+                    class="hidden md:block absolute top-24 left-1/6 right-1/6 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="scroll-reveal relative" style="transition-delay: 0.1s;">
+                    <div class="glass-card rounded-2xl p-8 text-center transition-all duration-400 group h-full">
+                        <div
+                            class="w-16 h-16 rounded-2xl gold-gradient-bg flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="user-plus" class="w-7 h-7 text-dark-500"></i>
+                        </div>
+                        <div class="text-gold-400/40 text-6xl font-display font-bold absolute top-4 right-6">01</div>
+                        <h3 class="font-display text-xl font-bold mb-3">Sign Up & Verify</h3>
+                        <p class="text-gray-400 leading-relaxed">Create your account in minutes with simple KYC
+                            verification</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="scroll-reveal relative" style="transition-delay: 0.25s;">
+                    <div class="glass-card rounded-2xl p-8 text-center transition-all duration-400 group h-full">
+                        <div
+                            class="w-16 h-16 rounded-2xl gold-gradient-bg flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="coins" class="w-7 h-7 text-dark-500"></i>
+                        </div>
+                        <div class="text-gold-400/40 text-6xl font-display font-bold absolute top-4 right-6">02</div>
+                        <h3 class="font-display text-xl font-bold mb-3">Buy Digital Gold</h3>
+                        <p class="text-gray-400 leading-relaxed">Purchase gold starting from as low as ₹1 with instant
+                            transactions</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="scroll-reveal relative" style="transition-delay: 0.4s;">
+                    <div class="glass-card rounded-2xl p-8 text-center transition-all duration-400 group h-full">
+                        <div
+                            class="w-16 h-16 rounded-2xl gold-gradient-bg flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="vault" class="w-7 h-7 text-dark-500"></i>
+                        </div>
+                        <div class="text-gold-400/40 text-6xl font-display font-bold absolute top-4 right-6">03</div>
+                        <h3 class="font-display text-xl font-bold mb-3">Store or Sell Anytime</h3>
+                        <p class="text-gray-400 leading-relaxed">Keep it secure in our vaults or sell it back instantly
+                            at market rates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Gold Offer -->
+    <section id="offers" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-dark-500"></div>
+        <!-- Decorative glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/5 rounded-full blur-3xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="scroll-reveal">
+                    <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Limited Time
+                        Offer</span>
+                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                        100% Free Gold<br><span class="gold-gradient">Offer (INR Only)</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Here's how you can maximize your free gold earnings. For every purchase you make, we'll add
+                        bonus gold to your account based on your transaction value.
+                    </p>
+
+                    <!-- Offer Tiers -->
+                    <div class="space-y-4 mb-8">
+                        <div class="glass-card rounded-xl p-5 flex items-center justify-between group cursor-default">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gold-400/10 flex items-center justify-center">
+                                    <i data-lucide="award" class="w-6 h-6 text-gold-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">Buy ₹1,000</div>
+                                    <div class="text-gray-500 text-sm">Starter tier</div>
+                                </div>
+                            </div>
+                            <div class="text-gold-300 font-bold text-xl">+5%</div>
+                        </div>
+
+                        <div class="glass-card rounded-xl p-5 flex items-center justify-between group cursor-default">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gold-400/10 flex items-center justify-center">
+                                    <i data-lucide="trophy" class="w-6 h-6 text-gold-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">Buy ₹10,000</div>
+                                    <div class="text-gray-500 text-sm">Premium tier</div>
+                                </div>
+                            </div>
+                            <div class="text-gold-300 font-bold text-xl">+25%</div>
+                        </div>
+
+                        <div
+                            class="glass-card rounded-xl p-5 flex items-center justify-between group cursor-default border-gold-400/30">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg gold-gradient-bg flex items-center justify-center">
+                                    <i data-lucide="crown" class="w-6 h-6 text-dark-500"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">Buy ₹1,00,000</div>
+                                    <div class="text-gray-500 text-sm">Elite tier — Best value!</div>
+                                </div>
+                            </div>
+                            <div class="text-gold-300 font-bold text-xl">+100%</div>
+                        </div>
+                    </div>
+
+                    <a href="#signup"
+                        class="btn-gold px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2">
+                        Claim Your Free Gold
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Right Visual - Bonus Meter -->
+                <div class="scroll-reveal flex items-center justify-center" style="transition-delay: 0.2s;">
+                    <div class="glass-card rounded-3xl p-10 w-full max-w-md text-center">
+                        <div class="text-gold-400/40 text-sm font-semibold tracking-widest uppercase mb-4">Free Gold
+                            Bonus</div>
+                        <div class="relative w-48 h-48 mx-auto mb-8">
+                            <svg class="w-48 h-48 -rotate-90" viewBox="0 0 192 192">
+                                <circle cx="96" cy="96" r="80" stroke="rgba(212,175,55,0.1)" stroke-width="12"
+                                    fill="none" />
+                                <circle id="bonusCircle" cx="96" cy="96" r="80" stroke="url(#goldGradient)"
+                                    stroke-width="12" fill="none" stroke-dasharray="502.6" stroke-dashoffset="502.6"
+                                    stroke-linecap="round" style="transition: stroke-dashoffset 2s ease-out;" />
+                                <defs>
+                                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#FFD700" />
+                                        <stop offset="100%" stop-color="#D4AF37" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div>
+                                    <div class="font-display text-5xl font-bold gold-gradient counter-value"
+                                        id="bonusPercent">0</div>
+                                    <div class="text-gold-400/60 text-sm">Percent</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Current Bonus</span>
+                                <span class="text-gold-300 font-bold">Up to 100%</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Offer Status</span>
+                                <span class="text-green-400 font-bold flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Active
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Validity</span>
+                                <span class="text-gold-300 font-bold">Limited Time</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 px-4 py-3 rounded-lg bg-gold-400/10 border border-gold-400/20">
+                            <div class="text-gold-300 text-sm font-medium">🔥 Don't miss this exclusive offer!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose AtomGold -->
+    <section id="features" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-400 to-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Our Advantages</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                    Why Choose <span class="gold-gradient">AtomGold</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Innovative features designed for modern investors
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="glass-card rounded-2xl p-7 group transition-all duration-400 h-full">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-gold-400/10 flex items-center justify-center mb-5 group-hover:bg-gold-400/20 transition-colors">
+                            <i data-lucide="zap" class="w-7 h-7 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold mb-3">Instant Transactions</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Buy and sell gold instantly at market rates
+                            with no delays</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="glass-card rounded-2xl p-7 group transition-all duration-400 h-full">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-gold-400/10 flex items-center justify-center mb-5 group-hover:bg-gold-400/20 transition-colors">
+                            <i data-lucide="shield" class="w-7 h-7 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold mb-3">Secure Storage</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Your gold is stored in RBI-approved vaults with
+                            full insurance</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="glass-card rounded-2xl p-7 group transition-all duration-400 h-full">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-gold-400/10 flex items-center justify-center mb-5 group-hover:bg-gold-400/20 transition-colors">
+                            <i data-lucide="receipt" class="w-7 h-7 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold mb-3">Zero Hidden Fees</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Transparent pricing with no hidden charges or
+                            surprises</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="glass-card rounded-2xl p-7 group transition-all duration-400 h-full">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-gold-400/10 flex items-center justify-center mb-5 group-hover:bg-gold-400/20 transition-colors">
+                            <i data-lucide="trending-up" class="w-7 h-7 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold mb-3">Live Market Rates</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Real-time gold prices with historical charts
+                            for smart investing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparent Pricing -->
+    <section id="pricing" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+        <div class="absolute top-1/2 right-0 w-96 h-96 bg-gold-400/3 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">No Surprises</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                    Transparent <span class="gold-gradient">Pricing</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Competitive rates with maximum savings for you
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Buy Price -->
+                <div class="scroll-reveal" style="transition-delay: 0.1s;">
+                    <div
+                        class="pricing-highlight rounded-2xl p-8 text-center transition-all duration-400 hover:border-gold-400/40">
+                        <i data-lucide="arrow-down-circle" class="w-10 h-10 text-gold-400 mx-auto mb-4"></i>
+                        <div class="text-gray-400 text-sm mb-2">Buy Price</div>
+                        <div class="font-display text-3xl font-bold text-white counter-value" id="buyPrice">₹7,265/g
+                        </div>
+                        <div class="text-gray-500 text-xs mt-2">Inclusive of GST</div>
+                    </div>
+                </div>
+
+                <!-- Sell Price -->
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div
+                        class="pricing-highlight rounded-2xl p-8 text-center transition-all duration-400 hover:border-gold-400/40">
+                        <i data-lucide="arrow-up-circle" class="w-10 h-10 text-gold-400 mx-auto mb-4"></i>
+                        <div class="text-gray-400 text-sm mb-2">Sell Price</div>
+                        <div class="font-display text-3xl font-bold text-white counter-value" id="sellPrice">₹7,225/g
+                        </div>
+                        <div class="text-gray-500 text-xs mt-2">Best in market</div>
+                    </div>
+                </div>
+
+                <!-- Spread -->
+                <div class="scroll-reveal" style="transition-delay: 0.3s;">
+                    <div
+                        class="pricing-highlight rounded-2xl p-8 text-center transition-all duration-400 hover:border-gold-400/40">
+                        <i data-lucide="percent" class="w-10 h-10 text-gold-400 mx-auto mb-4"></i>
+                        <div class="text-gray-400 text-sm mb-2">Spread</div>
+                        <div class="font-display text-3xl font-bold gold-gradient">Lowest</div>
+                        <div class="text-gray-500 text-xs mt-2">Minimal buy-sell gap</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10 scroll-reveal">
+                <div class="inline-flex items-center gap-3 glass-card rounded-full px-6 py-3">
+                    <i data-lucide="info" class="w-4 h-4 text-gold-400"></i>
+                    <span class="text-gray-400 text-sm">Minimum investment: <span
+                            class="text-gold-300 font-semibold">₹1</span> | Maximum investment: <span
+                            class="text-gold-300 font-semibold">No limit</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bank-Grade Security -->
+    <section id="security" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-400 to-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="scroll-reveal">
+                    <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Fort Knox Level</span>
+                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                        Bank-Grade <span class="gold-gradient">Security</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        Your gold and data are protected with multiple layers of security measures. We leave nothing to
+                        chance when it comes to safeguarding your investments.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- Security Feature 1 -->
+                        <div class="flex gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-400/20 transition-colors">
+                                <i data-lucide="lock" class="w-6 h-6 text-gold-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold mb-1">256-bit Encryption</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">All transactions secured with
+                                    military-grade encryption</p>
+                            </div>
+                        </div>
+
+                        <!-- Security Feature 2 -->
+                        <div class="flex gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-400/20 transition-colors">
+                                <i data-lucide="building" class="w-6 h-6 text-gold-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold mb-1">RBI-Approved Vaults</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Physical gold stored in insured,
+                                    audited vaults</p>
+                            </div>
+                        </div>
+
+                        <!-- Security Feature 3 -->
+                        <div class="flex gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-400/20 transition-colors">
+                                <i data-lucide="fingerprint" class="w-6 h-6 text-gold-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold mb-1">Two-Factor Authentication</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">Extra layer of security for your
+                                    account</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual - Security Grid -->
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="security-icon glass-card rounded-2xl p-6 text-center cursor-default">
+                            <i data-lucide="shield-check" class="w-10 h-10 text-gold-400 mx-auto mb-3"></i>
+                            <div class="text-white font-bold text-sm">Encryption</div>
+                            <div class="text-gray-500 text-xs mt-1">256-bit SSL</div>
+                        </div>
+                        <div class="security-icon glass-card rounded-2xl p-6 text-center cursor-default">
+                            <i data-lucide="umbrella" class="w-10 h-10 text-gold-400 mx-auto mb-3"></i>
+                            <div class="text-white font-bold text-sm">Insurance</div>
+                            <div class="text-gray-500 text-xs mt-1">Full coverage</div>
+                        </div>
+                        <div class="security-icon glass-card rounded-2xl p-6 text-center cursor-default">
+                            <i data-lucide="scan-face" class="w-10 h-10 text-gold-400 mx-auto mb-3"></i>
+                            <div class="text-white font-bold text-sm">KYC</div>
+                            <div class="text-gray-500 text-xs mt-1">Verified users</div>
+                        </div>
+                        <div class="security-icon glass-card rounded-2xl p-6 text-center cursor-default">
+                            <i data-lucide="eye" class="w-10 h-10 text-gold-400 mx-auto mb-3"></i>
+                            <div class="text-white font-bold text-sm">Security</div>
+                            <div class="text-gray-500 text-xs mt-1">24/7 monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+        <div class="absolute bottom-1/4 left-0 w-72 h-72 bg-gold-400/3 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Social Proof</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                    Trusted by <span class="gold-gradient">Thousands</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    What our customers say about AtomGold
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="testimonial-card glass-card rounded-2xl p-7 h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "I've been using AtomGold for 6 months and the experience has been flawless. The free gold
+                            offer is real and I've already earned 15% extra gold!"
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://static.photos/people/100x100/1" alt="User"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-gold-400/30">
+                            <div>
+                                <div class="text-white font-semibold text-sm">Priya Sharma</div>
+                                <div class="text-gray-500 text-xs">Investor since 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="testimonial-card glass-card rounded-2xl p-7 h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "The app is so easy to use and the gold rates are very competitive. Withdrawing to my bank
+                            account takes less than 24 hours. Highly recommended!"
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://static.photos/people/100x100/2" alt="User"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-gold-400/30">
+                            <div>
+                                <div class="text-white font-semibold text-sm">Rahul Mehta</div>
+                                <div class="text-gray-500 text-xs">Investor since 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="testimonial-card glass-card rounded-2xl p-7 h-full">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gold-400 fill-gold-400"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                            "Excellent customer service and transparency. I compared multiple platforms and AtomGold
+                            offered the best rates with the lowest fees."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <img src="https://static.photos/people/100x100/3" alt="User"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-gold-400/30">
+                            <div>
+                                <div class="text-white font-semibold text-sm">Ananya Patel</div>
+                                <div class="text-gray-500 text-xs">Investor since 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-400 to-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-gold-400 text-sm font-semibold tracking-widest uppercase">Got Questions?</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+                    Frequently Asked <span class="gold-gradient">Questions</span>
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    Find answers to common questions about AtomGold
+                </p>
+            </div>
+
+            <div class="space-y-4 scroll-reveal">
+                <!-- FAQ 1 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">What is digital gold and how does
+                            it work?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Digital gold is a method of investing in 24K physical gold that is stored in secure vaults on
+                        your behalf. When you buy digital gold on AtomGold, an equivalent amount of physical gold is
+                        purchased and stored in RBI-approved vaults. You own this gold and can sell it anytime or
+                        request physical delivery.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">How does the 100% free gold offer
+                            work?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        When you buy digital gold, AtomGold adds bonus gold to your account based on your purchase
+                        amount. Buy ₹1,000 to get 5% extra, ₹10,000 for 25% extra, and ₹1,00,000 for a whopping 100%
+                        extra gold. This bonus gold is credited instantly to your account.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">Is my gold safe in AtomGold
+                            vaults?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Absolutely! Your gold is stored in RBI-approved, fully insured vaults with 24/7 security
+                        monitoring. All transactions are protected with 256-bit encryption and two-factor
+                        authentication. The physical gold is audited regularly to ensure complete safety.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">Can I sell my gold anytime?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        Yes, you can sell your digital gold anytime at prevailing market rates. The amount is credited
+                        directly to your bank account within 24 hours. There are no lock-in periods or withdrawal
+                        restrictions.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">What is the minimum amount to
+                            invest?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        You can start investing in digital gold with as little as ₹1. There is no maximum limit, so you
+                        can invest any amount you're comfortable with. This makes it easy for everyone to start their
+                        gold investment journey.
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-5">
+                        <h3 class="text-white font-semibold text-sm sm:text-base pr-4">Are there any hidden fees or
+                            charges?</h3>
+                        <i data-lucide="plus"
+                            class="w-5 h-5 text-gold-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                        No, AtomGold operates with complete transparency. The price you see is the price you pay. There
+                        are no hidden fees, no storage charges, and no management fees. The only cost is the minimal
+                        spread between buy and sell prices, which is among the lowest in the industry.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="signup" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-dark-500"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-gold-400/5 via-transparent to-gold-400/3"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="scroll-reveal">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-400/30 bg-gold-400/5 mb-8">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-gold-400"></i>
+                    <span class="text-gold-300 text-sm font-medium">Join 10,000+ Smart Investors</span>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to Start Your<br><span class="gold-gradient">Gold Journey?</span>
+                </h2>
+                <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+                    Join thousands of smart investors who are growing their wealth with digital gold
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                    <a href="#"
+                        class="btn-gold px-10 py-4 rounded-xl text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center">
+                        Get Started Now
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#"
+                        class="btn-outline-gold px-10 py-4 rounded-xl text-base font-semibold flex items-center gap-2 w-full sm:w-auto justify-center">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download App
+                    </a>
+                </div>
+
+                <!-- Trust indicators -->
+                <div class="flex flex-wrap items-center justify-center gap-6 mt-12">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i>
+                        <span class="text-gray-500 text-xs">RBI Approved</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="lock" class="w-4 h-4 text-gold-400"></i>
+                        <span class="text-gray-500 text-xs">Bank-grade Security</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-gold-400"></i>
+                        <span class="text-gray-500 text-xs">Instant Transactions</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="headphones" class="w-4 h-4 text-gold-400"></i>
+                        <span class="text-gray-500 text-xs">24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-16 overflow-hidden">
+        <div class="absolute inset-0 bg-dark-600"></div>
+        <div class="absolute top-0 left-0 right-0 divider-gold"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center">
+                            <span class="font-display font-bold text-dark-500 text-lg">A</span>
+                        </div>
+                        <span class="font-display text-2xl font-bold gold-gradient">AtomGold</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        The most secure platform to buy, sell and store digital gold with RBI-approved vaults.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-gold-400/10 transition-colors">
+                            <i class="fab fa-x-twitter w-4 h-4 text-gold-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-gold-400/10 transition-colors">
+                            <i class="fab fa-instagram w-4 h-4 text-gold-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-gold-400/10 transition-colors">
+                            <i class="fab fa-linkedin w-4 h-4 text-gold-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-gold-400/10 transition-colors">
+                            <i class="fab fa-youtube w-4 h-4 text-gold-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#how-it-works"
+                            class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">How It Works</a>
+                        <a href="#offers" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Free
+                            Gold Offer</a>
+                        <a href="#features"
+                            class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Features</a>
+                        <a href="#pricing"
+                            class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Pricing</a>
+                        <a href="#faq" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Legal</h4>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Privacy
+                            Policy</a>
+                        <a href="#" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Terms of
+                            Service</a>
+                        <a href="#" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">Refund
+                            Policy</a>
+                        <a href="#" class="block text-gray-500 text-sm hover:text-gold-400 transition-colors">KYC
+                            Policy</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact</h4>
+                    <div class="space-y-3">
+                        <a href="#"
+                            class="flex items-center gap-2 text-gray-500 text-sm hover:text-gold-400 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            support@atomgold.tech
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-2 text-gray-500 text-sm hover:text-gold-400 transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +91 98765 43210
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-2 text-gray-500 text-sm hover:text-gold-400 transition-colors">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Mumbai, India
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider-gold mb-8"></div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-600 text-xs">© 2025 AtomGold. All rights reserved.</p>
+                <p class="text-gray-600 text-xs">Digital gold is not a financial product under SEBI regulations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // ===== Navbar scroll effect =====
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 50) {
+                navbar.classList.add('glass-card');
+                navbar.style.borderBottom = '1px solid rgba(212,175,55,0.1)';
+            } else {
+                navbar.classList.remove('glass-card');
+                navbar.style.borderBottom = 'none';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ===== Mobile menu =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        // ===== Scroll reveal =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== FAQ Toggle =====
+        function toggleFaq(el) {
+            const answer = el.querySelector('.faq-answer');
+            const icon = el.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // ===== Bonus Circle Animation =====
+        const bonusCircleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const circle = document.getElementById('bonusCircle');
+                    const circumference = 2 * Math.PI * 80; // r=80
+                    const offset = circumference - (100 / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+
+                    // Animate counter
+                    animateCounter('bonusPercent', 0, 100, 2000, '%');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const bonusSection = document.getElementById('offers');
+        if (bonusSection) bonusCircleObserver.observe(bonusSection);
+
+        // ===== Counter animation =====
+        function animateCounter(elementId, start, end, duration, suffix = '') {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                const current = Math.floor(start + (end - start) * eased);
+                el.textContent = current + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        // ===== Hero particles =====
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // ===== Simulate live gold rate =====
+        function simulateGoldRate() {
+            const baseRate = 7245;
+            const rateEl = document.getElementById('goldRate');
+            const buyEl = document.getElementById('buyPrice');
+            const sellEl = document.getElementById('sellPrice');
+
+            if (!rateEl) return;
+
+            setInterval(() => {
+                const variation = (Math.random() - 0.5) * 20;
+                const newRate = Math.round(baseRate + variation);
+                rateEl.textContent = '₹' + newRate.toLocaleString('en-IN') + '/g';
+
+                if (buyEl) buyEl.textContent = '₹' + (newRate + 20).toLocaleString('en-IN') + '/g';
+                if (sellEl) sellEl.textContent = '₹' + (newRate - 20).toLocaleString('en-IN') + '/g';
+            }, 3000);
+        }
+        simulateGoldRate();
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

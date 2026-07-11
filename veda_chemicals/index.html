@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veda Enterprises | Specialty Chemical Manufacturer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #fbbf24;
+            --secondary: #1a1a3d;
+            --bg: #FFFEF8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-amber-400 flex items-center justify-center mr-3">
+                        <span class="text-2xl font-bold text-gray-800">VE</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">Veda Enterprises</span>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-amber-500 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-amber-500 font-medium">About</a>
+                    <a href="#products" class="nav-link text-gray-800 hover:text-amber-500 font-medium">Products</a>
+                    <a href="#industries" class="nav-link text-gray-800 hover:text-amber-500 font-medium">Industries</a>
+                    <a href="#careers" class="nav-link text-gray-800 hover:text-amber-500 font-medium">Careers</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-amber-500 font-medium">Contact</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-800 hover:text-amber-500 font-medium">Home</a>
+                <a href="#about" class="text-gray-800 hover:text-amber-500 font-medium">About</a>
+                <a href="#products" class="text-gray-800 hover:text-amber-500 font-medium">Products</a>
+                <a href="#industries" class="text-gray-800 hover:text-amber-500 font-medium">Industries</a>
+                <a href="#careers" class="text-gray-800 hover:text-amber-500 font-medium">Careers</a>
+                <a href="#contact" class="text-gray-800 hover:text-amber-500 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-r from-gray-100 to-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 slide-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
+                        Innovative Chemical <span class="text-amber-500">Solutions</span> for Industry
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Veda Enterprises delivers high-quality specialty chemicals with unmatched expertise and
+                        commitment to sustainability.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#products"
+                            class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 text-center">
+                            Explore Products
+                        </a>
+                        <a href="#contact"
+                            class="border-2 border-gray-800 hover:bg-gray-800 hover:text-white font-semibold py-3 px-8 rounded-lg transition duration-300 text-center">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 slide-up" style="animation-delay: 0.2s;">
+                    <img src="https://plus.unsplash.com/premium_photo-1661852072904-1a49a865495d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Chemical Manufacturing" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Veda Enterprises</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 slide-up">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bullseye text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Our Mission</h3>
+                    <p class="text-gray-600 text-center">
+                        To provide innovative chemical solutions that enhance industrial processes while maintaining the
+                        highest standards of safety and environmental responsibility.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 slide-up"
+                    style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-eye text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Our Vision</h3>
+                    <p class="text-gray-600 text-center">
+                        To be the preferred partner for specialty chemicals globally, recognized for our technical
+                        expertise, reliability, and commitment to sustainability.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 slide-up"
+                    style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-heart text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Our Values</h3>
+                    <p class="text-gray-600 text-center">
+                        Integrity, Innovation, Excellence, Sustainability, and Customer Focus drive everything we do at
+                        Veda Enterprises.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-amber-50 rounded-xl p-8 md:p-12 shadow-md fade-in" style="animation-delay: 0.6s;">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Story</h3>
+                        <p class="text-gray-600 mb-4">
+                            Founded in 2005, Veda Enterprises began as a small chemical distributor with a vision to
+                            transform the industry. Today, we're a leading manufacturer with state-of-the-art facilities
+                            and a team of expert chemists.
+                        </p>
+                        <p class="text-gray-600">
+                            Our journey has been marked by continuous innovation, strategic partnerships, and an
+                            unwavering commitment to quality. We take pride in our ability to develop customized
+                            solutions for our clients' most challenging requirements.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-inner">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4">Key Milestones</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <span class="ml-3 text-gray-600">2005: Company founded with 5 employees</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <span class="ml-3 text-gray-600">2012: First manufacturing facility
+                                        established</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <span class="ml-3 text-gray-600">2018: ISO 9001 and 14001 certifications
+                                        achieved</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <span class="ml-3 text-gray-600">2023: Expanded to international markets</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Product Categories</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We offer a comprehensive range of specialty chemicals tailored to meet diverse industrial needs.
+                </p>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sugar Processing Additives</h3>
+                    <p class="text-gray-600 mb-4">
+                        Chemicals used in sugar mills for better juice clarification, scale prevention, and improved
+                        sugar recovery during processing.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(1)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up"
+                    style="animation-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-oil-can text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Oil & Gas Chemicals</h3>
+                    <p class="text-gray-600 mb-4">
+                        Additives used in drilling, production, and refining to improve flow, reduce corrosion, and
+                        extend equipment life.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(2)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up"
+                    style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-spray-can text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Surface Treatment</h3>
+                    <p class="text-gray-600 mb-4">
+                        Solutions for cleaning, degreasing, and preparing metal surfaces before painting, coating, or
+                        further processing.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(3)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up"
+                    style="animation-delay: 0.3s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-water text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Water Treatment Chemicals</h3>
+                    <p class="text-gray-600 mb-4">
+                        Chemicals like biocides, antiscalants, and pH adjusters used for treating industrial water and
+                        maintaining system performance.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(4)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up"
+                    style="animation-delay: 0.4s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-fire-extinguisher text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Phosphonates & Its Salts</h3>
+                    <p class="text-gray-600 mb-4">
+                        Widely used in water treatment, detergents, and flame retardants for scale control and metal
+                        protection.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(5)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up"
+                    style="animation-delay: 0.5s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-atom text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Polymer Additives</h3>
+                    <p class="text-gray-600 mb-4">
+                        Used to enhance flexibility, strength, and processing of plastic materials in molding,
+                        extrusion, and compounding.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(6)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up col-span-1 sm:col-span-2 lg:col-span-1"
+                    style="animation-delay: 0.6s;">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Green Chemicals</h3>
+                    <p class="text-gray-600 mb-4">
+                        Eco-friendly alternatives used in manufacturing and cleaning to meet environmental standards
+                        without compromising on performance.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(7)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md transition duration-300 slide-up">
+                    <div class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Coagulants/Colour Removing Agents</h3>
+                    <p class="text-gray-600 mb-4">
+                        Used in effluent treatment plants to remove suspended solids and color from textile and dyeing
+                        industry wastewater.
+                    </p>
+                    <a href="#" onclick="showCategoryDetails(8)"
+                        class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center fade-in">
+                <a href="#contact"
+                    class="inline-block bg-gray-800 hover:bg-black text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
+                    Request Product Information
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section id="industries" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Industries We Serve</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our specialty chemicals support diverse industries with customized solutions.
+                </p>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.7s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-utensils text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Food Processing</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Food-grade chemicals for cleaning, sanitation, and processing applications.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.8s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-recycle text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Waste Management</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Solutions for treatment, neutralization, and processing of industrial waste.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-car text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Automotive</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Chemicals for manufacturing, cleaning, and maintaining vehicles and components.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-industry text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Manufacturing</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Solutions for metal processing, equipment maintenance, and production efficiency.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-plug text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Energy</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Chemicals for power generation, oil & gas, and renewable energy applications.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-building text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Construction</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Specialized formulations for concrete, coatings, adhesives, and building materials.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.5s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tshirt text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Textiles</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Chemicals for dyeing, finishing, and enhancing textile properties.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 fade-in"
+                    style="animation-delay: 0.6s;">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-prescription-bottle text-2xl text-amber-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 text-center mb-2">Pharmaceuticals</h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        High-purity chemicals for drug formulation and manufacturing processes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Veda Enterprises</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our commitment to excellence sets us apart in the specialty chemicals industry.
+                </p>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-flask text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Technical Expertise</h3>
+                                <p class="text-gray-600">
+                                    Our team of PhD chemists and engineers brings decades of combined experience to
+                                    develop innovative solutions for your specific challenges.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 slide-up" style="animation-delay: 0.2s;">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-certificate text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Quality Assurance</h3>
+                                <p class="text-gray-600">
+                                    Rigorous quality control processes and ISO certifications ensure consistent,
+                                    high-performance products batch after batch.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md slide-up" style="animation-delay: 0.4s;">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-truck text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Reliable Supply Chain</h3>
+                                <p class="text-gray-600">
+                                    Strategic partnerships and multiple manufacturing locations ensure timely delivery,
+                                    even during market disruptions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 slide-up" style="animation-delay: 0.1s;">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Custom Formulations</h3>
+                                <p class="text-gray-600">
+                                    Our R&D team works closely with clients to develop tailored solutions that address
+                                    unique application requirements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8 slide-up" style="animation-delay: 0.3s;">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-leaf text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Sustainability Focus</h3>
+                                <p class="text-gray-600">
+                                    We prioritize eco-friendly formulations and processes to minimize environmental
+                                    impact without compromising performance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md slide-up" style="animation-delay: 0.5s;">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-headset text-amber-500"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Technical Support</h3>
+                                <p class="text-gray-600">
+                                    Our customer service team includes technical experts available to assist with
+                                    product selection, troubleshooting, and optimization.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Careers at Veda Enterprises</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Join our team of passionate professionals driving innovation in specialty chemicals.
+                </p>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 mb-16">
+                <div class="md:w-1/2 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Current Openings</h3>
+
+                    <div class="space-y-6">
+                        <div
+                            class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 slide-up">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Process Chemist</h4>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="bg-amber-100 text-amber-800 text-xs font-medium px-3 py-1 rounded-full">Full-time</span>
+                                <span
+                                    class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">R&D</span>
+                                <span
+                                    class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Pune,
+                                    India</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Lead process optimization and scale-up activities for new chemical formulations in our
+                                state-of-the-art facility.
+                            </p>
+                            <a href="#" class="text-amber-500 font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 slide-up"
+                            style="animation-delay: 0.2s;">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Quality Control Analyst</h4>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="bg-amber-100 text-amber-800 text-xs font-medium px-3 py-1 rounded-full">Full-time</span>
+                                <span
+                                    class="bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full">Quality</span>
+                                <span
+                                    class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Mumbai,
+                                    India</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Perform analytical testing and ensure compliance with quality standards for our
+                                specialty chemical products.
+                            </p>
+                            <a href="#" class="text-amber-500 font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 slide-up"
+                            style="animation-delay: 0.4s;">
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Technical Sales Engineer</h4>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="bg-amber-100 text-amber-800 text-xs font-medium px-3 py-1 rounded-full">Full-time</span>
+                                <span
+                                    class="bg-red-100 text-red-800 text-xs font-medium px-3 py-1 rounded-full">Sales</span>
+                                <span
+                                    class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Remote</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Combine technical knowledge with sales skills to help customers find the right chemical
+                                solutions for their needs.
+                            </p>
+                            <a href="#" class="text-amber-500 font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Apply Now</h3>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <form id="career-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                                    Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label for="position" class="block text-sm font-medium text-gray-700 mb-1">Position
+                                    Applying For</label>
+                                <select id="position" name="position" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                    <option value="">Select a position</option>
+                                    <option value="Process Chemist">Process Chemist</option>
+                                    <option value="Quality Control Analyst">Quality Control Analyst</option>
+                                    <option value="Technical Sales Engineer">Technical Sales Engineer</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="resume" class="block text-sm font-medium text-gray-700 mb-1">Upload
+                                    Resume</label>
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 file:mr-4 file:py-1 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-amber-100 file:text-amber-700">
+                            </div>
+
+                            <div>
+                                <label for="cover-letter" class="block text-sm font-medium text-gray-700 mb-1">Cover
+                                    Letter</label>
+                                <textarea id="cover-letter" name="cover-letter" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-4 rounded-lg shadow transition duration-300">
+                                Submit Application
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 rounded-xl p-8 md:p-12 shadow-md fade-in">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Employee Benefits</h3>
+                        <p class="text-gray-600 mb-6">
+                            At Veda Enterprises, we value our employees and offer a comprehensive benefits package
+                            designed to support your professional growth and personal well-being.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span class="ml-3 text-gray-600">Competitive salaries and performance bonuses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span class="ml-3 text-gray-600">Health, dental, and vision insurance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span class="ml-3 text-gray-600">Retirement savings plans with company matching</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span class="ml-3 text-gray-600">Professional development and training programs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <span class="ml-3 text-gray-600">Flexible work arrangements where possible</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Team at work" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Get in touch with our team for product inquiries, technical support, or partnership opportunities.
+                </p>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2 fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="contact-name"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="contact-name" name="name" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+
+                                <div>
+                                    <label for="contact-email"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="contact-email" name="email" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contact-subject"
+                                    class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="contact-subject" name="subject" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+
+                            <div>
+                                <label for="contact-message"
+                                    class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"></textarea>
+                            </div>
+
+                            <input type="hidden" name="time" id="time">
+
+                            <button type="submit"
+                                class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-4 rounded-lg shadow transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-amber-500"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Headquarters</h4>
+                                    <p class="text-gray-600">
+                                        <b>Veda Enterprise (India)<br></b>
+                                        57, 2nd Floor, Atlanta Business Hub,<br>
+                                        Vesu, Surat, Gujarat - 395007.
+                                    </p>
+                                    <br>
+                                    <p class="text-gray-600">
+                                        <b>Veda International - FZC (Dubai) <br></b>
+                                        Ajman - Dubai.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-amber-500"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Phone</h4>
+                                    <p class="text-gray-600">
+                                        +91 98249 02221 (Dubai)<br>
+                                        +91 99130 45454 (Sales)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-envelope text-amber-500"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">
+                                        info@vedachemicals.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-clock text-amber-500"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                        Saturday: 9:00 AM - 1:00 PM<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-100 hover:bg-amber-500 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-100 hover:bg-amber-500 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-100 hover:bg-amber-500 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-gray-100 hover:bg-amber-500 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram text-gray-600 hover:text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 rounded-xl overflow-hidden shadow-xl fade-in" style="animation-delay: 0.4s;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.265588856342!2d73.91455641541671!3d18.562061287384868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdcc8e4d6c77e!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1625069810466!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center mr-3">
+                            <span class="text-lg font-bold text-gray-800">VE</span>
+                        </div>
+                        <span class="text-xl font-bold">Veda Enterprises</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Leading manufacturer of specialty chemicals for diverse industrial applications.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition duration-300">Home</a>
+                        </li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition duration-300">About
+                                Us</a></li>
+                        <li><a href="#products"
+                                class="text-gray-400 hover:text-amber-500 transition duration-300">Products</a></li>
+                        <li><a href="#industries"
+                                class="text-gray-400 hover:text-amber-500 transition duration-300">Industries</a></li>
+                        <li><a href="#careers"
+                                class="text-gray-400 hover:text-amber-500 transition duration-300">Careers</a></li>
+                        <li><a href="#contact"
+                                class="text-gray-400 hover:text-amber-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Industrial
+                                Solvents</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Lubricant
+                                Additives</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Surface
+                                Treatment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Water
+                                Treatment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Flame
+                                Retardants</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Polymer
+                                Additives</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and industry insights.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit"
+                            class="bg-amber-500 hover:bg-amber-600 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Veda Enterprises. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="categoryDetails" class="detail-page hidden fixed inset-0 z-50 overflow-y-auto bg-white">
+        <div class="min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full p-8 relative">
+                <button onclick="hideCategoryDetails()"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <div class="text-center mb-10">
+                    <div class="flex justify-center mb-6">
+                        <div class="bg-amber-100 rounded-xl w-24 h-24 flex items-center justify-center">
+                            <div id="categoryIcon" class="text-blue-600 text-6xl"></div>
+                        </div>
+                    </div>
+                    <h2 id="categoryTitle" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"></h2>
+
+                    <p id="categoryDescription" class="text-xl text-gray-600 max-w-2xl mx-auto"></p>
+                </div>
+
+                <div class="border-t border-gray-200 pt-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Key Features</h3>
+                    <ul id="featureList" class="feature-list space-y-3 text-gray-700 text-lg pl-5">
+                        <!-- Features will be added dynamically -->
+                    </ul>
+                </div>
+
+                <div class="mt-12 flex justify-center">
+                    <button onclick="hideCategoryDetails()"
+                        class="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-8 rounded-lg transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Categories
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+919824902221" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handlers
+        document.getElementById('career-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will review your information and get back to you soon.');
+            this.reset();
+        });
+
+        // document.getElementById('contact-form').addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your message! Our team will respond to your inquiry shortly.');
+        //     this.reset();
+        // });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.remove('shadow-lg');
+                header.classList.remove('py-2');
+                header.classList.add('py-3');
+            }
+        });
+
+
+    </script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("X_1_aA2UEa4w1sEUZ"); // Your public key
+        })();
+
+        function sendEmail(e) {
+            e.preventDefault();
+
+            const form = document.getElementById("contact-form");
+
+            // ✅ Set the current time into the hidden input field BEFORE sending
+            const now = new Date();
+            form.querySelector('#time').value = now.toLocaleString();
+
+            // ✅ Optional: log values for debug
+            const formData = new FormData(form);
+            console.log("Form data preview:");
+            for (const [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            emailjs.sendForm('service_ibf2ha2', 'template_4zohx38', form)
+                .then(() => {
+                    alert("✅ Message sent successfully!");
+                    form.reset();
+                }, (error) => {
+                    alert("❌ Failed to send message. Try again.");
+                    console.error(error);
+                });
+        }
+
+        document.getElementById("contact-form").addEventListener("submit", sendEmail);
+    </script>
+
+    <script>
+        // Category data
+        const categories = {
+            1: {
+                title: "Sugar Processing Additives",
+                icon: "fas fa-flask",
+                description: "Chemicals used in sugar mills for better juice clarification, scale prevention, and improved sugar recovery during processing.",
+                features: [
+                    "Mill Sanitation Chemicals",
+                    "Antiscalant for Pan Evporator",
+                    "Settling Agent",
+                    "Viscosity Reducer",
+                    "Antifoaming Agent",
+                    "pH Booster",
+                    "Sludge Conditioner (Liquid)",
+                    "Decolorizing Agent",
+                ]
+            },
+            2: {
+                title: "Oil & Gas Chemicals",
+                icon: "fas fa-oil-can",
+                description: "Additives used in drilling, production, and refining to improve flow, reduce corrosion, and extend equipment life.",
+                features: [
+                    "Acid Corrosion Inhibitors",
+                    "Corrosion Inhibitor for Hydro Testing",
+                    "Bactericide / Biocide",
+                    "High Temperature Deflocculant",
+                    "Mud Cake Cleaner",
+                    "Silicon and Non-Silicon (Eco-Friendly) based Defoamers",
+                    "Oxygen Scavengers",
+                    "H₂S Scavengers",
+                    "Antiscalants / Scale Inhibitor",
+                    "Nitrite based Corrosion Inhibitor",
+                    "Scale Cleaner",
+                ]
+            },
+            3: {
+                title: "Surface Treatment",
+                icon: "fas fa-spray-can",
+                description: "Solutions for cleaning, degreasing, and preparing metal surfaces before painting, coating, or further processing.",
+                features: [
+                    
+                ]
+            },
+            4: {
+                title: "Water Treatment Chemicals",
+                icon: "fas fa-water",
+                description: "Chemicals like biocides, antiscalants, and pH adjusters used for treating industrial water and maintaining system performance.",
+                features: [
+                    "Boiler Oxygen Scavengers (All type",
+                    "Boiler Scale & Corrosion Inhibitor",
+                    "Sludge Conditioners",
+                    "Alkalinity Builders",
+                    "Boiler Phosphate Treatment Chemicals",
+                    "Steam Condensate Line Treatment Chemicals",
+                    "Fuel Additives & Anti-Foams",
+                    "Cooling Water Corrosion Inhibitors",
+                    "Cooling Water Scale & Corrosion Inhibitors",
+                    "Cooling Water Biocides & Biodispersants",
+                    "Reverse Osmosis & Nano-Filteration Membrane Scale and Fouling Cleaners",
+                    "Reverse Osmosis Antiscalants & Antifoulants",
+                    "Reverse Osmosis Biocides",
+                    "Reverse Osmosis Corrosion Inhibitors",
+                    "Closed System Corrosion Inhibitors",
+                    "Closed System Biocides",
+                    "Descaling Chemicals"
+                ]
+            },
+            5: {
+                title: "Phosphonates & Its Salts",
+                icon: "fas fa-fire-extinguisher",
+                description: "Widely used in water treatment, detergents, and flame retardants for scale control and metal protection.",
+                features: [
+                    "Polyamino Polyether Methylene Phosphonic Acid - PAPEMPA",
+                    "Diethylene Triamine Penta (Methylene Phosphonic Acid) - DTPMΡΑ",
+                    "1-Hydroxy Ethylidene-1,1-Diphosphonic Acid - HEDP",
+                    "Amino Tri Methylene Phosphonic Acid - ATMP",
+                    "2- Phosphonobutane - 1,2,4-Tricarboxylic Acid - PBTC",
+                    "Morpholino Methylene Bis Phosphonic Acid (MMBPA)",
+                    "Bis (Hexamethylene) Triamine (Pentamethylene) Phosphonic Acid - BHMTPH",
+                    "Penta Sodium Salt of Ethylene Diamine Tetra (Methylene Phosphonic Acid) - EDTMPA"
+                ]
+            },
+            6: {
+                title: "Polymer Additives",
+                icon: "fas fa-atom",
+                description: "Used to enhance flexibility, strength, and processing of plastic materials in molding, extrusion, and compounding.",
+                features: [
+                    "Acrylic Homo - Polymer",
+                    "Maleic Homo - Polymer",
+                    "Acrylic / Maleic - Sulfonate Co-polymer",
+                    "Carboxylic Co-polymer",
+                    "Carboxylate - Sulfonate Co-polymer",
+                    "Carboxylic - Sulfonate - Non-ionic Ter-Polymer",
+                    "Phosphino Carboxylate Ter-Polymer",
+                    "Carboxylic - Sulfonate Ter-Polymer",
+                    "Carboxylic - Sulfonate Multipolymer",
+                    "Phosphorus - Carboxylate Corin Polymer"
+                ]
+            },
+            7: {
+                title: "Green Chemicals",
+                icon: "fas fa-leaf",
+                description: "Eco-friendly alternatives used in manufacturing and cleaning to meet environmental standards without compromising on performance.",
+                features: [
+                    
+                ]
+            },
+            8: {
+                title: "Coagulants/Colour Removing Agents",
+                icon: "fas fa-flask",
+                description: "Used in effluent treatment plants to remove suspended solids and color from textile and dyeing industry wastewater.",
+                features: [
+                    "POLYAMINES POLYDADMAC POLYDCDA"
+                ]
+            }
+        };
+
+        // Show category details
+        function showCategoryDetails(categoryId) {
+            const category = categories[categoryId];
+            document.getElementById('categoryTitle').textContent = category.title;
+            document.getElementById('categoryIcon').className = `${category.icon} text-amber-500 text-6xl`;
+            document.getElementById('categoryDescription').textContent = category.description;
+
+            const featureList = document.getElementById('featureList');
+            featureList.innerHTML = '';
+            category.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.className = 'mb-2 flex items-start gap-3';
+
+                li.innerHTML = `
+            <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+            </div>
+            <span class="flex-1">${feature}</span>
+        `;
+
+                featureList.appendChild(li);
+            });
+
+            document.getElementById('categoryDetails').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide category details
+        function hideCategoryDetails() {
+            document.getElementById('categoryDetails').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+
+</html>

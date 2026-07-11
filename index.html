@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Projects Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #818cf8;
+    }
+
+    /* Animated gradient background */
+    .hero-gradient {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.3), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(168, 85, 247, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 20% 50%, rgba(59, 130, 246, 0.15), transparent);
+    }
+
+    /* Grid background pattern */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Card styles */
+    .project-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color, #6366f1), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-8px);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.1);
+    }
+
+    /* Preview container */
+    .preview-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #111118;
+    }
+
+    .preview-container::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, #111118);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .preview-iframe {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .project-card:hover .preview-iframe {
+      transform: scale(0.52);
+    }
+
+    /* Browser chrome dots */
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .browser-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Glow button */
+    .glow-btn {
+      position: relative;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+    }
+
+    .glow-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #818cf8, #a78bfa);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .glow-btn:hover::before {
+      opacity: 1;
+    }
+
+    .glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Tag styles */
+    .category-tag {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover .category-tag {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.35);
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -30px) scale(1.05);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.95);
+      }
+    }
+
+    /* Stats counter animation */
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-item {
+      animation: countUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.7s ease forwards;
+      opacity: 0;
+    }
+
+    /* Shimmer effect for loading */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    /* Nav blur */
+    .nav-blur {
+      backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(10, 10, 15, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Marquee */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-track {
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Search input */
+    .search-input {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+      outline: none;
+    }
+
+    /* Filter button */
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+    }
+
+    /* Pulse dot */
+    .pulse-dot {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #e0e7ff, #a5b4fc, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-gradient-warm {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="text-white antialiased">
+
+  <!-- Navigation -->
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-shadow">
+            <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-lg text-white">Anguler<span class="text-indigo-400">
+              Tech</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#projects"
+            class="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">Projects</a>
+          <a href="#stats"
+            class="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">Stats</a>
+          <a href="#about"
+            class="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com" target="_blank" class="p-2 text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 px-4 pb-4">
+      <a href="#projects" class="block py-2 text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
+      <a href="#stats" class="block py-2 text-sm text-gray-400 hover:text-white transition-colors">Stats</a>
+      <a href="#about" class="block py-2 text-sm text-gray-400 hover:text-white transition-colors">About</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient grid-pattern relative min-h-[85vh] flex items-center justify-center pt-16">
+    <!-- Floating orbs -->
+    <div class="orb w-[400px] h-[400px] bg-indigo-600/30 -top-20 -left-40" style="animation-delay: 0s;"></div>
+    <div class="orb w-[300px] h-[300px] bg-purple-600/20 top-40 right-10" style="animation-delay: 3s;"></div>
+    <div class="orb w-[250px] h-[250px] bg-blue-600/20 bottom-20 left-1/4" style="animation-delay: 5s;"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <!-- Badge -->
+      <div
+        class="fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8 mt-16">
+        <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+        <span class="text-sm text-indigo-300 font-medium">Portfolio Collection 2026</span>
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="fade-in-up font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+        style="animation-delay: 0.1s;">
+        <span class="text-gradient">Creative</span><br>
+        <span class="text-white">Project Showcase</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="fade-in-up text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+        style="animation-delay: 0.2s;">
+        A curated collection of handcrafted websites and digital experiences.
+        Each project is built with precision and passion.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4"
+        style="animation-delay: 0.3s;">
+        <a href="#projects"
+          class="glow-btn inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-sm">
+          <span class="relative z-10 flex items-center gap-2">
+            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+            Browse Projects
+          </span>
+        </a>
+        <a href="#about"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-gray-300 font-semibold text-sm border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all">
+          <i data-lucide="info" class="w-4 h-4"></i>
+          Learn More
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="fade-in-up mt-16 mb-12" style="animation-delay: 0.5s;">
+        <div class="flex flex-col items-center gap-2 text-gray-500">
+          <span class="text-xs uppercase tracking-widest">Scroll to explore</span>
+          <div class="w-5 h-8 rounded-full border border-gray-600 flex items-start justify-center p-1">
+            <div class="w-1 h-2 bg-gray-500 rounded-full" style="animation: float 2s ease-in-out infinite;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Section -->
+  <div class="border-y border-white/5 py-4 overflow-hidden bg-black/30">
+    <div class="marquee-track flex items-center gap-8 whitespace-nowrap" style="width: max-content;">
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="zap"
+          class="w-3 h-3 text-indigo-400"></i> Web Development</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="palette"
+          class="w-3 h-3 text-purple-400"></i> UI/UX Design</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="smartphone"
+          class="w-3 h-3 text-blue-400"></i> Responsive Design</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="sparkles"
+          class="w-3 h-3 text-amber-400"></i> Creative Solutions</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="globe"
+          class="w-3 h-3 text-green-400"></i> Modern Web</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="rocket"
+          class="w-3 h-3 text-red-400"></i> Performance</span>
+      <span class="text-gray-700">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="zap"
+          class="w-3 h-3 text-indigo-400"></i> Web Development</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="palette"
+          class="w-3 h-3 text-purple-400"></i> UI/UX Design</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="smartphone"
+          class="w-3 h-3 text-blue-400"></i> Responsive Design</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="sparkles"
+          class="w-3 h-3 text-amber-400"></i> Creative Solutions</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="globe"
+          class="w-3 h-3 text-green-400"></i> Modern Web</span>
+      <span class="text-gray-700">✦</span>
+      <span class="text-sm text-gray-500 flex items-center gap-2"><i data-lucide="rocket"
+          class="w-3 h-3 text-red-400"></i> Performance</span>
+      <span class="text-gray-700">✦</span>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section id="stats" class="py-16 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="stat-item text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+          style="animation-delay: 0.1s;">
+          <div class="text-3xl sm:text-4xl font-display font-bold text-gradient mb-1" id="stat1">12</div>
+          <div class="text-sm text-gray-500">Total Projects</div>
+        </div>
+        <div class="stat-item text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+          style="animation-delay: 0.2s;">
+          <div class="text-3xl sm:text-4xl font-display font-bold text-gradient mb-1">6+</div>
+          <div class="text-sm text-gray-500">Categories</div>
+        </div>
+        <div class="stat-item text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+          style="animation-delay: 0.3s;">
+          <div class="text-3xl sm:text-4xl font-display font-bold text-gradient mb-1">100%</div>
+          <div class="text-sm text-gray-500">Responsive</div>
+        </div>
+        <div class="stat-item text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+          style="animation-delay: 0.4s;">
+          <div class="text-3xl sm:text-4xl font-display font-bold text-gradient-warm mb-1">⚡</div>
+          <div class="text-sm text-gray-500">Fast & Modern</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4">
+          <i data-lucide="folder-open" class="w-3.5 h-3.5 text-indigo-400"></i>
+          <span class="text-xs text-indigo-300 font-medium uppercase tracking-wider">Portfolio</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Project Showcase</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Explore our collection of beautifully crafted websites. Click on any
+          project to view the live preview.</p>
+      </div>
+
+
+
+      <!-- Projects Grid -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards will be injected by JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="hidden text-center py-20">
+        <i data-lucide="search-x" class="w-12 h-12 text-gray-600 mx-auto mb-4"></i>
+        <h3 class="text-lg font-semibold text-gray-400 mb-2">No projects found</h3>
+        <p class="text-sm text-gray-500">Try a different search term or filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 border-t border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-purple-400"></i>
+            <span class="text-xs text-purple-300 font-medium uppercase tracking-wider">About</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6">Crafted with<br><span
+              class="text-gradient">Passion & Precision</span></h2>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Every project in this collection represents a unique challenge and a creative solution. From business
+            portfolios to jewelry showcases, dental clinics to film productions — each website is meticulously designed
+            and developed to deliver an exceptional user experience.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/15">HTML5</span>
+            <span
+              class="px-3 py-1.5 rounded-lg text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/15">CSS3</span>
+            <span
+              class="px-3 py-1.5 rounded-lg text-xs font-medium bg-yellow-500/10 text-yellow-300 border border-yellow-500/15">JavaScript</span>
+            <span
+              class="px-3 py-1.5 rounded-lg text-xs font-medium bg-green-500/10 text-green-300 border border-green-500/15">Responsive</span>
+            <span
+              class="px-3 py-1.5 rounded-lg text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/15">Modern
+              UI</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div
+              class="p-6 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/10">
+              <i data-lucide="monitor" class="w-8 h-8 text-indigo-400 mb-3"></i>
+              <h4 class="font-semibold text-white text-sm mb-1">Responsive</h4>
+              <p class="text-xs text-gray-500">Looks great on all devices</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/10">
+              <i data-lucide="zap" class="w-8 h-8 text-blue-400 mb-3"></i>
+              <h4 class="font-semibold text-white text-sm mb-1">Fast</h4>
+              <p class="text-xs text-gray-500">Optimized for performance</p>
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div
+              class="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/10">
+              <i data-lucide="palette" class="w-8 h-8 text-amber-400 mb-3"></i>
+              <h4 class="font-semibold text-white text-sm mb-1">Beautiful</h4>
+              <p class="text-xs text-gray-500">Stunning visual design</p>
+            </div>
+            <div
+              class="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/10">
+              <i data-lucide="shield-check" class="w-8 h-8 text-green-400 mb-3"></i>
+              <h4 class="font-semibold text-white text-sm mb-1">Clean Code</h4>
+              <p class="text-xs text-gray-500">Well-structured & maintainable</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+            <i data-lucide="code-2" class="w-4 h-4 text-white"></i>
+          </div>
+          <span class="font-display font-bold text-white">Anguler<span class="text-indigo-400"> Tech</span></span>
+        </div>
+        <p class="text-sm text-gray-500">© 2024–2026 Anguler Tech Projects. Crafted with ❤️</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-gray-500 hover:text-indigo-400 transition-colors"><i data-lucide="github"
+              class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-500 hover:text-indigo-400 transition-colors"><i data-lucide="twitter"
+              class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-500 hover:text-indigo-400 transition-colors"><i data-lucide="linkedin"
+              class="w-5 h-5"></i></a>
+          <a href="#" class="text-gray-500 hover:text-indigo-400 transition-colors"><i data-lucide="mail"
+              class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25 transition-all opacity-0 translate-y-4 pointer-events-none z-50">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script>
+    // Project data
+    const projects = [
+      {
+        name: "ADV Manoj Sharma",
+        slug: "adv-manoj.anguler.com",
+        category: "professional",
+        icon: "scale",
+        color: "#6366f1",
+        description: "Legal professional portfolio website with elegant design and service showcase.",
+        tags: ["Legal", "Portfolio"]
+      },
+      {
+        name: "Atom Gold",
+        slug: "atomgold.tech",
+        category: "business",
+        icon: "gem",
+        color: "#f59e0b",
+        description: "Premium gold and jewelry business website with luxurious aesthetics.",
+        tags: ["Gold", "Business"]
+      },
+      {
+        name: "Pinkessh Thakkaar",
+        slug: "pinkessh.anguler.com",
+        category: "professional",
+        icon: "user",
+        color: "#ec4899",
+        description: "Personal portfolio showcasing professional achievements and services.",
+        tags: ["Personal", "Portfolio"]
+      },
+      {
+        name: "PNG Infotech",
+        slug: "png.anguler.com",
+        category: "business",
+        icon: "cpu",
+        color: "#3b82f6",
+        description: "IT company website with modern tech design and service listings.",
+        tags: ["IT", "Technology"]
+      },
+      {
+        name: "R2S",
+        slug: "r2s.anguler.com",
+        category: "business",
+        icon: "rocket",
+        color: "#10b981",
+        description: "Business solutions website with clean layout and professional branding.",
+        tags: ["Business", "Solutions"]
+      },
+      {
+        name: "Khodal Jewelers",
+        slug: "khodal.anguler.com",
+        category: "business",
+        icon: "diamond",
+        color: "#f97316",
+        description: "Elegant jewelry store website with stunning product gallery.",
+        tags: ["Jewelry", "Luxury"]
+      },
+      {
+        name: "Niru Dental",
+        slug: "niru-dental.anguler.com",
+        category: "professional",
+        icon: "heart-pulse",
+        color: "#14b8a6",
+        description: "Dental clinic website with appointment booking and service information.",
+        tags: ["Medical", "Dental"]
+      },
+      {
+        name: "Jignesh Sutariya",
+        slug: "jignesh.anguler.com",
+        category: "professional",
+        icon: "briefcase",
+        color: "#8b5cf6",
+        description: "Professional portfolio with project showcases and skill highlights.",
+        tags: ["Personal", "Portfolio"]
+      },
+      {
+        name: "Bhargav Kalariya",
+        slug: "bhargav-kalariya.anguler.com",
+        category: "professional",
+        icon: "graduation-cap",
+        color: "#06b6d4",
+        description: "Personal brand website highlighting expertise and accomplishments.",
+        tags: ["Personal", "Brand"]
+      },
+      {
+        "name": "Swiftrut",
+        "slug": "swiftrut.anguler.com",
+        "category": "technology",
+        "icon": "cpu",
+        "color": "#6366f1",
+        "description": "Innovative tech company delivering cutting-edge digital solutions and scalable products.",
+        "tags": ["Technology", "Innovation"]
+      },
+      {
+        name: "Rachit Singhal",
+        slug: "rachit.anguler.com",
+        category: "professional",
+        icon: "star",
+        color: "#eab308",
+        description: "Creative portfolio with modern design and interactive elements.",
+        tags: ["Creative", "Portfolio"]
+      },
+      {
+        name: "Safarnama Film",
+        slug: "safarnamafilm.in",
+        category: "creative",
+        icon: "clapperboard",
+        color: "#ef4444",
+        description: "Film production website with cinematic design and video showcases.",
+        tags: ["Film", "Creative"]
+      },
+      {
+        name: "The CAD Studio",
+        slug: "thecadstudio.in",
+        category: "creative",
+        icon: "pen-tool",
+        color: "#a855f7",
+        description: "Design studio website with creative portfolio and service offerings.",
+        tags: ["Design", "Studio"]
+      },
+      {
+        name: "Patel Milin",
+        slug: "patelmilin.com",
+        category: "professional",
+        icon: "user",
+        color: "#6366f1",
+        description: "Personal portfolio website showcasing professional profile, skills, and achievements.",
+        tags: ["Personal", "Portfolio"]
+      },
+      {
+        name: "Veda Chemicals",
+        slug: "vedachemicals.com",
+        category: "business",
+        icon: "flask-conical",
+        color: "#14b8a6",
+        description: "Chemical manufacturing company website presenting products, industry solutions, and corporate information.",
+        tags: ["Chemical", "Industry"]
+      },
+      {
+        name: "Velvet Life",
+        slug: "velvet-life.anguler.com",
+        category: "business",
+        icon: "gem",
+        color: "#ec4899",
+        description: "Luxury lifestyle and jewelry brand website with elegant design and premium product showcase.",
+        tags: ["Luxury", "Lifestyle"]
+      },
+      {
+        name: "SwiftRut",
+        slug: "swiftrut.anguler.com",
+        category: "development",
+        icon: "layout",
+        color: "#0ea5e9",
+        description: "Full-stack MERN development platform focused on building modern web applications with clean UI/UX design, scalable architecture, and high-performance user experiences.",
+        tags: ["MERN Stack", "UI/UX Design", "Web Apps"]
+      },
+      {
+        name: "Shivinta Pharma",
+        slug: "shivintapharma.com",
+        category: "business",
+        icon: "flask-conical",
+        color: "#2563eb",
+        description: "Premium multi-page pharmaceutical website with modern UI, showcasing raw materials, specialty chemicals, certifications, and global supply capabilities with a high-trust brand experience.",
+        tags: ["Pharmaceutical", "B2B", "Healthcare"]
+      },
+      {
+        name: "Carnival Assurance",
+        slug: "carnivalassurance.com",
+        category: "business",
+        icon: "shield-check",
+        color: "#2563eb",
+        description: "Trusted insurance advisory website based in Surat, offering life and non-life insurance solutions with fast claim support, transparent communication, free consultation, and a high-trust service experience.",
+        tags: ["Insurance", "Protection", "Assurance"]
+      },
+      {
+        name: "Yashasvee Vaastu",
+        slug: "yashasveevaastu.anguler.com",
+        category: "business",
+        icon: "sparkles",
+        color: "#d97706",
+        description: "Professional Vaastu consultancy website offering energy balancing solutions, Pyramid Yantra guidance, vastu consultation, client trust highlights, service details, and inquiry-based lead generation.",
+        tags: ["Vaastu", "Consulting", "Spiritual"]
+      },
+      {
+        name: "Gwalior Property Valey",
+        slug: "gwaliorpropertyvaley.anguler.com",
+        category: "real-estate",
+        icon: "building-2",
+        color: "#16a34a",
+        description: "Real estate property website for Gwalior, featuring buy, rent, and sell property listings with property details, filters, inquiry forms, and lead generation for property buyers and sellers.",
+        tags: ["Real Estate", "Property", "Listings"]
+      },
+      {
+        name: "Hotel Akbari",
+        slug: "hotelakbari.anguler.com",
+        category: "hospitality",
+        icon: "hotel",
+        color: "#0ea5e9",
+        description: "Modern hotel website showcasing comfortable accommodations, complimentary breakfast, free Wi-Fi, 24-hour front desk service, room amenities, photo gallery, booking inquiry system, and direct WhatsApp reservations for guests visiting Cuttack.",
+        tags: ["Hotel", "Hospitality", "Accommodation"]
+      }
+    ];
+
+    const baseUrl = "https://";
+
+    // Render projects
+    function renderProjects(filteredProjects) {
+      const grid = document.getElementById('projectsGrid');
+      const emptyState = document.getElementById('emptyState');
+
+      if (filteredProjects.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filteredProjects.map((project, index) => `
+        <div class="project-card rounded-2xl" style="--accent-color: ${project.color}; animation-delay: ${index * 0.05}s;">
+          <!-- Preview -->
+          <div class="preview-container m-4 mb-0">
+            <div class="browser-dots">
+              <span style="background: #ff5f57;"></span>
+              <span style="background: #ffbd2e;"></span>
+              <span style="background: #28c840;"></span>
+            </div>
+            <div style="height: 180px; overflow: hidden;">
+              <iframe 
+                src="${baseUrl}${project.slug}" 
+                class="preview-iframe" 
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+                title="${project.name} preview"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-5 pt-4">
+            <!-- Tags -->
+            <div class="flex items-center gap-2 mb-3">
+              ${project.tags.map(tag => `
+                <span class="category-tag px-2.5 py-1 rounded-md text-[10px] font-semibold uppercase tracking-wider">${tag}</span>
+              `).join('')}
+            </div>
+
+            <!-- Title & Description -->
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background: ${project.color}15; border: 1px solid ${project.color}25;">
+                <i data-lucide="${project.icon}" class="w-5 h-5" style="color: ${project.color};"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-white text-base leading-tight mb-1">${project.name}</h3>
+                <p class="text-xs text-gray-500 leading-relaxed line-clamp-2">${project.description}</p>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+              <a href="${baseUrl}${project.slug}/index.html" target="_blank" rel="noopener noreferrer" 
+                 class="glow-btn flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-white text-xs font-semibold">
+                <span class="relative z-10 flex items-center gap-2">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  View Project
+                </span>
+              </a>
+              <a href="${baseUrl}${project.slug}/index.html" target="_blank" rel="noopener noreferrer"
+                 class="w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all shrink-0"
+                 title="Open in new tab">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Re-create icons for dynamically added elements
+      lucide.createIcons();
+    }
+
+    // Initial render
+    renderProjects(projects);
+
+
+
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        backToTop.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      } else {
+        backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        backToTop.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milin Patel | Strategic QA Advisor & Senior Quality Engineer</title>
+    <meta name="description"
+        content="Strategic QA Advisor specializing in enterprise test automation, performance engineering, and quality transformation. Building reliable software at scale.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',      // Deep Navy
+                        secondary: '#1e293b',    // Slate 800
+                        accent: '#0ea5e9',       // Sky Blue
+                        success: '#10b981',      // Emerald
+                        surface: '#f8fafc',      // Slate 50
+                        muted: '#64748b',        // Slate 500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0f172a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .precision-border {
+            position: relative;
+        }
+
+        .precision-border::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Smooth reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grid pattern background */
+        .bg-grid {
+            background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-primary antialiased bg-white selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex-shrink-0 flex items-center">
+                    <span class="font-serif text-2xl font-bold text-primary tracking-tight">
+                        MP<span class="text-accent">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#expertise"
+                        class="nav-link text-sm font-medium text-muted hover:text-primary transition-colors">
+                        Expertise
+                    </a>
+
+                    <a href="#process"
+                        class="nav-link text-sm font-medium text-muted hover:text-primary transition-colors">
+                        Methodology
+                    </a>
+
+                    <a href="#experience"
+                        class="nav-link text-sm font-medium text-muted hover:text-primary transition-colors">
+                        Experience
+                    </a>
+
+                    <a href="#contact"
+                        class="nav-link text-sm font-medium text-muted hover:text-primary transition-colors">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="#contact"
+                        class="inline-flex items-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-secondary transition-all duration-300 shadow-lg shadow-primary/20">
+                        Schedule Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-muted hover:text-primary focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-t border-slate-200 shadow-lg z-40">
+
+            <div class="px-4 py-4 space-y-2 text-center">
+
+                <a href="#expertise" class="nav-link block py-2 text-sm font-medium transition">
+                    Expertise
+                </a>
+
+                <a href="#process" class="nav-link block py-2 text-sm font-medium transition">
+                    Methodology
+                </a>
+
+                <a href="#experience" class="nav-link block py-2 text-sm font-medium transition">
+                    Experience
+                </a>
+
+                <a href="#contact" class="nav-link block py-2 text-sm font-medium transition">
+                    Contact
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal active">
+                    <div
+                        class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 border border-accent/20">
+                        <span class="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></span>
+                        Available for Strategic Consulting
+                    </div>
+
+                    <h1 class="font-serif text-5xl lg:text-7xl font-bold text-primary leading-tight mb-6">
+                        Engineering <span class="gradient-text">Quality</span> at Scale
+                    </h1>
+
+                    <p class="text-xl text-muted leading-relaxed mb-8 max-w-lg">
+                        Strategic QA Advisor specializing in enterprise test automation, performance engineering, and
+                        quality transformation. Building bulletproof software for high-growth organizations.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact"
+                            class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-secondary transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transform hover:-translate-y-0.5">
+                            Start a Project
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
+                        <a href="#process"
+                            class="inline-flex justify-center items-center px-8 py-4 border-2 border-slate-200 text-base font-medium rounded-lg text-primary bg-transparent hover:border-primary hover:bg-slate-50 transition-all duration-300">
+                            View Methodology
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 pt-8 border-t border-slate-200">
+                        <p class="text-sm text-muted mb-4">Trusted by engineering teams at</p>
+                        <div class="flex flex-wrap items-center gap-8 opacity-60 grayscale">
+                            <span class="text-xl font-bold">Fortune 500</span>
+                            <span class="text-xl font-bold">Tech Unicorns</span>
+                            <span class="text-xl font-bold">Enterprise SaaS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal delay-200">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-accent/20 to-success/20 rounded-3xl blur-3xl opacity-30">
+                    </div>
+                    <div class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
+                        <img src="./assets/Milin Patel Hero.png" alt="Milin Patel - Strategic QA Advisor"
+                            class="w-full h-auto object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary via-primary/80 to-transparent p-8">
+                            <div class="flex items-center gap-4">
+                                <div class="flex-1">
+                                    <h3 class="text-white font-serif text-2xl font-bold">Milin Patel</h3>
+                                    <p class="text-slate-300 text-sm">Strategic QA Advisor</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="#"
+                                        class="p-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors backdrop-blur-sm">
+                                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="p-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors backdrop-blur-sm">
+                                        <i data-lucide="github" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="p-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors backdrop-blur-sm">
+                                        <i data-lucide="mail" class="h-5 w-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-success/10 rounded-lg">
+                                <i data-lucide="check-circle" class="h-6 w-6 text-success"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-primary stat-number">99.9%</p>
+                                <p class="text-xs text-muted">Uptime Maintained</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-primary relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center reveal">
+                    <p class="text-4xl md:text-5xl font-bold text-white stat-number mb-2">12+</p>
+                    <p class="text-slate-400 text-sm uppercase tracking-wider">Years Experience</p>
+                </div>
+                <div class="text-center reveal delay-100">
+                    <p class="text-4xl md:text-5xl font-bold text-white stat-number mb-2">500K+</p>
+                    <p class="text-slate-400 text-sm uppercase tracking-wider">Tests Automated</p>
+                </div>
+                <div class="text-center reveal delay-200">
+                    <p class="text-4xl md:text-5xl font-bold text-white stat-number mb-2">50+</p>
+                    <p class="text-slate-400 text-sm uppercase tracking-wider">Enterprise Clients</p>
+                </div>
+                <div class="text-center reveal delay-300">
+                    <p class="text-4xl md:text-5xl font-bold text-accent stat-number mb-2">$2M+</p>
+                    <p class="text-slate-400 text-sm uppercase tracking-wider">Cost Savings Delivered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="font-serif text-4xl font-bold text-primary mb-4 precision-border inline-block pb-4">Strategic
+                    Expertise</h2>
+                <p class="text-lg text-muted">Comprehensive quality engineering solutions tailored for enterprise-scale
+                    challenges. From test automation architecture to performance optimization.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="workflow" class="h-7 w-7 text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Test Automation Architecture</h3>
+                    <p class="text-muted leading-relaxed mb-4">Designing scalable automation frameworks using Selenium,
+                        Cypress, and Playwright. CI/CD integration with Jenkins, GitLab CI, and GitHub Actions.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Framework Design</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Parallel Execution</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Reporting & Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal delay-100">
+                    <div class="w-14 h-14 bg-success/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="h-7 w-7 text-success"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Performance Engineering</h3>
+                    <p class="text-muted leading-relaxed mb-4">Load testing and bottleneck analysis using JMeter, K6,
+                        and Gatling. Optimizing application performance for high-traffic scenarios.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>Load
+                            & Stress Testing</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Capacity Planning</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>APM
+                            Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal delay-200">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="h-7 w-7 text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Quality Strategy</h3>
+                    <p class="text-muted leading-relaxed mb-4">Developing QA roadmaps and quality gates. Implementing
+                        shift-left testing practices and quality metrics dashboards.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>QA
+                            Transformation</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Process Optimization</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>Team
+                            Mentorship</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal">
+                    <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bug" class="h-7 w-7 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">API & Microservices Testing</h3>
+                    <p class="text-muted leading-relaxed mb-4">Comprehensive API testing strategies using REST Assured,
+                        Postman, and Karate. Contract testing with Pact.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Contract Testing</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Service Virtualization</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Security Testing</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal delay-100">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="cloud" class="h-7 w-7 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Cloud & DevOps QA</h3>
+                    <p class="text-muted leading-relaxed mb-4">Cloud-native testing on AWS, Azure, and GCP.
+                        Containerized testing environments with Docker and Kubernetes.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Infrastructure as Code</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>Chaos
+                            Engineering</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Monitoring & Alerts</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 card-hover reveal delay-200">
+                    <div class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="h-7 w-7 text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Mobile Quality Assurance</h3>
+                    <p class="text-muted leading-relaxed mb-4">Native and cross-platform mobile testing. Device lab
+                        management and automated mobile CI/CD pipelines.</p>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Cross-platform Testing</li>
+                        <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-success mr-2"></i>Real
+                            Device Cloud</li>
+                        <li class="flex items-center"><i data-lucide="check"
+                                class="h-4 w-4 text-success mr-2"></i>Accessibility Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="font-serif text-4xl font-bold text-primary mb-6 precision-border inline-block pb-4">The
+                        Quality Methodology</h2>
+                    <p class="text-lg text-muted mb-8 leading-relaxed">A systematic approach to quality engineering that
+                        emphasizes prevention over detection. Every phase is designed to catch defects early and ensure
+                        bulletproof releases.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-lg">
+                                1</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary mb-2">Assessment & Strategy</h4>
+                                <p class="text-muted">Audit existing processes, identify gaps, and develop a
+                                    comprehensive QA roadmap aligned with business objectives.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-lg">
+                                2</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary mb-2">Framework Architecture</h4>
+                                <p class="text-muted">Design scalable test automation frameworks with maintainable code
+                                    patterns and robust reporting mechanisms.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-lg">
+                                3</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary mb-2">CI/CD Integration</h4>
+                                <p class="text-muted">Seamlessly integrate quality gates into deployment pipelines with
+                                    automated feedback loops and quality metrics.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-success/10 flex items-center justify-center text-success font-bold text-lg">
+                                4</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary mb-2">Continuous Optimization</h4>
+                                <p class="text-muted">Monitor, analyze, and refine testing processes to improve defect
+                                    detection rates and reduce time-to-market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal delay-200">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-accent/10 to-success/10 rounded-3xl blur-2xl">
+                    </div>
+                    <div class="relative bg-surface rounded-2xl p-8 border border-slate-200">
+                        <img src="./assets/proccess.png" alt="Quality Engineering Process"
+                            class="w-full rounded-lg shadow-lg mb-6">
+
+                        <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm font-semibold text-primary">Defect Detection Rate</span>
+                                <span class="text-sm font-bold text-success">+47%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2 mb-4">
+                                <div class="bg-success h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm font-semibold text-primary">Release Velocity</span>
+                                <span class="text-sm font-bold text-accent">3x Faster</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="font-serif text-4xl font-bold mb-4">Professional Journey</h2>
+                <p class="text-slate-400 text-lg">Over a decade of driving quality transformation across fintech,
+                    healthcare, and enterprise SaaS industries.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-slate-700"></div>
+
+                <!-- Timeline items -->
+                <div class="space-y-12">
+                    <!-- Item 1 -->
+                    <div class="relative reveal">
+                        <div
+                            class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-primary">
+                        </div>
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-5/12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0">
+                                <span class="text-accent font-semibold text-sm">2021 - Present</span>
+                                <h3 class="text-xl font-bold mt-1">Strategic QA Advisor</h3>
+                                <p class="text-slate-400 text-sm mt-1">Independent Consultant</p>
+                            </div>
+                            <div class="md:w-5/12 pl-12 md:pl-0">
+                                <p class="text-slate-300 text-sm leading-relaxed">Leading quality transformation
+                                    initiatives for Fortune 500 companies. Architected test automation strategies
+                                    resulting in $2M+ annual savings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative reveal delay-100">
+                        <div
+                            class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-slate-500 border-4 border-primary">
+                        </div>
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-5/12 md:text-left pl-12 md:pl-0 mb-4 md:mb-0">
+                                <span class="text-accent font-semibold text-sm">2018 - 2021</span>
+                                <h3 class="text-xl font-bold mt-1">Senior Quality Engineer</h3>
+                                <p class="text-slate-400 text-sm mt-1">Enterprise SaaS Company</p>
+                            </div>
+                            <div class="md:w-5/12 pl-12 md:pl-0 md:text-right">
+                                <p class="text-slate-300 text-sm leading-relaxed">Built automated testing framework from
+                                    ground up, reducing regression cycle from 2 weeks to 4 hours. Led team of 8 QA
+                                    engineers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative reveal delay-200">
+                        <div
+                            class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-slate-500 border-4 border-primary">
+                        </div>
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-5/12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0">
+                                <span class="text-accent font-semibold text-sm">2015 - 2018</span>
+                                <h3 class="text-xl font-bold mt-1">QA Automation Lead</h3>
+                                <p class="text-slate-400 text-sm mt-1">Fintech Startup</p>
+                            </div>
+                            <div class="md:w-5/12 pl-12 md:pl-0">
+                                <p class="text-slate-300 text-sm leading-relaxed">Implemented CI/CD pipelines and
+                                    automated API testing suite. Ensured compliance with financial regulations through
+                                    rigorous testing protocols.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative reveal delay-300">
+                        <div
+                            class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-slate-500 border-4 border-primary">
+                        </div>
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-5/12 md:text-left pl-12 md:pl-0 mb-4 md:mb-0">
+                                <span class="text-accent font-semibold text-sm">2012 - 2015</span>
+                                <h3 class="text-xl font-bold mt-1">Quality Assurance Analyst</h3>
+                                <p class="text-slate-400 text-sm mt-1">Healthcare Technology</p>
+                            </div>
+                            <div class="md:w-5/12 pl-12 md:pl-0 md:text-right">
+                                <p class="text-slate-300 text-sm leading-relaxed">Specialized in HIPAA compliance
+                                    testing and medical device software validation. Reduced critical defect leakage by
+                                    60%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="py-16 bg-surface border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold text-muted uppercase tracking-wider mb-8">Technologies & Tools
+            </p>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-70">
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="box" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">Selenium</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="terminal" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">Cypress</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="cloud" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">AWS</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="git-branch" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">Jenkins</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="container" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">Docker</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i data-lucide="activity" class="h-8 w-8 text-primary"></i>
+                    <span class="text-xs font-medium text-muted">JMeter</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <h2 class="font-serif text-4xl font-bold text-primary mb-6">Let's Build Quality Together</h2>
+                    <p class="text-lg text-muted mb-8 leading-relaxed">Ready to transform your QA strategy? Whether you
+                        need test automation architecture, performance optimization, or quality consulting, let's
+                        discuss how we can elevate your engineering excellence.</p>
+
+                    <div class="space-y-6">
+
+                        <!-- Email -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                <i data-lucide="mail" class="h-5 w-5 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">Email</p>
+                                <p class="text-primary font-semibold">milin.patel@email.com</p>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                <i class="fab fa-linkedin-in text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">LinkedIn</p>
+                                <p class="text-primary font-semibold">linkedin.com/in/milinpatel</p>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">Location</p>
+                                <p class="text-primary font-semibold">San Francisco, CA (Remote Worldwide)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-surface rounded-2xl p-8 border border-slate-200 reveal delay-200">
+                    <form class="space-y-6"
+                        onsubmit="event.preventDefault(); alert('Thank you for your message! I will get back to you within 24 hours.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-primary mb-2">First Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                                    placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-primary mb-2">Last Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                                    placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                                placeholder="john@company.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Company</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                                placeholder="Company Name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Project Details</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+                                placeholder="Tell me about your QA challenges..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-all duration-300 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                            Send Message
+                            <i data-lucide="send" class="h-4 w-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="font-serif text-2xl font-bold">MP<span class="text-accent">.</span></span>
+                    <span class="text-slate-400 text-sm ml-4">© 2024 Milin Patel. All rights reserved.</span>
+                </div>
+
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="github" class="h-5 w-5"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                        <i data-lucide="twitter" class="h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

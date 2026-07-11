@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Your Property - Gwalior Property</title>
+  <meta name="description" content="List your property for sale or rent on Gwalior Property. Reach thousands of potential buyers and tenants.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="main-header"></header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">List Property</span>
+      </div>
+      <h1>List Your Property</h1>
+      <p>Want to sell or rent your property? Fill in the details below and we'll help you find the right buyer or tenant.</p>
+    </div>
+  </section>
+
+  <!-- Sell Property Form Section -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto">
+        <div class="form-card">
+          <h2 style="font-size:24px;font-weight:800;margin-bottom:6px">Property Details</h2>
+          <p style="color:var(--text-light);font-size:14px;margin-bottom:32px">Provide accurate details about your property. We'll review and contact you within 24 hours.</p>
+
+          <form id="sell-property-form">
+            <!-- Owner Information -->
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:20px;color:var(--primary)">Owner Information</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" id="sell-name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Mobile Number <span class="required">*</span></label>
+                <input type="tel" id="sell-phone" placeholder="Enter your mobile number" required>
+              </div>
+            </div>
+
+            <!-- Property Information -->
+            <h3 style="font-size:18px;font-weight:700;margin:32px 0 20px;color:var(--primary)">Property Information</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Property Title <span class="required">*</span></label>
+                <input type="text" id="sell-title" placeholder="e.g. 3 BHK Flat in City Centre" required>
+              </div>
+              <div class="form-group">
+                <label>Location <span class="required">*</span></label>
+                <input type="text" id="sell-location" placeholder="e.g. Morar, Gwalior" required>
+              </div>
+              <div class="form-group">
+                <label>Purpose <span class="required">*</span></label>
+                <select id="sell-purpose" required>
+                  <option value="">Select Purpose</option>
+                  <option value="Sell">Sell</option>
+                  <option value="Rent">Rent</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Property Type <span class="required">*</span></label>
+                <select id="sell-type" required>
+                  <option value="">Select Type</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Area (sqft) <span class="required">*</span></label>
+                <input type="number" id="sell-area" placeholder="e.g. 1200" required>
+              </div>
+              <div class="form-group">
+                <label>Expected Price <span class="required">*</span></label>
+                <input type="text" id="sell-price" placeholder="e.g. ₹45 Lac or ₹15,000/month" required>
+              </div>
+              <div class="form-group">
+                <label>Bedrooms</label>
+                <select id="sell-bedrooms">
+                  <option value="0">N/A</option>
+                  <option value="1">1 BHK</option>
+                  <option value="2">2 BHK</option>
+                  <option value="3">3 BHK</option>
+                  <option value="4">4 BHK</option>
+                  <option value="5">5 BHK</option>
+                  <option value="6">6+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Bathrooms</label>
+                <select id="sell-bathrooms">
+                  <option value="0">N/A</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Furnishing</label>
+                <select id="sell-furnishing">
+                  <option value="Unfurnished">Unfurnished</option>
+                  <option value="Semi Furnished">Semi Furnished</option>
+                  <option value="Fully Furnished">Fully Furnished</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Parking</label>
+                <select id="sell-parking">
+                  <option value="Not Available">Not Available</option>
+                  <option value="Available">Available</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label>Full Address <span class="required">*</span></label>
+                <input type="text" id="sell-address" placeholder="Enter complete property address" required>
+              </div>
+              <div class="form-group full-width">
+                <label>Description <span class="required">*</span></label>
+                <textarea id="sell-description" placeholder="Describe your property in detail — included amenities, nearby landmarks, unique features, etc." required style="min-height:140px"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:12px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Submit via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need Help Listing Your Property?</h2>
+      <p>Our team is ready to assist you. Reach out via WhatsApp for quick support!</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--primary)">Contact Us</a>
+        <a href="https://wa.me/919909559554" target="_blank" class="btn btn-lg" style="background:#25D366;color:#fff">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer"></footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919909559554" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

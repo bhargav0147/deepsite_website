@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties - Gwalior Property</title>
+  <meta name="description" content="Browse all properties for sale and rent in Gwalior. Filter by type, purpose, price, and location.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="main-header"></header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Properties</span>
+      </div>
+      <h1>All Properties</h1>
+      <p>Explore the best properties available for sale and rent in Gwalior.</p>
+    </div>
+  </section>
+
+  <!-- Properties Section -->
+  <section class="section">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label>Purpose</label>
+            <select id="filter-purpose" onchange="currentFilters.purpose=this.value;filterProperties()">
+              <option value="All">All</option>
+              <option value="Sell">Buy (For Sale)</option>
+              <option value="Rent">Rent</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Property Type</label>
+            <select id="filter-type" onchange="currentFilters.type=this.value;filterProperties()">
+              <option value="All">All</option>
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Price Range</label>
+            <select id="filter-price" onchange="currentFilters.priceRange=this.value;filterProperties()">
+              <option value="All">All Prices</option>
+              <optgroup label="Buy (Sale)">
+                <option value="under-25lac">Under ₹25 Lac</option>
+                <option value="25-50lac">₹25 Lac - ₹50 Lac</option>
+                <option value="50-1cr">₹50 Lac - ₹1 Cr</option>
+                <option value="1-2cr">₹1 Cr - ₹2 Cr</option>
+                <option value="above-2cr">Above ₹2 Cr</option>
+              </optgroup>
+              <optgroup label="Rent (Monthly)">
+                <option value="under-15k">Under ₹15,000</option>
+                <option value="15-30k">₹15,000 - ₹30,000</option>
+                <option value="30-50k">₹30,000 - ₹50,000</option>
+                <option value="above-50k">Above ₹50,000</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Location</label>
+            <select id="filter-location" onchange="currentFilters.location=this.value;filterProperties()">
+              <option value="All">All Locations</option>
+              <option value="City Centre">City Centre</option>
+              <option value="Morar">Morar</option>
+              <option value="Thatipur">Thatipur</option>
+              <option value="Mahalgaon">Mahalgaon</option>
+              <option value="Lashkar">Lashkar</option>
+              <option value="Gole Ka Mandir">Gole Ka Mandir</option>
+              <option value="Sirol">Sirol</option>
+              <option value="Airport Road">Airport Road</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Search</label>
+            <input type="text" id="filter-search" placeholder="Search by name, location..." oninput="searchProperties(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Property Count -->
+      <p class="property-count" id="property-count">Loading...</p>
+
+      <!-- Properties Grid -->
+      <div class="properties-grid" id="properties-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer"></footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919909559554" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

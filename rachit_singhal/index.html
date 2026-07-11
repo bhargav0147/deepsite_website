@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachit Singhal Photography | Visual Storytelling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFF9E6',
+                            100: '#FFF0BF',
+                            200: '#FFE699',
+                            300: '#FFD966',
+                            400: '#FFCC33',
+                            500: '#C9A96E',
+                            600: '#B8944A',
+                            700: '#9A7B3C',
+                            800: '#7C622E',
+                            900: '#5E4A20',
+                        },
+                        dark: {
+                            50: '#2A2A2A',
+                            100: '#232323',
+                            200: '#1E1E1E',
+                            300: '#1A1A1A',
+                            400: '#151515',
+                            500: '#111111',
+                            600: '#0D0D0D',
+                            700: '#0A0A0A',
+                            800: '#070707',
+                            900: '#030303',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #E8E8E8; overflow-x: hidden; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B8944A; }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+        @keyframes lineGrow {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.from-left {
+            transform: translateX(-40px);
+        }
+        .animate-on-scroll.from-left.visible {
+            transform: translateX(0);
+        }
+        .animate-on-scroll.from-right {
+            transform: translateX(40px);
+        }
+        .animate-on-scroll.from-right.visible {
+            transform: translateX(0);
+        }
+        .animate-on-scroll.scale-up {
+            transform: scale(0.9);
+        }
+        .animate-on-scroll.scale-up.visible {
+            transform: scale(1);
+        }
+
+        /* Hero */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.4) 70%, rgba(10,10,10,0.3) 100%);
+        }
+        .hero-gradient-bottom {
+            background: linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.8) 30%, transparent 100%);
+        }
+
+        /* Gold shimmer text */
+        .gold-shimmer {
+            background: linear-gradient(90deg, #C9A96E 0%, #FFE0A0 25%, #C9A96E 50%, #FFE0A0 75%, #C9A96E 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        /* Gold line accent */
+        .gold-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #C9A96E, #FFE0A0);
+        }
+        .gold-line-vertical {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(180deg, #C9A96E, #FFE0A0);
+        }
+
+        /* Portfolio grid */
+        .portfolio-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .portfolio-item img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.7s ease;
+            filter: brightness(0.8);
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1);
+        }
+        .portfolio-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 40%, transparent 70%);
+            transition: opacity 0.5s ease;
+        }
+        .portfolio-item:hover .overlay {
+            background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.5) 40%, rgba(201,169,110,0.1) 70%);
+        }
+        .portfolio-item .item-content {
+            transform: translateY(10px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .portfolio-item:hover .item-content {
+            transform: translateY(0);
+        }
+
+        /* Service cards */
+        .service-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.4) 100%);
+            border: 1px solid rgba(201,169,110,0.08);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+        .service-card:hover {
+            border-color: rgba(201,169,110,0.3);
+            background: linear-gradient(145deg, rgba(40,40,40,0.7) 0%, rgba(25,25,25,0.5) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(201,169,110,0.05);
+        }
+
+        /* Testimonial cards */
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(25,25,25,0.8) 0%, rgba(15,15,15,0.6) 100%);
+            border: 1px solid rgba(201,169,110,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* FAQ accordion */
+        .faq-item { border-bottom: 1px solid rgba(201,169,110,0.1); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-item .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Stat counter */
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C9A96E, transparent);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+        }
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Navbar */
+        .nav-scrolled {
+            background: rgba(10,10,10,0.95) !important;
+            backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid rgba(201,169,110,0.1) !important;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Grain overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Smooth image loading */
+        img { transition: opacity 0.5s ease; }
+        
+        /* Parallax section */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Client logos scroll */
+        .logo-scroll {
+            animation: scrollLogos 25s linear infinite;
+        }
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .logo-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* Floating WhatsApp button */
+        .whatsapp-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Custom selection */
+        ::selection {
+            background: rgba(201,169,110,0.3);
+            color: #FFE0A0;
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+        }
+
+        /* Video play button pulse */
+        .play-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 2px solid rgba(201,169,110,0.5);
+            border-radius: 50%;
+            animation: pulse-gold 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Film Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="background: transparent;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center group-hover:border-gold-500 transition-colors duration-300">
+                        <span class="font-serif text-gold-500 text-lg font-semibold">R</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-white font-serif text-lg tracking-wide">Rachit</span>
+                        <span class="text-gold-500 font-serif text-lg ml-1">Singhal</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">About</a>
+                    <a href="#journey" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">Journey</a>
+                    <a href="#services" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">Services</a>
+                    <a href="#portfolio" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">Portfolio</a>
+                    <a href="#testimonials" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">Reviews</a>
+                    <a href="#faq" class="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-300 tracking-wider uppercase">FAQ</a>
+                    <a href="#contact" class="ml-4 px-6 py-2.5 border border-gold-500/50 text-gold-500 text-sm tracking-wider uppercase hover:bg-gold-500 hover:text-dark-700 transition-all duration-300 rounded-sm">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menuToggle" class="lg:hidden text-white p-2" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 bg-dark-700/98 backdrop-blur-xl flex flex-col">
+        <div class="flex items-center justify-between px-6 h-20">
+            <span class="font-serif text-xl text-white">Rachit <span class="text-gold-500">Singhal</span></span>
+            <button id="menuClose" class="text-white p-2" aria-label="Close menu">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="flex-1 flex flex-col justify-center px-8 gap-6">
+            <a href="#about" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">About</a>
+            <a href="#journey" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">Journey</a>
+            <a href="#services" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">Services</a>
+            <a href="#portfolio" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">Portfolio</a>
+            <a href="#testimonials" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">Reviews</a>
+            <a href="#faq" class="mobile-nav-link text-3xl font-serif text-gray-300 hover:text-gold-500 transition-colors duration-300">FAQ</a>
+            <a href="#contact" class="mobile-nav-link text-3xl font-serif text-gold-500 transition-colors duration-300">Contact</a>
+        </div>
+        <div class="px-8 pb-8">
+            <div class="gold-line mb-4"></div>
+            <p class="text-gray-500 text-sm">New Delhi, India</p>
+            <p class="text-gray-500 text-sm">+91 79826 44927</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://rachit.atomgold.tech/assets/3.jpeg" alt="Hero Background" class="w-full h-full object-cover object-center" style="filter: brightness(0.4) contrast(1.1);">
+        </div>
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="hero-gradient-bottom absolute inset-0"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 right-8 lg:right-16 opacity-20">
+            <div class="gold-line-vertical" style="height: 120px;"></div>
+        </div>
+        <div class="absolute bottom-1/4 left-8 lg:left-16 opacity-20">
+            <div class="gold-line-vertical" style="height: 80px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
+            <div class="max-w-3xl">
+                <!-- Overline -->
+                <div class="flex items-center gap-4 mb-8" style="animation: fadeInDown 0.8s ease forwards;">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.3em] uppercase font-light">Shot by an Athlete. Driven by Adrenaline.</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.95] mb-6" style="animation: fadeInUp 1s ease forwards; animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+                    Visual<br>
+                    <span class="italic text-gold-500">Storytelling</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-400 font-light leading-relaxed mb-4 max-w-xl" style="animation: fadeInUp 1s ease forwards; animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;">
+                    Powered by Speed, Precision & Emotion
+                </p>
+
+                <p class="text-base text-gray-500 font-light leading-relaxed mb-10 max-w-lg" style="animation: fadeInUp 1s ease forwards; animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards;">
+                    Award-winning photographer, filmmaker, and drone cinematographer trusted by global brands, sports federations, and international institutions.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4" style="animation: fadeInUp 1s ease forwards; animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
+                    <a href="#portfolio" class="group px-8 py-3.5 bg-gold-500 text-dark-700 font-medium text-sm tracking-wider uppercase hover:bg-gold-400 transition-all duration-300 flex items-center gap-3">
+                        View Portfolio
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 border border-white/20 text-white text-sm tracking-wider uppercase hover:border-gold-500/50 hover:text-gold-500 transition-all duration-300">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="animation: fadeInUp 1s ease forwards; animation-delay: 1s; opacity: 0; animation-fill-mode: forwards;">
+            <span class="text-gray-500 text-xs tracking-[0.2em] uppercase">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-gold-500/50 to-transparent relative overflow-hidden">
+                <div class="w-full h-4 bg-gold-500 absolute top-0 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Image -->
+                <div class="animate-on-scroll from-left relative">
+                    <div class="relative">
+                        <img src="https://rachit.atomgold.tech/assets/3.jpeg" alt="Rachit Singhal - Professional Photographer" class="w-full aspect-[3/4] object-cover rounded-sm" style="filter: brightness(0.9) contrast(1.05);">
+                        <!-- Gold frame accent -->
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-gold-500/30 rounded-br-sm"></div>
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold-500/30 rounded-tl-sm"></div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-8 bg-dark-200 border border-gold-500/20 p-5 rounded-sm shadow-2xl">
+                        <div class="text-3xl font-serif text-gold-500 font-bold">7+</div>
+                        <div class="text-xs text-gray-400 tracking-wider uppercase">Years Exp.</div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="animate-on-scroll from-right">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="gold-line"></div>
+                        <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">About Me</span>
+                    </div>
+
+                    <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight mb-8">
+                        Capturing Moments,<br>
+                        <span class="italic text-gold-500">Creating Legacies</span>
+                    </h2>
+
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Rachit Singhal is a New Delhi–based photographer, filmmaker, and cinematographer with <strong class="text-white">7+ years of experience</strong> across sports, events, architecture, lifestyle, and commercial photography. Having worked with global brands, luxury hotels, and international sporting bodies, he blends storytelling with technical precision to create powerful visual narratives.
+                    </p>
+
+                    <p class="text-gray-400 leading-relaxed mb-10">
+                        A professional racing driver and sportsperson himself, Rachit brings rare insider perspective to sports and action-driven content.
+                    </p>
+
+                    <!-- Achievement badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+                        <div class="flex items-center gap-3 p-3 rounded-sm bg-dark-100/50 border border-gold-500/5">
+                            <i data-lucide="plane" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-300">Certified Drone Pilot</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-sm bg-dark-100/50 border border-gold-500/5">
+                            <i data-lucide="trophy" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-300">National Karting Champion</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-sm bg-dark-100/50 border border-gold-500/5">
+                            <i data-lucide="globe" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-300">13+ Countries</span>
+                        </div>
+                    </div>
+
+                    <a href="#journey" class="group inline-flex items-center gap-3 text-gold-500 text-sm tracking-wider uppercase hover:text-gold-400 transition-colors duration-300">
+                        <span>Learn More</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Journey Section -->
+    <section id="journey" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">The Journey</span>
+                    <div class="gold-line"></div>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight">
+                    A Story of Passion & <span class="italic text-gold-500">Precision</span>
+                </h2>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid lg:grid-cols-2 gap-16 items-start mb-20">
+                <div class="animate-on-scroll from-left">
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Rachit Singhal is an award-winning visual storyteller, photographer, cinematographer, and licensed drone operator based in New Delhi, India with a strong global outlook. With over seven years of experience he has worked across sports, large-scale events, architecture, lifestyle, hospitality, fashion, and broadcast media.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        His portfolio includes collaborations with brands and organizations such as <strong class="text-white">Red Bull, Marriott Bonvoy, Walmart India, Taco Bell India, Embassy of Switzerland, Prohelvetia, CGTN News,</strong> and <strong class="text-white">World Surf League</strong>.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        He has covered government and corporate events including assignments at <strong class="text-white">Rashtrapati Bhawan</strong>, international conferences, CSR summits, and major sporting championships across India and internationally.
+                    </p>
+                </div>
+                <div class="animate-on-scroll from-right">
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        As a national karting champion and endurance racer, Rachit uniquely understands speed, emotion, and timing which allows him to capture action content authentically.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        He is also the <strong class="text-white">Founder & Director of Hotshoe Pvt Ltd</strong> providing photography, films, live streaming, and media production. Certified drone pilot in Europe (EASA) and Dubai (DCAA). His work is driven by emotion, detail, and complete client satisfaction.
+                    </p>
+                    
+                    <!-- Highlights -->
+                    <div class="space-y-4 mt-8">
+                        <div class="flex items-center gap-4 p-4 rounded-sm bg-dark-100/30 border-l-2 border-gold-500">
+                            <i data-lucide="building-2" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Founder & Director of Hotshoe Pvt Ltd</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-sm bg-dark-100/30 border-l-2 border-gold-500">
+                            <i data-lucide="flag" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">National Karting Champion</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-sm bg-dark-100/30 border-l-2 border-gold-500">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Certified Drone Pilot (EASA & DCAA)</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-sm bg-dark-100/30 border-l-2 border-gold-500">
+                            <i data-lucide="landmark" class="w-5 h-5 text-gold-500 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Worked at Rashtrapati Bhawan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted By -->
+            <div class="animate-on-scroll mb-20">
+                <div class="text-center mb-10">
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Trusted By</span>
+                </div>
+                <div class="overflow-hidden relative">
+                    <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark-700 to-transparent z-10"></div>
+                    <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark-700 to-transparent z-10"></div>
+                    <div class="logo-scroll flex items-center gap-16 whitespace-nowrap">
+                                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Red Bull</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Marriott Bonvoy</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Walmart India</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Taco Bell</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Embassy of Switzerland</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">CGTN News</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">World Surf League</span>
+                        <!-- Duplicate for seamless scroll -->
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Red Bull</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Marriott Bonvoy</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Walmart India</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Taco Bell</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">Embassy of Switzerland</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">CGTN News</span>
+                        <span class="text-2xl font-serif text-gray-500/40 tracking-wider">World Surf League</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 animate-on-scroll">
+                <div class="stat-card text-center p-8 bg-dark-100/30 border border-gold-500/5 rounded-sm">
+                    <div class="text-4xl lg:text-5xl font-serif text-gold-500 font-bold mb-2" data-count="7">0</div>
+                    <div class="text-sm text-gray-500 tracking-wider uppercase">Years Experience</div>
+                </div>
+                <div class="stat-card text-center p-8 bg-dark-100/30 border border-gold-500/5 rounded-sm">
+                    <div class="text-4xl lg:text-5xl font-serif text-gold-500 font-bold mb-2" data-count="20">0</div>
+                    <div class="text-sm text-gray-500 tracking-wider uppercase">Brands Worked With</div>
+                </div>
+                <div class="stat-card text-center p-8 bg-dark-100/30 border border-gold-500/5 rounded-sm">
+                    <div class="text-4xl lg:text-5xl font-serif text-gold-500 font-bold mb-2" data-count="13">0</div>
+                    <div class="text-sm text-gray-500 tracking-wider uppercase">Countries Covered</div>
+                </div>
+                <div class="stat-card text-center p-8 bg-dark-100/30 border border-gold-500/5 rounded-sm">
+                    <div class="text-4xl lg:text-5xl font-serif text-gold-500 font-bold mb-2" data-count="200">0</div>
+                    <div class="text-sm text-gray-500 tracking-wider uppercase">Projects Delivered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-on-scroll">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Services</span>
+                    <div class="gold-line"></div>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight mb-6">
+                    What I <span class="italic text-gold-500">Offer</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive visual solutions from capture to delivery, tailored for brands, events, and editorial needs.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="calendar" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Event Photography & Videography</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Comprehensive coverage of corporate events, conferences, launches, and celebrations with cinematic quality.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="zap" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Sports & Action Photography</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">High-speed action capture with insider athlete perspective. Perfect for motorsports, athletics, and extreme sports.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="building" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Architecture & Real Estate</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Stunning architectural photography showcasing properties, interiors, and structural masterpieces.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Commercial & Brand Photography</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Product shoots, brand campaigns, and advertising photography that elevates your visual identity.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Lifestyle & Fashion Shoots</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Creative lifestyle and fashion photography for brands, magazines, and personal portfolios.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="clapperboard" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Cinematic Films & Reels</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Brand films, promotional videos, and social media reels with cinematic storytelling approach.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="navigation" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Drone & Aerial Cinematography</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Licensed drone operations for stunning aerial perspectives. EASA (Europe) and DCAA (Dubai) certified.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="radio" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Live Streaming & Broadcast</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Professional live streaming services for events, webinars, and broadcast coverage.</p>
+                </div>
+
+                <div class="service-card p-8 rounded-sm animate-on-scroll group">
+                    <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors duration-300">
+                        <i data-lucide="image" class="w-6 h-6 text-gold-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Post-Production & Editing</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Professional color grading, retouching, video editing, and final delivery in multiple formats.</p>
+                </div>
+            </div>
+
+            <!-- Client Categories -->
+            <div class="mt-20 animate-on-scroll">
+                <div class="text-center mb-10">
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Clientele</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Corporate & MNCs</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Event Management Companies</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Sports Federations & Racing Teams</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Hotels & Hospitality Brands</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Architects & Real Estate Developers</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Government Bodies & Embassies</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Media Houses & News Agencies</span>
+                    <span class="px-5 py-2.5 bg-dark-100/40 border border-gold-500/10 rounded-full text-gray-400 text-sm hover:border-gold-500/30 hover:text-gold-500 transition-all duration-300 cursor-default">Global Brands</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Portfolio</span>
+                    <div class="gold-line"></div>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight mb-6">
+                    Selected <span class="italic text-gold-500">Works</span>
+                </h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 animate-on-scroll" id="filterTabs">
+                <button class="filter-btn active px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="all">All</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="sports">Sports</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="events">Events</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="architecture">Architecture</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="commercial">Commercial</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="lifestyle">Lifestyle</button>
+                <button class="filter-btn px-5 py-2 text-sm tracking-wider uppercase transition-all duration-300 rounded-sm" data-filter="drone">Drone</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6" id="portfolioGrid">
+                <!-- Item 1 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="sports" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&h=400&fit=crop" alt="Racing Action" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Sports</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Racing Action</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="events" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=800&fit=crop" alt="Corporate Summit" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Events</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Corporate Summit</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="architecture" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=400&fit=crop" alt="Modern Structure" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Architecture</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Modern Structure</h3>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="commercial" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop" alt="Brand Campaign" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Commercial</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Brand Campaign</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="lifestyle" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&h=800&fit=crop" alt="Fashion Editorial" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Lifestyle</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Fashion Editorial</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="drone" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Aerial Perspective" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Drone</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Aerial Perspective</h3>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="sports" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&h=400&fit=crop" alt="Cycling Championship" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Sports</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Cycling Championship</h3>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="events" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop" alt="Gala Night" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Events</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Gala Night</h3>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="architecture" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" alt="Interior Excellence" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Architecture</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Interior Excellence</h3>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="commercial" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" alt="Product Excellence" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Commercial</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Product Excellence</h3>
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="drone" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&h=400&fit=crop" alt="Urban Landscape" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Drone</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Urban Landscape</h3>
+                    </div>
+                </div>
+
+                <!-- Item 12 -->
+                <div class="portfolio-item rounded-sm aspect-[4/3] animate-on-scroll" data-category="lifestyle" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=400&fit=crop" alt="Portrait Session" class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 item-content">
+                        <span class="text-gold-500 text-xs tracking-[0.2em] uppercase">Lifestyle</span>
+                        <h3 class="text-white font-serif text-lg lg:text-xl mt-1">Portrait Session</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Testimonials</span>
+                    <div class="gold-line"></div>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight">
+                    Client <span class="italic text-gold-500">Voices</span>
+                </h2>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-sm animate-on-scroll relative">
+                    <div class="absolute top-6 right-8 text-gold-500/10 font-serif text-6xl leading-none">"</div>
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-sm italic">
+                        "Rachit's ability to capture the energy of our motorsport events is unmatched. His racing background gives him an edge that other photographers simply don't have."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 flex items-center justify-center">
+                            <span class="text-gold-500 font-serif text-sm font-bold">R</span>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Red Bull India</div>
+                            <div class="text-gray-500 text-xs">Sports & Events</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-sm animate-on-scroll relative">
+                    <div class="absolute top-6 right-8 text-gold-500/10 font-serif text-6xl leading-none">"</div>
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-sm italic">
+                        "Working with Rachit on our property shoots has elevated our visual marketing. His attention to detail and understanding of hospitality aesthetics is remarkable."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 flex items-center justify-center">
+                            <span class="text-gold-500 font-serif text-sm font-bold">P</span>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Priya Sharma</div>
+                            <div class="text-gray-500 text-xs">Marriott Bonvoy Marketing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-sm animate-on-scroll relative">
+                    <div class="absolute top-6 right-8 text-gold-500/10 font-serif text-6xl leading-none">"</div>
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-sm italic">
+                        "Rachit covered our diplomatic events with professionalism and discretion. The quality of his work exceeded our expectations for official documentation."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 flex items-center justify-center">
+                            <span class="text-gold-500 font-serif text-sm font-bold">H</span>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Ambassador Heinrich</div>
+                            <div class="text-gray-500 text-xs">Embassy of Switzerland</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="relative py-24 lg:py-32">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <div class="gold-line"></div>
+                    <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">FAQ</span>
+                    <div class="gold-line"></div>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight">
+                    Common <span class="italic text-gold-500">Questions</span>
+                </h2>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="space-y-0 animate-on-scroll">
+                <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-start justify-between gap-6">
+                        <h3 class="text-white font-medium text-lg pr-4">Where are you based, and do you travel for assignments?</h3>
+                        <div class="faq-icon flex-shrink-0 mt-1">
+                            <i data-lucide="plus" class="w-5 h-5 text-gold-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-400 leading-relaxed pt-4 pb-2">I am based in New Delhi, India, but I work extensively across India and internationally. I have covered projects in 13+ countries including UAE, Europe, Southeast Asia, and the Middle East. For international assignments, travel and accommodation arrangements can be discussed during the booking process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-start justify-between gap-6">
+                        <h3 class="text-white font-medium text-lg pr-4">Can you work on international projects?</h3>
+                        <div class="faq-icon flex-shrink-0 mt-1">
+                            <i data-lucide="plus" class="w-5 h-5 text-gold-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-400 leading-relaxed pt-4 pb-2">Yes, I regularly work on international projects. I am a certified drone pilot in Europe (EASA) and Dubai (DCAA), which allows me to provide aerial services in these regions legally. I have worked with global brands like Red Bull, World Surf League, and covered events at international venues.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-start justify-between gap-6">
+                        <h3 class="text-white font-medium text-lg pr-4">Do you offer drone photography services?</h3>
+                        <div class="faq-icon flex-shrink-0 mt-1">
+                            <i data-lucide="plus" class="w-5 h-5 text-gold-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-400 leading-relaxed pt-4 pb-2">Yes, I offer professional drone photography and cinematography services. I hold certifications from EASA (European Union Aviation Safety Agency) and DCAA (Dubai Civil Aviation Authority). Drone services include aerial photography, videography, real estate surveys, and event coverage from unique perspectives.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-start justify-between gap-6">
+                        <h3 class="text-white font-medium text-lg pr-4">How can brands collaborate with you?</h3>
+                        <div class="faq-icon flex-shrink-0 mt-1">
+                            <i data-lucide="plus" class="w-5 h-5 text-gold-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-400 leading-relaxed pt-4 pb-2">Brands can collaborate through various models: project-based assignments, retainer partnerships, event coverage contracts, or content creation packages. I work with the brand's marketing team to understand objectives and deliver visual content that aligns with their brand identity and campaign goals. Contact me to discuss your specific requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-start justify-between gap-6">
+                        <h3 class="text-white font-medium text-lg pr-4">What is your booking process?</h3>
+                        <div class="faq-icon flex-shrink-0 mt-1">
+                            <i data-lucide="plus" class="w-5 h-5 text-gold-500"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-400 leading-relaxed pt-4 pb-2">The booking process is simple: (1) Contact me via the form, WhatsApp, or phone with your project details. (2) We discuss requirements, timeline, and budget. (3) I provide a detailed quote and contract. (4) Upon confirmation and advance payment, the date is blocked. (5) Shoot execution and post-production follow the agreed timeline. (6) Final delivery in your preferred format.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Left Content -->
+                <div class="animate-on-scroll from-left">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="gold-line"></div>
+                        <span class="text-gold-500 text-sm tracking-[0.2em] uppercase">Contact</span>
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-5xl text-white leading-tight mb-8">
+                        Let's Create<br>
+                        <span class="italic text-gold-500">Together</span>
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-12">
+                        Ready to bring your vision to life? Whether it's a brand shoot, event coverage, or cinematic project, I'd love to hear about it.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-xs tracking-wider uppercase mb-1">Phone</div>
+                                <a href="tel:+917982644927" class="text-white hover:text-gold-500 transition-colors duration-300">+91 79826 44927</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-xs tracking-wider uppercase mb-1">WhatsApp</div>
+                                <a href="https://wa.me/917982644927" target="_blank" class="text-white hover:text-gold-500 transition-colors duration-300">Chat on WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-sm bg-gold-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-xs tracking-wider uppercase mb-1">Location</div>
+                                <span class="text-white">New Delhi, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-sm border border-gold-500/20 flex items-center justify-center text-gray-400 hover:text-gold-500 hover:border-gold-500/50 transition-all duration-300">
+                            <i class="fab fa-instagram w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-sm border border-gold-500/20 flex items-center justify-center text-gray-400 hover:text-gold-500 hover:border-gold-500/50 transition-all duration-300">
+                            <i class="fab fa-youtube w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-sm border border-gold-500/20 flex items-center justify-center text-gray-400 hover:text-gold-500 hover:border-gold-500/50 transition-all duration-300">
+                            <i class="fab fa-linkedin w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-sm border border-gold-500/20 flex items-center justify-center text-gray-400 hover:text-gold-500 hover:border-gold-500/50 transition-all duration-300">
+                            <i class="fab fa-twitter w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="animate-on-scroll from-right">
+                    <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gray-500 tracking-wider uppercase mb-2">First Name</label>
+                                <input type="text" required class="w-full bg-transparent border-b border-gold-500/20 focus:border-gold-500 text-white py-3 outline-none transition-colors duration-300 placeholder-gray-600" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-500 tracking-wider uppercase mb-2">Last Name</label>
+                                <input type="text" required class="w-full bg-transparent border-b border-gold-500/20 focus:border-gold-500 text-white py-3 outline-none transition-colors duration-300 placeholder-gray-600" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 tracking-wider uppercase mb-2">Email</label>
+                            <input type="email" required class="w-full bg-transparent border-b border-gold-500/20 focus:border-gold-500 text-white py-3 outline-none transition-colors duration-300 placeholder-gray-600" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 tracking-wider uppercase mb-2">Service Needed</label>
+                            <select required class="w-full bg-transparent border-b border-gold-500/20 focus:border-gold-500 text-white py-3 outline-none transition-colors duration-300 appearance-none cursor-pointer" style="background: #111;">
+                                <option value="" class="bg-dark-200">Select a service</option>
+                                <option value="event" class="bg-dark-200">Event Photography & Videography</option>
+                                <option value="sports" class="bg-dark-200">Sports & Action Photography</option>
+                                <option value="architecture" class="bg-dark-200">Architecture & Real Estate</option>
+                                <option value="commercial" class="bg-dark-200">Commercial & Brand Photography</option>
+                                <option value="lifestyle" class="bg-dark-200">Lifestyle & Fashion Shoots</option>
+                                <option value="film" class="bg-dark-200">Cinematic Films & Reels</option>
+                                <option value="drone" class="bg-dark-200">Drone & Aerial Cinematography</option>
+                                <option value="streaming" class="bg-dark-200">Live Streaming & Broadcast</option>
+                                <option value="other" class="bg-dark-200">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 tracking-wider uppercase mb-2">Message</label>
+                            <textarea rows="4" required class="w-full bg-transparent border-b border-gold-500/20 focus:border-gold-500 text-white py-3 outline-none transition-colors duration-300 resize-none placeholder-gray-600" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="group w-full py-4 bg-gold-500 text-dark-700 font-medium text-sm tracking-wider uppercase hover:bg-gold-400 transition-all duration-300 flex items-center justify-center gap-3">
+                            <span>Send Message</span>
+                            <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center">
+                            <span class="font-serif text-gold-500 text-lg font-semibold">R</span>
+                        </div>
+                        <div>
+                            <span class="text-white font-serif text-lg">Rachit</span>
+                            <span class="text-gold-500 font-serif text-lg ml-1">Singhal</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Visual Storytelling Powered by Speed, Precision & Emotion</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-sm tracking-wider uppercase mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">About</a>
+                        <a href="#services" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">Services</a>
+                        <a href="#portfolio" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">Portfolio</a>
+                        <a href="#contact" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white text-sm tracking-wider uppercase mb-4">Get in Touch</h4>
+                    <div class="space-y-2">
+                        <a href="tel:+917982644927" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">+91 79826 44927</a>
+                        <a href="https://wa.me/917982644927" target="_blank" class="block text-gray-500 text-sm hover:text-gold-500 transition-colors duration-300">WhatsApp</a>
+                        <p class="text-gray-500 text-sm">New Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider mb-8"></div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-600 text-xs">&copy; 2024 Rachit Singhal Photography. All rights reserved.</p>
+                <p class="text-gray-600 text-xs">Crafted with passion & precision</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917982644927" target="_blank" class="whatsapp-float fixed bottom-8 right-8 z-40 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-400 transition-all duration-300 hover:scale-110" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp  text-white text-2xl"></i>
+    </a>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox fixed inset-0 z-50 bg-dark-700/98 backdrop-blur-xl flex items-center justify-center" onclick="closeLightbox(event)">
+        <button class="absolute top-6 right-6 text-white hover:text-gold-500 transition-colors duration-300 z-10" onclick="closeLightbox(event, true)">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-sm shadow-2xl">
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-24 right-6 z-50 bg-dark-200 border border-gold-500/30 text-white px-6 py-4 rounded-sm shadow-2xl transform translate-x-[120%] transition-transform duration-500">
+        <div class="flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-gold-500"></i>
+            <span class="text-sm">Message sent successfully!</span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // =====================
+        // NAVBAR SCROLL EFFECT
+        // =====================
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 80) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // =====================
+        // MOBILE MENU
+        // =====================
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // =====================
+        // SCROLL ANIMATIONS
+        // =====================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation for stat cards
+                    if (entry.target.querySelector('[data-count]')) {
+                        animateCounters(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // =====================
+        // COUNTER ANIMATION
+        // =====================
+        function animateCounters(container) {
+            const counters = container.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                if (counter.dataset.animated) return;
+                counter.dataset.animated = 'true';
+                
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const start = performance.now();
+                
+                function update(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                    const current = Math.floor(eased * target);
+                    counter.textContent = current + '+';
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                }
+                
+                requestAnimationFrame(update);
+            });
+        }
+
+        // =====================
+        // PORTFOLIO FILTER
+        // =====================
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('#portfolioGrid .portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.color = '#9CA3AF';
+                    b.style.border = 'none';
+                    b.style.background = 'transparent';
+                });
+                btn.classList.add('active');
+                btn.style.color = '#C9A96E';
+                btn.style.background = 'rgba(201,169,110,0.1)';
+
+                const filter = btn.dataset.filter;
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = '';
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400);
+                    }
+                });
+            });
+        });
+
+        // Initialize active filter button style
+        document.querySelector('.filter-btn.active').style.color = '#C9A96E';
+        document.querySelector('.filter-btn.active').style.background = 'rgba(201,169,110,0.1)';
+        document.querySelectorAll('.filter-btn:not(.active)').forEach(btn => {
+            btn.style.color = '#9CA3AF';
+        });
+
+        // =====================
+        // LIGHTBOX
+        // =====================
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            
+            lightboxImg.src = img.src.replace('w=600', 'w=1200').replace('h=400', 'h=800').replace('h=800', 'h=1200');
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event, force = false) {
+            if (force || event.target.id === 'lightbox') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox(e, true);
+            }
+        });
+
+        // =====================
+        // FAQ ACCORDION
+        // =====================
+        function toggleFaq(item) {
+            const isOpen = item.classList.contains('open');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('open');
+            });
+            
+            // Open clicked if wasn't open
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // =====================
+        // CONTACT FORM
+        // =====================
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const toast = document.getElementById('toast');
+            toast.style.transform = 'translateX(0)';
+            
+            setTimeout(() => {
+                toast.style.transform = 'translateX(120%)';
+            }, 3000);
+            
+            e.target.reset();
+        }
+
+        // =====================
+        // SMOOTH SCROLL FOR NAV LINKS
+        // =====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =====================
+        // PARALLAX ON HERO (SUBTLE)
+        // =====================
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('#hero img');
+            if (hero) {
+                const scrolled = window.scrollY;
+                if (scrolled < window.innerHeight) {
+                    hero.style.transform = `scale(1.05) translateY(${scrolled * 0.2}px)`;
+                }
+            }
+        });
+
+        // =====================
+        // RE-OBSERVE ELEMENTS AFTER FILTER
+        // =====================
+        // Already handled by the filter logic above
+    </script>
+</body>
+</html>

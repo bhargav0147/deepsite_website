@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Advocate Manoj Sharma | Legal Services & Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f3f9',
+                            100: '#dce3f0',
+                            200: '#b8c7e0',
+                            300: '#8da2cb',
+                            400: '#627db6',
+                            500: '#3d5a9e',
+                            600: '#2c4278',
+                            700: '#1e3160',
+                            800: '#142248',
+                            900: '#0a142f',
+                            950: '#060b1a',
+                        },
+                        gold: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#c9a84c',
+                            600: '#b8952e',
+                            700: '#9a7b1f',
+                            800: '#7c6318',
+                            900: '#5e4a12',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+
+        /* Smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Delay classes */
+        .delay-100 { transition-delay: 0.1s !important; }
+        .delay-200 { transition-delay: 0.2s !important; }
+        .delay-300 { transition-delay: 0.3s !important; }
+        .delay-400 { transition-delay: 0.4s !important; }
+        .delay-500 { transition-delay: 0.5s !important; }
+        .delay-600 { transition-delay: 0.6s !important; }
+        .delay-700 { transition-delay: 0.7s !important; }
+        .delay-800 { transition-delay: 0.8s !important; }
+
+        /* Hero gradient animation */
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a142f 0%, #1e3160 40%, #142248 70%, #060b1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(59, 90, 158, 0.15) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        /* Gold line decoration */
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, #fde047, #c9a84c);
+            border-radius: 2px;
+        }
+
+        /* Card hover effect */
+        .practice-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .practice-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(10, 20, 47, 0.15);
+        }
+
+        /* Stat counter pulse */
+        .stat-glow {
+            position: relative;
+        }
+        .stat-glow::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.2) 0%, transparent 70%);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            animation: bounce-down 2s ease-in-out infinite;
+        }
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+        }
+
+        /* Testimonial card */
+        .testimonial-card {
+            transition: all 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Navbar blur */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Process line */
+        .process-line {
+            background: linear-gradient(180deg, #c9a84c, rgba(201, 168, 76, 0.1));
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a142f; }
+        ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #fde047; }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Section pattern */
+        .section-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(201, 168, 76, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.open {
+            transform: rotate(45deg);
+        }
+
+        /* Profile image glow */
+        .profile-glow {
+            box-shadow: 0 0 60px rgba(201, 168, 76, 0.3), 0 0 120px rgba(201, 168, 76, 0.1);
+        }
+
+        /* WhatsApp button */
+        .whatsapp-btn {
+            animation: whatsapp-pulse 2s ease-in-out infinite;
+        }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+        }
+
+        /* Step connector */
+        .step-connector::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(180deg, #c9a84c, transparent);
+            transform: translateX(-50%);
+        }
+        .step-connector:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-navy-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center shadow-lg group-hover:shadow-gold-500/30 transition-shadow">
+                        <i data-lucide="scale" class="w-5 h-5 text-navy-950"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="font-display font-bold text-sm leading-tight text-white">Adv. Manoj Sharma</p>
+                        <p class="text-[10px] text-gold-400 tracking-widest uppercase">High Court · Lucknow</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#about" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">About</a>
+                    <a href="#practice" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Practice Areas</a>
+                    <a href="#why-choose" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Why Choose</a>
+                    <a href="#process" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Process</a>
+                    <a href="#testimonials" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Testimonials</a>
+                    <a href="#faq" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">FAQ</a>
+                    <a href="#contact" class="ml-3 px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-700 text-navy-950 text-sm font-semibold rounded-lg hover:from-gold-500 hover:to-gold-600 transition-all shadow-lg hover:shadow-gold-600/30">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-80 max-w-full bg-navy-900/98 nav-blur z-[60] shadow-2xl">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
+                        <i data-lucide="scale" class="w-5 h-5 text-navy-950"></i>
+                    </div>
+                    <p class="font-display font-bold text-white text-sm">Adv. Manoj Sharma</p>
+                </div>
+                <button id="closeMenu" class="text-white/70 hover:text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex flex-col gap-1">
+                <a href="#about" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">About</a>
+                <a href="#practice" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">Practice Areas</a>
+                <a href="#why-choose" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">Why Choose</a>
+                <a href="#process" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">Process</a>
+                <a href="#testimonials" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">Testimonials</a>
+                <a href="#faq" class="mobile-link px-4 py-3 text-white/80 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors font-medium">FAQ</a>
+                <a href="#contact" class="mt-4 px-5 py-3 bg-gradient-to-r from-gold-600 to-gold-700 text-navy-950 font-semibold rounded-lg text-center hover:from-gold-500 hover:to-gold-600 transition-all">
+                    Book Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/60 z-[55] hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-gradient min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="reveal inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/20 rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+                        <span class="text-gold-400 text-sm font-medium tracking-wide">17+ Years of Excellence</span>
+                    </div>
+                    
+                    <h1 class="reveal delay-100 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-4">
+                        Chamber of
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500">Advocate Manoj Sharma</span>
+                    </h1>
+                    
+                    <p class="reveal delay-200 text-lg sm:text-xl text-gold-400/90 font-display italic mb-4">
+                        "Trusted Legal Representation at Lucknow High Court"
+                    </p>
+                    
+                    <p class="reveal delay-300 text-navy-200 text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                        Expert legal services in Criminal, Civil, Family Law, CAT matters, Writ Petitions, and Revenue cases — with professionalism, dedication, and integrity.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="reveal delay-400 flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-10 mb-10">
+                        <div class="text-center">
+                            <p class="text-3xl sm:text-4xl font-bold text-white" data-count="500">0</p>
+                            <p class="text-xs text-navy-300 uppercase tracking-wider mt-1">Cases Handled</p>
+                        </div>
+                        <div class="w-px bg-navy-600 hidden sm:block"></div>
+                        <div class="text-center">
+                            <p class="text-3xl sm:text-4xl font-bold text-white">17<span class="text-gold-400">+</span></p>
+                            <p class="text-xs text-navy-300 uppercase tracking-wider mt-1">Years Experience</p>
+                        </div>
+                        <div class="w-px bg-navy-600 hidden sm:block"></div>
+                        <div class="text-center">
+                            <p class="text-3xl sm:text-4xl font-bold text-white">95<span class="text-gold-400">%</span></p>
+                            <p class="text-xs text-navy-300 uppercase tracking-wider mt-1">Success Rate</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="reveal delay-500 flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="#contact" class="group px-7 py-3.5 bg-gradient-to-r from-gold-600 to-gold-700 text-navy-950 font-semibold rounded-xl hover:from-gold-500 hover:to-gold-600 transition-all shadow-lg shadow-gold-600/20 hover:shadow-gold-500/40 flex items-center gap-2">
+                            Book Consultation
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="https://wa.me/919717302802" target="_blank" class="px-7 py-3.5 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.47-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.881 11.881 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right - Profile Image -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="reveal-scale delay-200 relative">
+                        <!-- Decorative ring -->
+                        <div class="absolute -inset-4 rounded-full border-2 border-dashed border-gold-500/20 animate-[spin_30s_linear_infinite]"></div>
+                        <div class="absolute -inset-8 rounded-full border border-dashed border-gold-500/10 animate-[spin_40s_linear_infinite_reverse]"></div>
+                        
+                        <!-- Profile Image -->
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden profile-glow border-4 border-gold-500/40">
+                            <img src="https://adv-manoj.atomgold.tech/assets/manoj_sharma.jpg" 
+                                 alt="Advocate Manoj Sharma" 
+                                 class="w-full h-full object-cover object-top">
+                            <!-- Overlay gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-navy-900 border border-gold-500/30 rounded-full px-5 py-2 shadow-xl">
+                            <p class="text-gold-400 text-xs font-semibold tracking-wider uppercase whitespace-nowrap">Allahabad High Court</p>
+                        </div>
+
+                        <!-- Experience badge -->
+                        <div class="absolute top-4 -right-2 sm:-right-4 bg-gradient-to-br from-gold-600 to-gold-700 rounded-2xl px-4 py-3 shadow-xl stat-glow">
+                            <p class="text-navy-950 text-2xl font-bold leading-none">17+</p>
+                            <p class="text-navy-900/80 text-[10px] font-semibold uppercase tracking-wider">Years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+            <a href="#about" class="text-white/40 hover:text-gold-400 transition-colors">
+                <i data-lucide="chevrons-down" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-28 bg-white section-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left - Image / Visual -->
+                <div class="reveal-left">
+                    <div class="relative">
+                        <div class="bg-navy-900 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="http://static.photos/law/640x360/42" alt="Legal Practice" class="w-full h-80 sm:h-96 object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/40 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <p class="text-gold-400 text-sm font-semibold tracking-wider uppercase mb-2">Legal Practice Since</p>
+                                <p class="text-white text-5xl font-display font-bold">2007</p>
+                            </div>
+                        </div>
+                        <!-- Floating card -->
+                        <div class="absolute -bottom-6 -right-4 sm:-right-6 bg-white rounded-2xl p-5 shadow-xl border border-navy-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
+                                    <i data-lucide="award" class="w-6 h-6 text-navy-950"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-navy-900 text-lg">95%</p>
+                                    <p class="text-navy-500 text-xs">Success Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="reveal-right">
+                    <div class="gold-line mb-4"></div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mb-6">
+                        Dedicated to Justice,<br>
+                        <span class="text-gold-600">Committed to You</span>
+                    </h2>
+                    <p class="text-navy-600 text-lg leading-relaxed mb-6">
+                        Advocate Manoj Sharma offers expert legal representation at the Lucknow High Court. Specializing in Criminal, Civil, Family Law, CAT matters, Writ Petitions, and Revenue disputes, he provides strategic legal solutions with professionalism, dedication, and integrity.
+                    </p>
+                    <p class="text-navy-500 leading-relaxed mb-8">
+                        With a deep commitment to justice and client welfare, Advocate Sharma has built a reputation for thorough case preparation, transparent communication, and relentless advocacy in the courtroom.
+                    </p>
+
+                    <!-- Addresses -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-navy-50 rounded-xl p-5 border border-navy-100">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="building-2" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-navy-900 text-sm mb-1">High Court Chamber</p>
+                                    <p class="text-navy-500 text-xs leading-relaxed">Chamber No. B-509, B Block<br>Advocates' Chamber<br>Hon'ble Allahabad High Court<br>(Lucknow Bench)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-navy-50 rounded-xl p-5 border border-navy-100">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-gold-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-navy-900 text-sm mb-1">Office Address</p>
+                                    <p class="text-navy-500 text-xs leading-relaxed">Villa No. 2, Madhav Kheda<br>Near BCC Heights Building<br>Mohanlalganj, Lucknow – 226301</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practice" class="py-20 sm:py-28 bg-navy-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(201,168,76,0.05),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Practice <span class="text-gold-400">Areas</span>
+                </h2>
+                <p class="reveal delay-200 text-navy-300 text-lg max-w-2xl mx-auto">
+                    Comprehensive legal expertise across multiple domains to protect your rights and deliver results.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+                <!-- Card 1 -->
+                <div class="reveal practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="shield" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Criminal Defense</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Strong defense strategies for criminal cases including bail, trials, and appeals.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="reveal delay-100 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="file-text" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Civil Litigation</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Expert handling of civil disputes, contracts, and commercial matters.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="reveal delay-200 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="heart-handshake" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Divorce & Family Law</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Sensitive handling of divorce, custody, maintenance, and domestic matters.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="reveal delay-300 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="home" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Property Disputes</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Resolution of property conflicts, title disputes, and real estate matters.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="reveal practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="landmark" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">CAT Tribunal Matters</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Representation before Central Administrative Tribunal for government employees.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="reveal delay-100 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="scroll-text" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Writ Petitions</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Constitutional remedies and writ petitions before High Court.</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="reveal delay-200 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="coins" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Revenue Matters</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Land revenue disputes, mutations, and revenue court proceedings.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="reveal delay-300 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="eye" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">RTI Cases</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Right to Information applications and appeals assistance.</p>
+                </div>
+                <!-- Card 9 -->
+                <div class="reveal practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="globe" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">NRI Legal Solutions</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Comprehensive legal support for Non-Resident Indians in India.</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="reveal delay-100 practice-card bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 hover:border-gold-500/40 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center mb-4 group-hover:from-gold-500/30 group-hover:to-gold-600/20 transition-colors">
+                        <i data-lucide="lock" class="w-6 h-6 text-gold-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">Cyber Fraud Cases</h3>
+                    <p class="text-navy-400 text-sm leading-relaxed">Legal assistance in cybercrime and online fraud matters.</p>
+                </div>
+                <!-- Memberships -->
+                <div class="reveal delay-200 sm:col-span-2 bg-gradient-to-br from-gold-600 to-gold-700 rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <h3 class="font-display font-bold text-navy-950 text-lg mb-4">Professional Memberships</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-navy-900"></i>
+                            <span class="text-navy-900/90 text-sm font-medium">Oudh Bar Association</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-navy-900"></i>
+                            <span class="text-navy-900/90 text-sm font-medium">UP Bar Council</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-navy-900"></i>
+                            <span class="text-navy-900/90 text-sm font-medium">UP State Info Commission</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-navy-900"></i>
+                            <span class="text-navy-900/90 text-sm font-medium">Legal Practice Since 2007</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-choose" class="py-20 sm:py-28 bg-white section-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+                    Why Choose <span class="text-gold-600">Advocate Sharma</span>
+                </h2>
+                <p class="reveal delay-200 text-navy-500 text-lg max-w-2xl mx-auto">
+                    A distinguished track record built on expertise, integrity, and client-focused representation.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="reveal practice-card bg-white border border-navy-100 rounded-2xl p-7 text-center group hover:border-gold-500/40">
+                    <div class="w-16 h-16 rounded-2xl bg-navy-900 flex items-center justify-center mx-auto mb-5 group-hover:bg-gradient-to-br group-hover:from-gold-500 group-hover:to-gold-700 transition-all">
+                        <i data-lucide="landmark" class="w-8 h-8 text-gold-400 group-hover:text-navy-950 transition-colors"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-3">High Court Expertise</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Direct practice and representation at the Hon'ble Allahabad High Court, Lucknow Bench.</p>
+                </div>
+                <div class="reveal delay-100 practice-card bg-white border border-navy-100 rounded-2xl p-7 text-center group hover:border-gold-500/40">
+                    <div class="w-16 h-16 rounded-2xl bg-navy-900 flex items-center justify-center mx-auto mb-5 group-hover:bg-gradient-to-br group-hover:from-gold-500 group-hover:to-gold-700 transition-all">
+                        <i data-lucide="brain" class="w-8 h-8 text-gold-400 group-hover:text-navy-950 transition-colors"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-3">Strategic Case Preparation</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Meticulous research and strategic planning for every case to maximize success.</p>
+                </div>
+                <div class="reveal delay-200 practice-card bg-white border border-navy-100 rounded-2xl p-7 text-center group hover:border-gold-500/40">
+                    <div class="w-16 h-16 rounded-2xl bg-navy-900 flex items-center justify-center mx-auto mb-5 group-hover:bg-gradient-to-br group-hover:from-gold-500 group-hover:to-gold-700 transition-all">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-gold-400 group-hover:text-navy-950 transition-colors"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-3">Transparent Legal Guidance</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Clear communication about case progress, options, and realistic expectations.</p>
+                </div>
+                <div class="reveal delay-300 practice-card bg-white border border-navy-100 rounded-2xl p-7 text-center group hover:border-gold-500/40">
+                    <div class="w-16 h-16 rounded-2xl bg-navy-900 flex items-center justify-center mx-auto mb-5 group-hover:bg-gradient-to-br group-hover:from-gold-500 group-hover:to-gold-700 transition-all">
+                        <i data-lucide="globe" class="w-8 h-8 text-gold-400 group-hover:text-navy-950 transition-colors"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-3">NRI Client Support</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Specialized assistance for Non-Resident Indians with legal matters in India.</p>
+                </div>
+            </div>
+
+            <!-- Multi-domain banner -->
+            <div class="reveal mt-12 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(201,168,76,0.1),transparent_50%)]"></div>
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="layers" class="w-8 h-8 text-navy-950"></i>
+                </div>
+                <div class="flex-1 text-center sm:text-left relative z-10">
+                    <h3 class="font-display font-bold text-white text-xl mb-2">Multi-Domain Experience</h3>
+                    <p class="text-navy-300 text-sm leading-relaxed">Expertise spanning criminal, civil, family, administrative, and revenue law — a one-stop legal solution for all your needs.</p>
+                </div>
+                <a href="#contact" class="relative z-10 px-6 py-3 bg-gradient-to-r from-gold-600 to-gold-700 text-navy-950 font-semibold rounded-xl hover:from-gold-500 hover:to-gold-600 transition-all whitespace-nowrap shadow-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 sm:py-28 bg-navy-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+                    How We <span class="text-gold-600">Work</span>
+                </h2>
+                <p class="reveal delay-200 text-navy-500 text-lg max-w-2xl mx-auto">
+                    A structured, transparent approach to delivering the best legal outcomes for you.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Step 1 -->
+                <div class="reveal practice-card bg-white rounded-2xl p-6 text-center relative border border-navy-100 group hover:border-gold-500/40">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/20">
+                        <span class="text-navy-950 font-display font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-2">Consultation</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Initial meeting to understand your legal concerns and requirements.</p>
+                    <!-- Connector line (hidden on mobile) -->
+                    <div class="hidden lg:block absolute top-7 -right-3 w-6 h-0.5 bg-gradient-to-r from-gold-500/50 to-transparent"></div>
+                </div>
+                <!-- Step 2 -->
+                <div class="reveal delay-100 practice-card bg-white rounded-2xl p-6 text-center relative border border-navy-100 group hover:border-gold-500/40">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/20">
+                        <span class="text-navy-950 font-display font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-2">Case Evaluation</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Thorough analysis of facts, documents, and legal merits of your case.</p>
+                    <div class="hidden lg:block absolute top-7 -right-3 w-6 h-0.5 bg-gradient-to-r from-gold-500/50 to-transparent"></div>
+                </div>
+                <!-- Step 3 -->
+                <div class="reveal delay-200 practice-card bg-white rounded-2xl p-6 text-center relative border border-navy-100 group hover:border-gold-500/40">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/20">
+                        <span class="text-navy-950 font-display font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-2">Legal Strategy</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Development of a customized legal strategy for optimal outcomes.</p>
+                    <div class="hidden lg:block absolute top-7 -right-3 w-6 h-0.5 bg-gradient-to-r from-gold-500/50 to-transparent"></div>
+                </div>
+                <!-- Step 4 -->
+                <div class="reveal delay-300 practice-card bg-white rounded-2xl p-6 text-center relative border border-navy-100 group hover:border-gold-500/40">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/20">
+                        <span class="text-navy-950 font-display font-bold text-xl">4</span>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-2">Court Representation</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Strong advocacy and representation in court proceedings.</p>
+                    <div class="hidden lg:block absolute top-7 -right-3 w-6 h-0.5 bg-gradient-to-r from-gold-500/50 to-transparent"></div>
+                </div>
+                <!-- Step 5 -->
+                <div class="reveal delay-400 practice-card bg-white rounded-2xl p-6 text-center border border-navy-100 group hover:border-gold-500/40">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/20">
+                        <span class="text-navy-950 font-display font-bold text-xl">5</span>
+                    </div>
+                    <h3 class="font-display font-bold text-navy-900 text-lg mb-2">Case Resolution</h3>
+                    <p class="text-navy-500 text-sm leading-relaxed">Working towards favorable resolution and closure of your matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 sm:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+                    Client <span class="text-gold-600">Testimonials</span>
+                </h2>
+                <p class="reveal delay-200 text-navy-500 text-lg max-w-2xl mx-auto">
+                    Hear from clients who trusted us with their legal matters.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="reveal testimonial-card bg-navy-50 rounded-2xl p-7 border border-navy-100 relative">
+                    <div class="absolute top-6 right-7 text-gold-500/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-navy-600 leading-relaxed mb-6 relative z-10">
+                        "Advocate Manoj Sharma handled my property dispute with exceptional professionalism. His strategic approach and courtroom expertise helped us win the case. Highly recommended!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-gold-400 font-display font-bold text-sm">RK</div>
+                        <div>
+                            <p class="font-semibold text-navy-900 text-sm">Rajesh Kumar</p>
+                            <p class="text-navy-500 text-xs">Property Dispute Case</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="reveal delay-100 testimonial-card bg-navy-50 rounded-2xl p-7 border border-navy-100 relative">
+                    <div class="absolute top-6 right-7 text-gold-500/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-navy-600 leading-relaxed mb-6 relative z-10">
+                        "As an NRI, I was worried about handling legal matters in India. Advocate Sharma made the entire process smooth with regular updates and excellent representation."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-gold-400 font-display font-bold text-sm">PP</div>
+                        <div>
+                            <p class="font-semibold text-navy-900 text-sm">Priya Patel</p>
+                            <p class="text-navy-500 text-xs">NRI Family Matter</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="reveal delay-200 testimonial-card bg-navy-50 rounded-2xl p-7 border border-navy-100 relative">
+                    <div class="absolute top-6 right-7 text-gold-500/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-gold-500 fill-gold-500"></i>
+                    </div>
+                    <p class="text-navy-600 leading-relaxed mb-6 relative z-10">
+                        "I was facing a criminal case and Advocate Sharma's expertise in criminal law was evident from day one. He secured bail quickly and eventually got the case dismissed."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-gold-400 font-display font-bold text-sm">AS</div>
+                        <div>
+                            <p class="font-semibold text-navy-900 text-sm">Amit Singh</p>
+                            <p class="text-navy-500 text-xs">Criminal Defense Case</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 sm:py-28 bg-navy-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+                    Frequently Asked <span class="text-gold-600">Questions</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="reveal faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden">
+                    <button class="faq-toggle w-full px-7 py-5 flex items-center justify-between text-left group" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-900 text-lg pr-4">How can I book a consultation?</span>
+                        <i data-lucide="plus" class="faq-icon w-5 h-5 text-gold-600 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-7">
+                        <p class="text-navy-500 leading-relaxed pb-5">You can book a consultation by calling or WhatsApp at <a href="tel:+919717302802" class="text-gold-600 font-semibold hover:underline">+91 9717302802</a>, or by filling out the contact form on this website. We typically respond within 24 hours to schedule an appointment at your convenience.</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="reveal delay-100 faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden">
+                    <button class="faq-toggle w-full px-7 py-5 flex items-center justify-between text-left group" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-900 text-lg pr-4">What types of cases do you handle?</span>
+                        <i data-lucide="plus" class="faq-icon w-5 h-5 text-gold-600 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-7">
+                        <p class="text-navy-500 leading-relaxed pb-5">We handle a wide range of cases including Criminal Defense, Civil Litigation, Divorce & Family Law, Property Disputes, CAT Tribunal Matters, Writ Petitions, Revenue Matters, RTI Cases, NRI Legal Solutions, and Cyber Fraud Cases.</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="reveal delay-200 faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden">
+                    <button class="faq-toggle w-full px-7 py-5 flex items-center justify-between text-left group" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-900 text-lg pr-4">Do you provide legal support for NRIs?</span>
+                        <i data-lucide="plus" class="faq-icon w-5 h-5 text-gold-600 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-7">
+                        <p class="text-navy-500 leading-relaxed pb-5">Yes, we provide comprehensive legal support for Non-Resident Indians (NRIs). We understand the unique challenges faced by NRIs and offer flexible communication methods including video calls and regular email updates on case progress.</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="reveal delay-300 faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden">
+                    <button class="faq-toggle w-full px-7 py-5 flex items-center justify-between text-left group" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-900 text-lg pr-4">What are your office locations?</span>
+                        <i data-lucide="plus" class="faq-icon w-5 h-5 text-gold-600 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-7">
+                        <p class="text-navy-500 leading-relaxed pb-5">Our High Court Chamber is at Chamber No. B-509, B Block, Advocates' Chamber, Hon'ble Allahabad High Court (Lucknow Bench). Our office is at Villa No. 2, Madhav Kheda, Near BCC Heights Building, Mohanlalganj, Lucknow – 226301.</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="reveal delay-400 faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden">
+                    <button class="faq-toggle w-full px-7 py-5 flex items-center justify-between text-left group" onclick="toggleFaq(this)">
+                        <span class="font-display font-semibold text-navy-900 text-lg pr-4">Which courts do you practice in?</span>
+                        <i data-lucide="plus" class="faq-icon w-5 h-5 text-gold-600 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-7">
+                        <p class="text-navy-500 leading-relaxed pb-5">We primarily practice at the Hon'ble Allahabad High Court (Lucknow Bench), Central Administrative Tribunal (CAT), Revenue Courts, and various District Courts across Uttar Pradesh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-28 bg-navy-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(201,168,76,0.06),transparent_60%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="reveal gold-line mx-auto mb-4"></div>
+                <h2 class="reveal delay-100 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Get In <span class="text-gold-400">Touch</span>
+                </h2>
+                <p class="reveal delay-200 text-navy-300 text-lg max-w-2xl mx-auto">
+                    Ready to discuss your legal matter? Reach out for a confidential consultation.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8">
+                <!-- Contact Info -->
+                <div class="reveal lg:col-span-2 space-y-5">
+                    <div class="bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 flex items-start gap-4 hover:border-gold-500/30 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-1">Call / WhatsApp</p>
+                            <a href="tel:+919717302802" class="text-gold-400 hover:text-gold-300 transition-colors">+91 9717302802</a>
+                        </div>
+                    </div>
+                    <div class="bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 flex items-start gap-4 hover:border-gold-500/30 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="building-2" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-1">High Court Chamber</p>
+                            <p class="text-navy-400 text-sm leading-relaxed">Chamber No. B-509, B Block, Advocates' Chamber, Hon'ble Allahabad High Court (Lucknow Bench)</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 flex items-start gap-4 hover:border-gold-500/30 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-1">Office Address</p>
+                            <p class="text-navy-400 text-sm leading-relaxed">Villa No. 2, Madhav Kheda, Near BCC Heights Building, Mohanlalganj, Lucknow – 226301</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-900/60 border border-navy-700/50 rounded-2xl p-6 flex items-start gap-4 hover:border-gold-500/30 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="clock" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold mb-1">Response Time</p>
+                            <p class="text-navy-400 text-sm">We typically respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="reveal delay-200 lg:col-span-3 bg-navy-900/60 border border-navy-700/50 rounded-2xl p-7 sm:p-8">
+                    <h3 class="font-display font-bold text-white text-xl mb-6">Send a Message</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-navy-300 text-sm font-medium mb-2">Full Name *</label>
+                                <input type="text" required class="w-full bg-navy-800/50 border border-navy-700/50 rounded-xl px-4 py-3 text-white placeholder-navy-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-navy-300 text-sm font-medium mb-2">Phone Number *</label>
+                                <input type="tel" required class="w-full bg-navy-800/50 border border-navy-700/50 rounded-xl px-4 py-3 text-white placeholder-navy-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors" placeholder="+91 XXXXX XXXXX">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-navy-300 text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-navy-800/50 border border-navy-700/50 rounded-xl px-4 py-3 text-white placeholder-navy-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-navy-300 text-sm font-medium mb-2">Case Type</label>
+                            <select class="w-full bg-navy-800/50 border border-navy-700/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors">
+                                <option value="" class="bg-navy-900">Select a practice area</option>
+                                <option value="criminal" class="bg-navy-900">Criminal Defense</option>
+                                <option value="civil" class="bg-navy-900">Civil Litigation</option>
+                                <option value="family" class="bg-navy-900">Divorce & Family Law</option>
+                                <option value="property" class="bg-navy-900">Property Disputes</option>
+                                <option value="cat" class="bg-navy-900">CAT Tribunal Matters</option>
+                                <option value="writ" class="bg-navy-900">Writ Petitions</option>
+                                <option value="revenue" class="bg-navy-900">Revenue Matters</option>
+                                <option value="rti" class="bg-navy-900">RTI Cases</option>
+                                <option value="nri" class="bg-navy-900">NRI Legal Solutions</option>
+                                <option value="cyber" class="bg-navy-900">Cyber Fraud Cases</option>
+                                <option value="other" class="bg-navy-900">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-navy-300 text-sm font-medium mb-2">Message *</label>
+                            <textarea required rows="4" class="w-full bg-navy-800/50 border border-navy-700/50 rounded-xl px-4 py-3 text-white placeholder-navy-500 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/30 transition-colors resize-none" placeholder="Briefly describe your legal concern..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-gold-600 to-gold-700 text-navy-950 font-semibold rounded-xl hover:from-gold-500 hover:to-gold-600 transition-all shadow-lg shadow-gold-600/20 hover:shadow-gold-500/40 flex items-center justify-center gap-2">
+                            Send Message
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                        <div id="formSuccess" class="hidden text-center py-3 bg-green-500/10 border border-green-500/30 rounded-xl">
+                            <p class="text-green-400 font-medium text-sm">✓ Message sent successfully! We'll contact you within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-navy-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
+                        <i data-lucide="scale" class="w-5 h-5 text-navy-950"></i>
+                    </div>
+                    <div>
+                        <p class="font-display font-bold text-white text-sm">Adv. Manoj Sharma</p>
+                        <p class="text-navy-500 text-xs">Legal Services & Consultancy</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="tel:+919717302802" class="text-navy-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +91 9717302802
+                    </a>
+                    <a href="https://wa.me/919717302802" target="_blank" class="text-navy-400 hover:text-gold-400 transition-colors text-sm flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.47-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.881 11.881 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+                <p class="text-navy-600 text-xs">© 2026 Chamber of Advocate Manoj Sharma. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919717302802" target="_blank" class="whatsapp-btn fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.47-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.881 11.881 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-navy-900/80 hover:bg-navy-800 text-gold-400 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 translate-y-4 pointer-events-none nav-blur border border-navy-700/50">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ========================
+        // Navbar Scroll Effect
+        // ========================
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('bg-navy-950/90', 'nav-blur', 'shadow-lg', 'shadow-black/10');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-navy-950/90', 'nav-blur', 'shadow-lg', 'shadow-black/10');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ========================
+        // Mobile Menu
+        // ========================
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.remove('hidden');
+            setTimeout(() => menuOverlay.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFn() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('opacity-100');
+            setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFn);
+        menuOverlay.addEventListener('click', closeMenuFn);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenuFn));
+
+        // ========================
+        // Scroll Reveal Animation
+        // ========================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ========================
+        // Counter Animation
+        // ========================
+        const countElements = document.querySelectorAll('[data-count]');
+        
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.count);
+                    const suffix = entry.target.dataset.suffix || '';
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        entry.target.textContent = Math.floor(current) + '+';
+                    }, 20);
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        countElements.forEach(el => countObserver.observe(el));
+
+        // ========================
+        // FAQ Toggle
+        // ========================
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('open');
+            
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+            
+            // Open clicked if was closed
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('open');
+            }
+        }
+
+        // ========================
+        // Contact Form
+        // ========================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        });
+
+        // ========================
+        // Back to Top
+        // ========================
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========================
+        // Smooth active nav link
+        // ========================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-gold-400', 'bg-white/5');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('text-gold-400', 'bg-white/5');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

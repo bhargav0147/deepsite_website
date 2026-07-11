@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Return2Success Business Club - A professional community platform for small and medium-sized business owners. Get your mini business website, list products, book services, and earn through our 4-layer referral system.">
+    <meta name="keywords"
+        content="business community, SME, referral income, business website, digital presence, Return2Success">
+    <meta name="author" content="Return2Success Business Club">
+    <meta property="og:title" content="Return2Success Business Club - Grow, Earn & Succeed Together">
+    <meta property="og:description"
+        content="Join India's fastest-growing business community platform. Get your digital presence and earn through referrals.">
+    <meta property="og:type" content="website">
+    <title>Return2Success Business Club | Empowering Business Owners</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" data-testid="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" data-testid="nav-logo">
+                <img src="assets/logo.png" alt="Return2Success Logo" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" data-testid="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu" data-testid="nav-menu">
+                <li><a href="#about" class="nav-link" data-testid="nav-about">About</a></li>
+                <li><a href="#services" class="nav-link" data-testid="nav-services">Services</a></li>
+                <li><a href="#referral" class="nav-link" data-testid="nav-referral">Referral Model</a></li>
+                <li><a href="#benefits" class="nav-link" data-testid="nav-benefits">Benefits</a></li>
+                <li><a href="#testimonials" class="nav-link" data-testid="nav-testimonials">Testimonials</a></li>
+                <li><a href="#faq" class="nav-link" data-testid="nav-faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-link" data-testid="nav-contact">Contact</a></li>
+            </ul>
+            <a target="_blank" href="https://member.return2success.com/" class="nav-cta" data-testid="nav-join-btn">Join Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" data-testid="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHw0fHxwcmVtaXVtJTIwb2ZmaWNlJTIwaGFuZHNoYWtlfGVufDB8fHx8MTc3MDc5NTYwOHww&ixlib=rb-4.1.0&q=85"
+                alt="Business professionals shaking hands" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content fade-in">
+            <span class="hero-badge" data-testid="hero-badge">
+                <i class="fas fa-crown"></i> Premium Business Community
+            </span>
+            <h1 class="hero-title" data-testid="hero-title">
+                Empowering Business Owners to<br>
+                <span class="highlight-orange">Grow,</span>
+                <span class="highlight-gold">Earn</span> &
+                <span class="highlight-orange">Succeed</span> Together
+            </h1>
+            <p class="hero-subtitle" data-testid="hero-subtitle">
+                Join India's fastest-growing community-driven digital platform.
+                Get your professional business website, list products, accept bookings,
+                and earn through our transparent referral income system.
+            </p>
+            <div class="hero-ctas">
+                <a target="_blank" href="https://member.return2success.com/" class="btn btn-primary" data-testid="hero-join-btn">
+                    <i class="fas fa-user-plus"></i> Join the Club
+                </a>
+                <a href="#services" class="btn btn-secondary" data-testid="hero-explore-btn">
+                    <i class="fas fa-store"></i> Explore Businesses
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-testid="stat-members">500+</span>
+                    <span class="stat-label">Active Members</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-testid="stat-businesses">200+</span>
+                    <span class="stat-label">Businesses Listed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-testid="stat-earnings">10L+</span>
+                    <span class="stat-label">Referral Earnings</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about" data-testid="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <span class="section-tag" data-testid="about-tag">
+                        <i class="fas fa-bullseye"></i> Our Mission
+                    </span>
+                    <h2 class="section-title" data-testid="about-title">
+                        Building a Growth-Driven<br>
+                        <span class="highlight-gold">Business Community</span>
+                    </h2>
+                    <p class="about-text" data-testid="about-text">
+                        Return2Success Business Club is more than just a platform - it's a movement
+                        dedicated to empowering small and medium-sized business owners across India.
+                        We believe every entrepreneur deserves a strong digital presence and multiple
+                        income streams.
+                    </p>
+                    <ul class="about-features">
+                        <li class="fade-in" data-testid="about-feature-1">
+                            <span class="feature-icon"><i class="fas fa-globe"></i></span>
+                            <div>
+                                <strong>Digital Presence</strong>
+                                <p>Professional mini websites for every member to showcase their business</p>
+                            </div>
+                        </li>
+                        <li class="fade-in" data-testid="about-feature-2">
+                            <span class="feature-icon"><i class="fas fa-coins"></i></span>
+                            <div>
+                                <strong>Referral Income</strong>
+                                <p>Earn additional income through our transparent 4-layer referral system</p>
+                            </div>
+                        </li>
+                        <li class="fade-in" data-testid="about-feature-3">
+                            <span class="feature-icon"><i class="fas fa-handshake"></i></span>
+                            <div>
+                                <strong>Trusted Ecosystem</strong>
+                                <p>Connect with verified business owners and grow together</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image-container fade-in">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1722573783625-eceb04251036?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBidXNpbmVzcyUyMHByb2Zlc3Npb25hbHMlMjBtZWV0aW5nfGVufDB8fHx8MTc3MDc5NTYwN3ww&ixlib=rb-4.1.0&q=85"
+                            alt="Indian business professionals in a meeting" class="about-image"
+                            data-testid="about-image">
+                        <div class="about-image-badge">
+                            <span class="badge-number">5+</span>
+                            <span class="badge-text">Years of Trust</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" data-testid="services-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag" data-testid="services-tag">
+                    <i class="fas fa-cogs"></i> Platform Services
+                </span>
+                <h2 class="section-title centered" data-testid="services-title">
+                    Everything You Need to<br>
+                    <span class="highlight-orange">Grow Your Business</span>
+                </h2>
+                <p class="section-subtitle" data-testid="services-subtitle">
+                    Comprehensive tools and features designed specifically for SME success
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in" data-testid="service-website">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Mini Business Website</h3>
+                    <p class="service-desc">Get a professional, mobile-responsive website to showcase your business,
+                        products, and services to the world.</p>
+                    <span class="service-badge">Included</span>
+                </div>
+                <div class="service-card fade-in" data-testid="service-products">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">Product Listing & Sales</h3>
+                    <p class="service-desc">List unlimited products with images, descriptions, and prices. Enable direct
+                        purchases from customers.</p>
+                    <span class="service-badge">Included</span>
+                </div>
+                <div class="service-card fade-in" data-testid="service-booking">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="service-title">Service Appointment Booking</h3>
+                    <p class="service-desc">Allow customers to book appointments for your services with an easy-to-use
+                        scheduling system.</p>
+                    <span class="service-badge">Included</span>
+                </div>
+                <div class="service-card featured fade-in" data-testid="service-referral">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="service-title">4-Layer Referral Income</h3>
+                    <p class="service-desc">Earn passive income by referring other business owners. Our transparent
+                        system pays across 4 layers.</p>
+                    <span class="service-badge gold">Premium</span>
+                </div>
+                <div class="service-card fade-in" data-testid="service-promotion">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">Business Promotion Tools</h3>
+                    <p class="service-desc">Access marketing tools, social media integration, and promotional features
+                        to reach more customers.</p>
+                    <span class="service-badge">Included</span>
+                </div>
+                <div class="service-card fade-in" data-testid="service-analytics">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Business Analytics</h3>
+                    <p class="service-desc">Track your website visitors, product views, and customer engagement with
+                        detailed analytics.</p>
+                    <span class="service-badge">Included</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Model Section -->
+    <section class="referral" id="referral" data-testid="referral-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag gold" data-testid="referral-tag">
+                    <i class="fas fa-money-bill-wave"></i> Referral Income Model
+                </span>
+                <h2 class="section-title centered" data-testid="referral-title">
+                    Transparent Earning<br>
+                    <span class="highlight-gold">Structure</span>
+                </h2>
+                <p class="section-subtitle" data-testid="referral-subtitle">
+                    Simple, honest, and lucrative. See exactly how you earn.
+                </p>
+            </div>
+
+            <div class="referral-content">
+                <div class="referral-fee fade-in" data-testid="referral-fee">
+                    <div class="fee-circle">
+                        <span class="fee-symbol">&#8377;</span>
+                        <span class="fee-amount">1000</span>
+                    </div>
+                    <span class="fee-label">Annual Membership Fee</span>
+                </div>
+
+                <div class="referral-flow" data-testid="referral-flow">
+                    <div class="referral-layer fade-in" data-testid="layer-1">
+                        <div class="layer-badge">Layer 1</div>
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="layer-details">
+                                <span class="layer-title">Direct Referral</span>
+                                <span class="layer-percent">50%</span>
+                            </div>
+                            <div class="layer-earning">
+                                <span class="earning-symbol">&#8377;</span>
+                                <span class="earning-amount">500</span>
+                            </div>
+                        </div>
+                        <div class="layer-connector"></div>
+                    </div>
+
+                    <div class="referral-layer fade-in" data-testid="layer-2">
+                        <div class="layer-badge">Layer 2</div>
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="layer-details">
+                                <span class="layer-title">Second Level</span>
+                                <span class="layer-percent">10%</span>
+                            </div>
+                            <div class="layer-earning">
+                                <span class="earning-symbol">&#8377;</span>
+                                <span class="earning-amount">100</span>
+                            </div>
+                        </div>
+                        <div class="layer-connector"></div>
+                    </div>
+
+                    <div class="referral-layer fade-in" data-testid="layer-3">
+                        <div class="layer-badge">Layer 3</div>
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <div class="layer-details">
+                                <span class="layer-title">Third Level</span>
+                                <span class="layer-percent">10%</span>
+                            </div>
+                            <div class="layer-earning">
+                                <span class="earning-symbol">&#8377;</span>
+                                <span class="earning-amount">100</span>
+                            </div>
+                        </div>
+                        <div class="layer-connector"></div>
+                    </div>
+
+                    <div class="referral-layer fade-in" data-testid="layer-4">
+                        <div class="layer-badge">Layer 4</div>
+                        <div class="layer-content">
+                            <div class="layer-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="layer-details">
+                                <span class="layer-title">Fourth Level</span>
+                                <span class="layer-percent">10%</span>
+                            </div>
+                            <div class="layer-earning">
+                                <span class="earning-symbol">&#8377;</span>
+                                <span class="earning-amount">100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="referral-total fade-in" data-testid="referral-total">
+                    <div class="total-box">
+                        <span class="total-label">Total Potential Earnings Per Referral Chain</span>
+                        <div class="total-amount">
+                            <span class="total-symbol">&#8377;</span>
+                            <span class="total-value">800</span>
+                        </div>
+                        <span class="total-note">Earn more than your investment from just one complete referral
+                            chain!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits" data-testid="benefits-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag" data-testid="benefits-tag">
+                    <i class="fas fa-star"></i> Why Join Us
+                </span>
+                <h2 class="section-title centered" data-testid="benefits-title">
+                    Benefits of<br>
+                    <span class="highlight-orange">Membership</span>
+                </h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card large fade-in" data-testid="benefit-visibility">
+                    <div class="benefit-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Increased Business Visibility</h3>
+                    <p>Get discovered by thousands of potential customers actively looking for products and services
+                        like yours.</p>
+                </div>
+                <div class="benefit-card fade-in" data-testid="benefit-income">
+                    <div class="benefit-icon gold">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Passive Referral Income</h3>
+                    <p>Build a sustainable income stream by growing your referral network.</p>
+                </div>
+                <div class="benefit-card fade-in" data-testid="benefit-support">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Digital Growth Support</h3>
+                    <p>Access expert guidance and resources to grow your business digitally.</p>
+                </div>
+                <div class="benefit-card fade-in" data-testid="benefit-credibility">
+                    <div class="benefit-icon gold">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Professional Credibility</h3>
+                    <p>Stand out with a verified business profile and professional online presence.</p>
+                </div>
+
+                <div class="benefit-card fade-in" data-testid="benefit-network">
+                    <div class="benefit-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3>Community Networking</h3>
+                    <p>Connect with like-minded business owners, share experiences, and find collaboration opportunities
+                        within our thriving community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials" data-testid="testimonials-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag" data-testid="testimonials-tag">
+                    <i class="fas fa-quote-left"></i> Success Stories
+                </span>
+                <h2 class="section-title centered" data-testid="testimonials-title">
+                    What Our Members<br>
+                    <span class="highlight-gold">Say About Us</span>
+                </h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in" data-testid="testimonial-1">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Return2Success transformed my tailoring business. Within 3 months, I got my professional
+                        website,
+                        started receiving online bookings, and earned over ₹15,000 through referrals. Best investment I
+                        ever made!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/priya-sharma.jpeg"
+                            alt="Priya Sharma" class="author-image">
+                        <div class="author-info">
+                            <strong>Priya Sharma</strong>
+                            <span>Fashion Boutique Owner, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in" data-testid="testimonial-2">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "As a small-town electrician, I never thought I'd have an online presence. Now customers find me
+                        on Google, book appointments online, and I've built a team of 5 referrals earning passive
+                        income!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/rajesh-kumar.jpg"
+                            alt="Rajesh Kumar" class="author-image">
+                        <div class="author-info">
+                            <strong>Rajesh Kumar</strong>
+                            <span>Electrical Services, Surat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in" data-testid="testimonial-3">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The community aspect is what I love most. I've connected with suppliers, found partners,
+                        and my catering business has grown 3x. The referral income is a fantastic bonus!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/meena-patel.jpg"
+                            alt="Meena Patel" class="author-image">
+                        <div class="author-info">
+                            <strong>Meena Patel</strong>
+                            <span>Catering Services, Ahmedabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust" id="trust" data-testid="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item fade-in" data-testid="trust-verified">
+                    <div class="trust-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Verified Business Model</h4>
+                    <p>Legally compliant and transparent operations</p>
+                </div>
+                <div class="trust-item fade-in" data-testid="trust-secure">
+                    <div class="trust-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Secure Digital Platform</h4>
+                    <p>SSL encrypted & data protected</p>
+                </div>
+                <div class="trust-item fade-in" data-testid="trust-transparent">
+                    <div class="trust-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h4>Transparent Income Structure</h4>
+                    <p>Clear earnings, no hidden terms</p>
+                </div>
+                <div class="trust-item fade-in" data-testid="trust-community">
+                    <div class="trust-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h4>Community Driven Growth</h4>
+                    <p>Built by entrepreneurs, for entrepreneurs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq" data-testid="faq-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag" data-testid="faq-tag">
+                    <i class="fas fa-question-circle"></i> Got Questions?
+                </span>
+                <h2 class="section-title centered" data-testid="faq-title">
+                    Frequently Asked<br>
+                    <span class="highlight-orange">Questions</span>
+                </h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in" data-testid="faq-1">
+                    <button class="faq-question" data-testid="faq-q1">
+                        <span>How does membership work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply pay a Annual membership fee of ₹1000 to join Return2Success Business Club.
+                            You'll immediately get access to create your mini business website, list products/services,
+                            and start earning through our referral program. There are no recurring fees or hidden
+                            charges.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in" data-testid="faq-2">
+                    <button class="faq-question" data-testid="faq-q2">
+                        <span>How do I earn referral income?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>When you refer someone who joins with ₹1000, you earn ₹500 (50%) immediately.
+                            When your referral refers someone, you earn ₹100 from that (Layer 2). This continues
+                            for Layers 3 and 4, earning you ₹100 each. Total potential: ₹800 per complete chain!</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in" data-testid="faq-3">
+                    <button class="faq-question" data-testid="faq-q3">
+                        <span>Is the website setup included in membership?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Your professional mini business website is completely included in your ₹1000 membership.
+                            You can customize it with your business details, add products or services, upload images,
+                            and start receiving inquiries immediately. No technical knowledge required.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in" data-testid="faq-4">
+                    <button class="faq-question" data-testid="faq-q4">
+                        <span>How do customers book or purchase from my website?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Customers can directly browse your products, add items to cart, and make inquiries
+                            or purchases. For services, they can view your availability and book appointments.
+                            You'll receive notifications for every booking and can manage everything from your
+                            dashboard.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in" data-testid="faq-5">
+                    <button class="faq-question" data-testid="faq-q5">
+                        <span>What support is provided to members?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide comprehensive support including: website setup assistance, product listing help,
+                            marketing guidance, WhatsApp support for quick queries, video tutorials, and community
+                            forums.
+                            Our team is available Monday to Saturday, 10 AM to 7 PM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-final" id="join" data-testid="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2 class="cta-title" data-testid="cta-title">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="cta-subtitle" data-testid="cta-subtitle">
+                    Join Return2Success Business Club today and start your journey towards
+                    digital growth and passive income. Limited-time offer - Register now!
+                </p>
+                <div class="cta-price" data-testid="cta-price">
+                    <span class="price-label">Annual Membership</span>
+                    <div class="price-amount">
+                        <span class="price-symbol">&#8377;</span>
+                        <span class="price-value">1000</span>
+                        <span class="price-only">only</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://member.return2success.com/"
+                        class="btn btn-primary btn-large" target="_blank" data-testid="cta-register-btn">
+                         Register Now
+                    </a>
+                </div>
+                <div class="cta-guarantee" data-testid="cta-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Satisfaction Guaranteed | Transparent Policies | Instant Activation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact" data-testid="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo" data-testid="footer-logo">
+                        <span class="logo-return">Return</span><span class="logo-2">2</span><span
+                            class="logo-success">Success</span>
+                    </a>
+                    <p class="footer-tagline">Empowering Business Owners to Grow, Earn & Succeed Together</p>
+                    <div class="footer-social" data-testid="footer-social">
+                        <a target="_blank" href="https://www.facebook.com/share/1Vu8oKSM3z/" aria-label="Facebook" data-testid="social-facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/return2success/" aria-label="Instagram" data-testid="social-instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/return2success-business-club/" aria-label="LinkedIn" data-testid="social-linkedin"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" href="https://wa.me/918849363109" aria-label="WhatsApp"
+                            data-testid="social-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#referral">Referral Model</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-testid="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a target="_blank" href="https://wa.me/918849363109">+91 88493 63109</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@return2success.com">contact@return2success.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <address>
+                                214 Twin Business Hub,<br>
+                                Near Ghadhpur Road, Kathodara,<br>
+                                Surat, Gujarat - 394326
+                            </address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" data-testid="footer-bottom">
+                <p>&copy; 2024 Return2Success Business Club. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918849363109?text=Hi%2C%20I%20have%20a%20question%20about%20Return2Success%20Business%20Club"
+        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" data-testid="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" data-testid="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

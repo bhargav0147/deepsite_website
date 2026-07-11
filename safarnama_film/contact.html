@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Safarnama Film</title>
+  <meta name="description" content="Get in touch with Safarnama Film to book your wedding photography and cinematic film session.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Safarnama<span>Film</span></a>
+      <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Book Your Date</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-overlay"></div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="page-header-bg">
+      <img src="http://static.photos/nature/1200x630/22" alt="Contact background">
+    </div>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+      <h1>Contact Us</h1>
+      <p>Ready to create your perfect wedding story? Let's start the conversation.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info Card -->
+        <div class="contact-info-card reveal-left">
+          <h2>Let's Connect</h2>
+          <p>We'd love to hear about your wedding plans. Reach out and let's discuss how we can make your special day unforgettable.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text">
+              <h4>Phone</h4>
+              <p><a href="tel:+919727730111">+91 97277 30111</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text">
+              <h4>Email</h4>
+              <p><a href="mailto:hello.safarnamafilm@gmail.com">hello.safarnamafilm@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <h4>Location</h4>
+              <p>Surat, Gujarat, India</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🕐</div>
+            <div class="contact-detail-text">
+              <h4>Working Hours</h4>
+              <p>Mon – Sat: 10:00 AM – 7:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" class="contact-social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="contact-social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="contact-social-link" aria-label="YouTube">🎬</a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrapper reveal-right">
+          <h3>Send Us a Message</h3>
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+                <span class="error-msg">Please enter a valid email</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone" required>
+                <span class="error-msg">Please enter a valid phone number</span>
+              </div>
+              <div class="form-group">
+                <label>Wedding Date</label>
+                <input type="date" required>
+                <span class="error-msg">Please select a date</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Location / Venue</label>
+              <input type="text" placeholder="Wedding city or venue" required>
+              <span class="error-msg">Please enter the location</span>
+            </div>
+            <div class="form-group">
+              <label>Service Interested In</label>
+              <select required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="wedding-photography">Wedding Photography</option>
+                <option value="cinematic-films">Cinematic Wedding Films</option>
+                <option value="pre-wedding">Pre-Wedding Shoot</option>
+                <option value="destination">Destination Wedding</option>
+                <option value="couple-story">Couple Story Film</option>
+                <option value="custom">Custom Package</option>
+              </select>
+              <span class="error-msg">Please select a service</span>
+            </div>
+            <div class="form-group">
+              <label>Your Message</label>
+              <textarea placeholder="Tell us about your dream wedding..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px 32px; font-size:0.95rem;">Send Message</button>
+          </form>
+          <div class="form-success">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>We've received your message. We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="reveal" style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-medium);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118110.31741772736!2d72.76849685244258!3d21.15912020300393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e5bc7a4e8e1%3A0x53f5e2e4b6b4d4a6!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          width="100%" 
+          height="400" 
+          style="border:0; display:block;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Safarnama<span>Film</span></a>
+          <p>We Live In The Details. Creating timeless wedding stories with emotion, elegance, and cinematic artistry since 2009.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="blog.html">Blog</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+919727730111">+91 97277 30111</a>
+          <a href="mailto:hello.safarnamafilm@gmail.com">hello.safarnamafilm@gmail.com</a>
+          <a href="#">Surat, Gujarat</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Safarnama Film. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="footer-social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919727730111" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.744 3.054 9.378L1.056 31.17l5.998-1.924C9.592 30.924 12.66 32 16.004 32 24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.342 22.616c-.39 1.1-1.932 2.014-3.17 2.28-.846.18-1.952.324-5.674-1.22-4.762-1.976-7.826-6.81-8.064-7.126-.23-.316-1.928-2.568-1.928-4.896s1.22-3.474 1.654-3.95c.434-.476.948-.596 1.264-.596.316 0 .632.004.908.016.292.014.684-.11 1.07.816.39.936 1.326 3.234 1.442 3.468.116.234.194.508.04.816-.156.316-.234.508-.47.784-.234.278-.494.62-.706.832-.234.236-.48.49-.204.96.274.47 1.222 2.016 2.624 3.266 1.804 1.608 3.324 2.106 3.796 2.34.474.236.75.196 1.028-.118.278-.316 1.19-1.386 1.508-1.862.316-.476.632-.394 1.066-.236.434.156 2.778 1.31 3.252 1.546.474.236.79.356.908.55.116.196.116 1.128-.274 2.226z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
