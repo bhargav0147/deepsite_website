@@ -30,7 +30,7 @@ const FAQS = [
     { cat: "Recovery", q: "How long is the recovery after implant surgery?", a: "Most patients return to normal activities within 2-3 days. Mild swelling and discomfort for 3-5 days is normal. Complete osseointegration takes 3-6 months, during which you'll have temporary teeth." },
     { cat: "Recovery", q: "Will I experience pain after the procedure?", a: "Modern techniques and sedation options make the procedure virtually painless. Post-operative discomfort is typically mild and managed with over-the-counter pain medication." },
     { cat: "Recovery", q: "When can I eat normally after treatment?", a: "For implant procedures, a soft diet is recommended for 1-2 weeks. After All-on-4/6, soft foods for 6-8 weeks. Your dentist will provide a detailed dietary guide." },
-    { cat: "Pricing", q: "How much can I save by getting treatment in Dubai?", a: "US patients typically save 40-70% compared to US prices, even after factoring in flights and accommodation. All-on-4 that costs $25,000-$30,000 in the US starts at $9,499 at Musakn." },
+    { cat: "Pricing", q: "How much can I save by getting treatment in Dubai?", a: "UK Patients typically save 40-70% compared to US prices, even after factoring in flights and accommodation. All-on-4 that costs $25,000-$30,000 in the US starts at $9,499 at Musakn." },
     { cat: "Pricing", q: "What is included in the treatment packages?", a: "Our packages include consultation, 3D imaging, surgery, anesthesia, implants, prosthesis, airport transfers, accommodation, daily clinic transfers, and post-treatment care." },
     { cat: "Pricing", q: "Do you offer payment plans?", a: "Yes, we offer flexible payment options and accept major credit cards. Our concierge team will discuss all payment options during your consultation." },
     { cat: "Travel", q: "How long do I need to stay in Dubai?", a: "Most treatments require 5-10 days. All-on-4 typically requires 7 days, single implants 3-5 days, full mouth rehabilitation 10-14 days." },
@@ -43,7 +43,7 @@ const FAQS = [
 ];
 
 const BLOG_POSTS = [
-    { title: "The Complete Guide to Dental Implants in Dubai", cat: "Dental Implants", excerpt: "Everything you need to know about getting dental implants in Dubai — from consultation to recovery, costs, and why it's becoming the top choice for US patients.", date: "Jan 20, 2025", read: "8 min", icon: "fa-solid fa-tooth", featured: true },
+    { title: "The Complete Guide to Dental Implants in Dubai", cat: "Dental Implants", excerpt: "Everything you need to know about getting dental implants in Dubai — from consultation to recovery, costs, and why it's becoming the top choice for UK Patients.", date: "Jan 20, 2025", read: "8 min", icon: "fa-solid fa-tooth", featured: true },
     { title: "Why Americans Are Choosing Dubai for Dental Tourism", cat: "Dental Tourism", excerpt: "With US dental costs soaring, discover why thousands of Americans are traveling to Dubai for world-class dental care at 40-70% savings.", date: "Jan 15, 2025", read: "6 min", icon: "fa-solid fa-plane-departure" },
     { title: "All-on-4 vs All-on-6: Making the Right Choice", cat: "Dental Implants", excerpt: "A detailed comparison of All-on-4 and All-on-6 treatments. Understand the differences, benefits, and which option is right for your specific case.", date: "Jan 10, 2025", read: "5 min", icon: "fa-solid fa-teeth" },
     { title: "The Art of the Smile Makeover", cat: "Cosmetic Dentistry", excerpt: "How digital smile design technology is revolutionizing cosmetic dentistry. See your new smile before treatment even begins.", date: "Jan 5, 2025", read: "7 min", icon: "fa-solid fa-wand-magic-sparkles" },
@@ -53,6 +53,7 @@ const BLOG_POSTS = [
 ];
 
 const PACKAGES = [
+    { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide", "Lifetime warranty on implants"] },
     { name: "Single Implant", sub: "One tooth replacement", price: "1,899", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "3D CBCT imaging", "Consultation & planning", "1-year warranty"] },
     { name: "All-on-4 Full Arch", sub: "Complete arch restoration", price: "9,499", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "Airport transfers included", "5-night luxury accommodation", "Lifetime warranty"] },
     { name: "All-on-6 Full Arch", sub: "Enhanced stability", price: "12,999", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service", "Lifetime warranty"] },
@@ -60,18 +61,18 @@ const PACKAGES = [
 ];
 
 const GALLERY_ITEMS = [
-    { cat: "clinic", title: "Reception Area", cls: "g-grad-1", tall: true, wide: false, icon: "fa-solid fa-door-open" },
-    { cat: "interior", title: "Consultation Room", cls: "g-grad-2", tall: false, wide: false, icon: "fa-solid fa-couch" },
-    { cat: "equipment", title: "3D CBCT Scanner", cls: "g-grad-3", tall: false, wide: false, icon: "fa-solid fa-x-ray" },
-    { cat: "clinic", title: "Treatment Suite", cls: "g-grad-4", tall: false, wide: true, icon: "fa-solid fa-hospital" },
-    { cat: "equipment", title: "CAD/CAM Lab", cls: "g-grad-5", tall: true, wide: false, icon: "fa-solid fa-print" },
-    { cat: "interior", title: "Patient Lounge", cls: "g-grad-6", tall: false, wide: false, icon: "fa-solid fa-mug-hot" },
-    { cat: "team", title: "Our Specialists", cls: "g-grad-1", tall: false, wide: false, icon: "fa-solid fa-user-doctor" },
-    { cat: "interior", title: "Recovery Suite", cls: "g-grad-2", tall: false, wide: false, icon: "fa-solid fa-bed" },
-    { cat: "equipment", title: "Surgical Suite", cls: "g-grad-3", tall: false, wide: true, icon: "fa-solid fa-syringe" },
-    { cat: "team", title: "Clinical Team", cls: "g-grad-4", tall: false, wide: false, icon: "fa-solid fa-users" },
-    { cat: "clinic", title: "Sterilization Room", cls: "g-grad-5", tall: false, wide: false, icon: "fa-solid fa-shield-virus" },
-    { cat: "interior", title: "Building Exterior", cls: "g-grad-6", tall: false, wide: false, icon: "fa-solid fa-building" }
+    { cat: "clinic", title: "Reception Area", cls: "g-grad-1", tall: true, wide: false, image: "assets/images/nava-exterior.png" },
+    { cat: "interior", title: "Consultation Room", cls: "g-grad-2", tall: false, wide: false, image: "assets/images/reception.png" },
+    { cat: "equipment", title: "3D CBCT Scanner", cls: "g-grad-3", tall: false, wide: false, image: "assets/images/machine-1.png" },
+    { cat: "clinic", title: "Treatment Suite", cls: "g-grad-4", tall: false, wide: true, image: "assets/images/nava-exterior.png" },
+    { cat: "equipment", title: "CAD/CAM Lab", cls: "g-grad-5", tall: true, wide: false, image: "assets/images/machine-2.png" },
+    { cat: "interior", title: "Patient Lounge", cls: "g-grad-6", tall: false, wide: false, image: "assets/images/reception.png" },
+    { cat: "team", title: "Our Specialists", cls: "g-grad-1", tall: false, wide: false, image: "assets/images/nava-exterior.png" },
+    { cat: "interior", title: "Recovery Suite", cls: "g-grad-2", tall: false, wide: false, image: "assets/images/reception.png" },
+    { cat: "equipment", title: "Surgical Suite", cls: "g-grad-3", tall: false, wide: true, image: "assets/images/machine-1.png" },
+    { cat: "team", title: "Clinical Team", cls: "g-grad-4", tall: false, wide: false, image: "assets/images/machine-2.png" },
+    { cat: "clinic", title: "Sterilization Room", cls: "g-grad-5", tall: false, wide: false, image: "assets/images/nava-exterior.png" },
+    { cat: "interior", title: "Building Exterior", cls: "g-grad-6", tall: false, wide: false, image: "assets/images/reception.png" }
 ];
 
 const TEAM = [
@@ -209,26 +210,55 @@ function toggleFAQ(btn) {
 function renderPackages() {
     const homeGrid = document.getElementById('pkgGridHome');
     const fullGrid = document.getElementById('pkgGridFull');
-    const html = PACKAGES.map(p => `
+    const html = PACKAGES.map(p => {
+        if (p.name.includes('Umrah')) {
+            return `
+<div class="pkg-card usp-pkg-card">
+    <span class="pkg-badge">Exclusive Combo</span>
+    <div class="usp-info">
+        <h3>${p.name}</h3>
+        <div class="pkg-sub">${p.sub}</div>
+        <div class="price-block">
+            <div class="pkg-price">${p.price}</div>
+            <div class="pkg-from">${p.from}</div>
+        </div>
+        <button class="btn btn-primary" data-modal="book">Book Consultation</button>
+    </div>
+    <div class="usp-features-wrapper">
+        <ul class="pkg-features">
+            ${p.features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}
+        </ul>
+    </div>
+</div>`;
+        } else {
+            return `
 <div class="pkg-card${p.popular ? ' popular' : ''}">
-${p.popular ? '<span class="pkg-badge">Most Popular</span>' : ''}
-<h3>${p.name}</h3><div class="pkg-sub">${p.sub}</div>
-<div class="pkg-price">${p.price === 'Custom' ? '<span style="font-size:2rem">Custom</span>' : '$' + p.price}</div>
-<div class="pkg-from">${p.from}</div>
-<ul class="pkg-features">${p.features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}</ul>
-<button class="btn ${p.popular ? 'btn-primary' : 'btn-ghost'}" data-modal="book">Book Consultation</button>
-</div>`).join('');
+    ${p.popular ? '<span class="pkg-badge">Most Popular</span>' : ''}
+    <h3>${p.name}</h3><div class="pkg-sub">${p.sub}</div>
+    <div class="pkg-price">${p.price === 'Custom' ? '<span style="font-size:2rem">Custom</span>' : '$' + p.price}</div>
+    <div class="pkg-from">${p.from}</div>
+    <ul class="pkg-features">${p.features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}</ul>
+    <button class="btn ${p.popular ? 'btn-primary' : 'btn-ghost'}" data-modal="book">Book Consultation</button>
+</div>`;
+        }
+    }).join('');
     if (homeGrid) homeGrid.innerHTML = html;
     if (fullGrid) fullGrid.innerHTML = html;
 }
 
 /* ===== RENDER: GALLERY ===== */
 function renderGallery() {
-    const grid = document.getElementById('galleryGrid'); if (!grid) return;
+    const grid = document.getElementById("galleryGrid");
+    if (!grid) return;
+
     grid.innerHTML = GALLERY_ITEMS.map(g => `
-<div class="gallery-item ${g.tall ? 'tall' : ''} ${g.wide ? 'wide' : ''}" data-gallery-cat="${g.cat}">
-<div class="gallery-item-inner ${g.cls}"><i class="${g.icon}"></i><span>${g.title}</span></div>
-</div>`).join('');
+        <div class="gallery-item ${g.tall ? "tall" : ""} ${g.wide ? "wide" : ""}" data-gallery-cat="${g.cat}">
+            <div class="gallery-item-inner ${g.cls}">
+                <img src="${g.image}" alt="${g.title}" class="gallery-img">
+                <span>${g.title}</span>
+            </div>
+        </div>
+    `).join("");
 }
 
 /* ===== RENDER: TEAM ===== */
@@ -236,7 +266,9 @@ function renderTeam() {
     const grid = document.getElementById('teamGrid'); if (!grid) return;
     grid.innerHTML = TEAM.map(t => `
 <div class="team-card">
-<div class="team-photo ${t.grad}"><i class="fa-solid fa-user-doctor"></i></div>
+<div class="team-photo">
+    <img src="assets/Dr. Kayyum Bhatti image.jpeg" alt="${t.name}">
+</div>
 <div class="team-info"><h3>${t.name}</h3><div class="role">${t.role}</div><div class="creds">${t.creds}</div></div>
 </div>`).join('');
 }
@@ -269,14 +301,51 @@ function initBASlider(sliderId, afterId, handleId) {
     const slider = document.getElementById(sliderId);
     const after = document.getElementById(afterId);
     const handle = document.getElementById(handleId);
-    if (!slider) return;
+    if (!slider || !after) return;
+
+    // Extract background image from after element (inline or computed)
+    const bg = after.style.backgroundImage || window.getComputedStyle(after).backgroundImage;
+    let bgDiv = null;
+    if (bg && bg !== 'none') {
+        bgDiv = document.createElement('div');
+        bgDiv.className = 'ba-after-bg';
+        bgDiv.style.backgroundImage = bg;
+        bgDiv.style.position = 'absolute';
+        bgDiv.style.top = '0';
+        bgDiv.style.left = '0';
+        bgDiv.style.height = '100%';
+        bgDiv.style.backgroundPosition = 'center center';
+        bgDiv.style.backgroundSize = 'cover';
+        bgDiv.style.backgroundRepeat = 'no-repeat';
+        bgDiv.style.pointerEvents = 'none';
+        bgDiv.style.zIndex = '1';
+
+        after.insertBefore(bgDiv, after.firstChild);
+        after.style.background = 'none';
+        after.style.backgroundImage = 'none';
+    }
+
+    function updateDimensions() {
+        if (bgDiv) {
+            bgDiv.style.width = slider.offsetWidth + 'px';
+        }
+    }
+
     let dragging = false;
     function move(clientX) {
         const rect = slider.getBoundingClientRect();
         const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
         const pos = (x / rect.width) * 100;
-        after.style.width = pos + '%'; handle.style.left = pos + '%';
+        after.style.width = pos + '%';
+        handle.style.left = pos + '%';
     }
+
+    window.addEventListener('resize', updateDimensions);
+    updateDimensions();
+    setTimeout(updateDimensions, 100);
+    // Double safeguard on page transition/load complete
+    window.addEventListener('load', updateDimensions);
+
     slider.addEventListener('mousedown', e => { dragging = true; move(e.clientX); });
     slider.addEventListener('touchstart', e => { dragging = true; move(e.touches[0].clientX); }, { passive: true });
     document.addEventListener('mousemove', e => { if (dragging) move(e.clientX); });
@@ -427,6 +496,128 @@ function initPageTransition() {
     });
 }
 
+/* ===== COOKIE HELPERS ===== */
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+/* ===== FIRST VISIT POPUP ===== */
+function initFirstVisitPopup() {
+    // Only show on the homepage
+    const path = window.location.pathname;
+    const isIndex = path.endsWith('index.html') || path === '/' || path.endsWith('/') || path === '';
+    if (!isIndex) return;
+
+    if (getCookie('firstVisitPromoShown')) return;
+
+    const popup = document.createElement('div');
+    popup.id = 'promoPopup';
+    popup.className = 'promo-popup-wrapper';
+    popup.innerHTML = `
+        <div class="promo-popup-overlay"></div>
+        <div class="promo-popup-content">
+            <button class="promo-popup-close" aria-label="Close popup"><i class="fa-solid fa-xmark"></i></button>
+            <span class="promo-popup-badge">Limited-Time Free Consultation</span>
+            <h2>Your New Smile Starts Here</h2>
+            <p>Schedule your FREE Dental Implant Consultation and meet our experienced implant specialists. Discover the best treatment options for your smile in a comfortable, stress-free environment.</p>
+            <button class="btn btn-primary btn-lg promo-cta">Book Appointment</button>
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    const closeBtn = popup.querySelector('.promo-popup-close');
+    const overlay = popup.querySelector('.promo-popup-overlay');
+    const ctaBtn = popup.querySelector('.promo-cta');
+
+    function closePopup() {
+        popup.classList.add('fade-out');
+        setCookie('firstVisitPromoShown', 'true', 30); // 30-day cookie
+        setTimeout(() => {
+            popup.remove();
+        }, 500);
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup);
+
+    ctaBtn.addEventListener('click', () => {
+        setCookie('firstVisitPromoShown', 'true', 30);
+        window.location.href = 'contact.html';
+    });
+
+    // Show popup strictly after page finishes loading (adds 2.2s delay to clear preloader transition)
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 2200);
+}
+
+/* ===== VIDEO PLAY SYSTEM ===== */
+function initVideoCards() {
+    document.querySelectorAll('.video-card').forEach((card, idx) => {
+        card.addEventListener('click', function handleCardClick() {
+            // If video is already playing, do nothing
+            if (card.querySelector('video')) return;
+            
+            const video = document.createElement('video');
+            video.src = 'assets/video/hero-dental.mp4';
+            video.controls = true;
+            video.autoplay = true;
+            video.style.position = 'absolute';
+            video.style.inset = '0';
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.objectFit = 'cover';
+            video.style.zIndex = '10';
+            video.style.borderRadius = '20px';
+            
+            // Stagger start times to make segment playbacks look unique
+            const startTimes = [0, 5, 10];
+            const startTime = startTimes[idx % startTimes.length];
+            
+            video.addEventListener('loadedmetadata', () => {
+                try {
+                    if (startTime < video.duration) {
+                        video.currentTime = startTime;
+                    }
+                } catch (err) {
+                    console.warn("Could not seek video segment:", err);
+                }
+            });
+            
+            card.appendChild(video);
+            video.focus();
+            
+            // Prevent clicking inside video controls or screen from resetting/re-triggering the card click
+            video.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // Reset state when video ends
+            video.addEventListener('ended', () => {
+                video.remove();
+            });
+        });
+    });
+}
+
 /* ===== INIT ===== */
 function init() {
     setTimeout(() => { const p = document.getElementById('preloader'); if (p) p.classList.add('done'); }, 1000);
@@ -437,6 +628,8 @@ function init() {
     initBASlider('baSlider1', 'baAfter1', 'baHandle1');
     initBASlider('baSlider2', 'baAfter2', 'baHandle2');
     observeReveals(); initPageTransition();
+    initFirstVisitPopup();
+    initVideoCards();
 }
 if (document.readyState !== 'loading') { init(); } else { document.addEventListener('DOMContentLoaded', init); }
 
