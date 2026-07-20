@@ -220,17 +220,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (isValid) {
-        // Show success message
-        const successEl = form.closest('.lead-form, .contact-form-wrapper')
-          ? form.closest('.lead-form, .contact-form-wrapper').querySelector('.form-success')
-          : null;
-        if (successEl) {
-          form.style.display = 'none';
-          successEl.style.display = 'block';
-        } else {
-          form.reset();
-          alert('Thank you! Your message has been sent successfully.');
-        }
+        const name = form.querySelector('input[type="text"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+        const phone = form.querySelector('input[type="tel"]').value;
+        const project = form.querySelector('select').value;
+        const details = form.querySelector('textarea').value;
+
+        const message = `*New Project Inquiry*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+*Project Type:* ${project}
+
+*Project Details:*
+${details}`;
+
+        const whatsappNumber = "919722677878";
+
+        const whatsappURL =
+          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+
+        form.reset();
       }
     });
   });
@@ -278,3 +291,124 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+const galleryImages = [
+  "./assets/00 drone view.png",
+  "./assets/00 Elevation.png",
+  "./assets/01. Parking.jpg",
+  "./assets/02. Home theater room.png",
+  "./assets/03. 1st floor entrance.png",
+  "./assets/04. living room view 1.jpg",
+  "./assets/05. living room view 2.jpeg",
+  "./assets/06. living room tv unit.png",
+  "./assets/07. kitchen.png",
+  "./assets/08. 1st floor bedroom bed.jpg",
+  "./assets/09. 1st floor bedroom wardrobe.png",
+  "./assets/10. 2nd floor passage.jpg",
+  "./assets/11. 2nd floor bed.jpeg",
+  "./assets/12. 2nd floor fist bedroom wardrobe.png",
+  "./assets/13. 2nd floor second bedroom bed.png",
+  "./assets/14. 2nd floor second bedroom wardrobe.png",
+  "./assets/15. tarrace room.png",
+
+  "./assets/bedroom_CTexmap.jpg",
+
+  "./assets/diskk 730.jpg",
+  "./assets/diskk 731.jpg",
+  "./assets/diskk 732.jpg",
+  "./assets/diskk 733.jpg",
+  "./assets/diskk 734.jpg",
+  "./assets/diskk 735.jpg",
+  "./assets/diskk 736.jpg",
+  "./assets/diskk 737.jpg",
+  "./assets/diskk 738.jpg",
+  "./assets/diskk 739.jpg",
+  "./assets/diskk 740.jpg",
+  "./assets/diskk 741.jpg",
+  "./assets/diskk 742.jpg",
+  "./assets/diskk 743.jpg",
+  "./assets/diskk 744.jpg",
+  "./assets/diskk 745.jpg",
+  "./assets/diskk 746.jpg",
+  "./assets/diskk 747.jpg",
+  "./assets/diskk 748.jpg",
+  "./assets/diskk 749.jpg",
+  "./assets/diskk 750.jpg",
+  "./assets/diskk 751.jpg",
+  "./assets/diskk 752.jpg",
+  "./assets/diskk 753.jpg",
+  "./assets/diskk 754.jpg",
+  "./assets/diskk 2440.jpg",
+  "./assets/diskk 2441.jpg",
+  "./assets/diskk 2442.jpg",
+  "./assets/diskk 2443.jpg",
+  "./assets/diskk 2444.jpg",
+  "./assets/diskk 2445.jpg",
+  "./assets/diskk 2446.jpg",
+  "./assets/diskk 2447.jpg",
+  "./assets/diskk 2448.jpg",
+  "./assets/diskk 3139.jpg",
+  "./assets/diskk 3140.jpg",
+  "./assets/diskk 3141.jpg",
+  "./assets/diskk 3142.jpg",
+  "./assets/diskk 3143.jpg",
+  "./assets/diskk 3144.jpg",
+  "./assets/diskk 3145.jpg",
+  "./assets/diskk 3147.jpg",
+  "./assets/diskk 3148.jpg",
+  "./assets/diskk 3149.jpg",
+  "./assets/diskk 3150.jpg",
+  "./assets/diskk 3151.jpg",
+  "./assets/diskk 3152.jpg",
+  "./assets/diskk 3153.jpg",
+  "./assets/diskk 3154.jpg",
+  "./assets/diskk 3155.jpg",
+  "./assets/diskk 3156.jpg",
+  "./assets/diskk 3157.jpg",
+  "./assets/diskk 3158.jpg",
+  "./assets/diskk 3159.jpg",
+  "./assets/diskk 3160.jpg",
+  "./assets/diskk 3162.jpg",
+  "./assets/diskk 3163.jpg",
+  "./assets/diskk 3164.jpg",
+  "./assets/diskk 3165.jpg",
+  "./assets/diskk 3166.jpg",
+  "./assets/diskk 3167.jpg",
+  "./assets/diskk 3168.jpg",
+  "./assets/diskk 3169.jpg",
+
+  "./assets/diskk 4440.png",
+  "./assets/diskk 4441.png",
+  "./assets/diskk 4442.png",
+  "./assets/diskk 4443.png",
+  "./assets/diskk 4444.png",
+  "./assets/diskk 4445.png",
+
+  "./assets/diskk 4525.jpg",
+  "./assets/diskk 4526.jpg"
+];
+
+// Gallery page
+const gallery = document.getElementById("galleryGrid");
+
+if (gallery) {
+    gallery.innerHTML = galleryImages.map(path => `
+        <div class="gallery-item">
+            <img src="${path}" alt="" loading="lazy">
+        </div>
+    `).join("");
+}
+
+// Home page
+const homeGallery = document.getElementById("homeGallery");
+
+if (homeGallery) {
+    homeGallery.innerHTML = galleryImages
+        .slice(0, 6)
+        .map(path => `
+            <div class="gallery-item">
+                <img src="${path}" alt="" loading="lazy">
+            </div>
+        `)
+        .join("");
+}
