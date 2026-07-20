@@ -53,11 +53,11 @@ const BLOG_POSTS = [
 ];
 
 const PACKAGES = [
-    { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide", "Lifetime warranty on implants"] },
-    { name: "Single Implant", sub: "One tooth replacement", price: "1,899", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "3D CBCT imaging", "Consultation & planning", "1-year warranty"] },
-    { name: "All-on-4 Full Arch", sub: "Complete arch restoration", price: "9,499", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "Airport transfers included", "5-night luxury accommodation", "Lifetime warranty"] },
-    { name: "All-on-6 Full Arch", sub: "Enhanced stability", price: "12,999", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service", "Lifetime warranty"] },
-    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager", "Lifetime warranty"] }
+    { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide"] },
+    { name: "Single Implant", sub: "One tooth replacement", price: "1,899", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning", "1-year warranty"] },
+    { name: "All-on-4 Full Arch", sub: "Complete arch restoration", price: "9,499", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
+    { name: "All-on-6 Full Arch", sub: "Enhanced stability", price: "12,999", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
+    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] }
 ];
 
 const GALLERY_ITEMS = [
@@ -76,10 +76,10 @@ const GALLERY_ITEMS = [
 ];
 
 const TEAM = [
-    { name: "Dr. Kayyum Bhatti", role: "Chief Implantologist", creds: "DDS, Harvard · 20+ yrs · ICOI Fellow", grad: "g-grad-1" },
-    { name: "Dr. Aisha Al-Mansoori", role: "Cosmetic Dentistry Director", creds: "NYU-trained · AACD Member · 15+ yrs", grad: "g-grad-2" },
-    { name: "Dr. Michael Roberts", role: "Oral & Maxillofacial Surgeon", creds: "UCLA · Board-certified · 18+ yrs", grad: "g-grad-4" },
-    { name: "Dr. Sofia Romano", role: "Prosthodontist", creds: "Univ. of Bologna · 12+ yrs", grad: "g-grad-5" }
+    { name: "Dr. Kayyum Bhatti", role: "Senior Implantologist", creds: "All on 4/6 Expert . 15+ yrs", grad: "g-grad-1", image: "./assets/Dr. Kayyum Bhatti image.jpeg" },
+    { name: "Dr. Tarandeep", role: "Implant Prosthodontist", creds: "Hollywood Smile Expert . 12+ yes", grad: "g-grad-2", image: "./assets/Dr. Kayyum Bhatti image.jpeg" },
+    // { name: "Dr. Michael Roberts", role: "Oral & Maxillofacial Surgeon", creds: "UCLA · Board-certified · 18+ yrs", grad: "g-grad-4" },
+    // { name: "Dr. Sofia Romano", role: "Prosthodontist", creds: "Univ. of Bologna · 12+ yrs", grad: "g-grad-5" }
 ];
 
 /* ===== RENDER: TREATMENTS ===== */
@@ -214,7 +214,7 @@ function renderPackages() {
         if (p.name.includes('Umrah')) {
             return `
 <div class="pkg-card usp-pkg-card">
-    <span class="pkg-badge">Exclusive Combo</span>
+    <span class="pkg-badge">Exclusive Package</span>
     <div class="usp-info">
         <h3>${p.name}</h3>
         <div class="pkg-sub">${p.sub}</div>
@@ -263,14 +263,21 @@ function renderGallery() {
 
 /* ===== RENDER: TEAM ===== */
 function renderTeam() {
-    const grid = document.getElementById('teamGrid'); if (!grid) return;
+    const grid = document.getElementById("teamGrid");
+    if (!grid) return;
+
     grid.innerHTML = TEAM.map(t => `
-<div class="team-card">
-<div class="team-photo">
-    <img src="assets/Dr. Kayyum Bhatti image.jpeg" alt="${t.name}">
-</div>
-<div class="team-info"><h3>${t.name}</h3><div class="role">${t.role}</div><div class="creds">${t.creds}</div></div>
-</div>`).join('');
+        <div class="team-card">
+            <div class="team-photo">
+                <img src="${t.image}" alt="${t.name}">
+            </div>
+            <div class="team-info">
+                <h3>${t.name}</h3>
+                <div class="role">${t.role}</div>
+                <div class="creds">${t.creds}</div>
+            </div>
+        </div>
+    `).join("");
 }
 
 /* ===== RENDER: BLOG ===== */
@@ -575,7 +582,7 @@ function initVideoCards() {
         card.addEventListener('click', function handleCardClick() {
             // If video is already playing, do nothing
             if (card.querySelector('video')) return;
-            
+
             const video = document.createElement('video');
             video.src = 'assets/video/hero-dental.mp4';
             video.controls = true;
@@ -587,11 +594,11 @@ function initVideoCards() {
             video.style.objectFit = 'cover';
             video.style.zIndex = '10';
             video.style.borderRadius = '20px';
-            
+
             // Stagger start times to make segment playbacks look unique
             const startTimes = [0, 5, 10];
             const startTime = startTimes[idx % startTimes.length];
-            
+
             video.addEventListener('loadedmetadata', () => {
                 try {
                     if (startTime < video.duration) {
@@ -601,21 +608,211 @@ function initVideoCards() {
                     console.warn("Could not seek video segment:", err);
                 }
             });
-            
+
             card.appendChild(video);
             video.focus();
-            
+
             // Prevent clicking inside video controls or screen from resetting/re-triggering the card click
             video.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
-            
+
             // Reset state when video ends
             video.addEventListener('ended', () => {
                 video.remove();
             });
         });
     });
+}
+
+/* ===== COOKIE CONSENT SYSTEM ===== */
+const COOKIE_STORAGE_KEY = 'muskan_cookie_consent_v1';
+
+function getSavedCookieConsent() {
+    try {
+        const stored = localStorage.getItem(COOKIE_STORAGE_KEY);
+        if (stored) return JSON.parse(stored);
+    } catch (e) { }
+    const cookieVal = getCookie('muskan_cookie_consent');
+    if (cookieVal) {
+        try { return JSON.parse(decodeURIComponent(cookieVal)); } catch (e) { }
+    }
+    return null;
+}
+
+function saveCookieConsent(preferences) {
+    const data = {
+        essential: true,
+        analytics: !!preferences.analytics,
+        marketing: !!preferences.marketing,
+        timestamp: new Date().toISOString()
+    };
+    try {
+        localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(data));
+    } catch (e) { }
+    setCookie('muskan_cookie_consent', encodeURIComponent(JSON.stringify(data)), 365);
+
+    // Dismiss banner if visible
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+        banner.classList.remove('show');
+        setTimeout(() => banner.remove(), 600);
+    }
+
+    // Dismiss modal if open
+    const modal = document.getElementById('cookieModal');
+    if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Show feedback toast
+    if (typeof showToast === 'function') {
+        showToast('Cookie preferences updated successfully.');
+    } else {
+        const toast = document.getElementById('toast');
+        if (toast) {
+            document.getElementById('toastMsg').textContent = 'Cookie preferences updated successfully.';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+    }
+}
+
+function openCookieSettings() {
+    let modal = document.getElementById('cookieModal');
+    const currentConsent = getSavedCookieConsent() || { essential: true, analytics: true, marketing: true };
+
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'cookieModal';
+        modal.className = 'cookie-modal';
+        modal.innerHTML = `
+            <div class="cookie-modal-overlay" id="cookieModalOverlay"></div>
+            <div class="cookie-modal-content">
+                <div class="cookie-modal-header">
+                    <div>
+                        <h3>Cookie Preferences</h3>
+                        <p style="font-size:0.85rem;color:var(--d3);margin-top:0.25rem;">Customize your cookie privacy settings for Muskan Dental.</p>
+                    </div>
+                    <button class="cookie-modal-close" id="closeCookieModal" aria-label="Close cookie preferences"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="cookie-category-list">
+                    <div class="cookie-category-card">
+                        <div class="cookie-category-top">
+                            <div class="cookie-category-title">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span>Essential &amp; Security Cookies</span>
+                            </div>
+                            <label class="cookie-switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        <p>Required for core website functionality, secure login, booking consultations, and session management. Always active.</p>
+                    </div>
+                    <div class="cookie-category-card">
+                        <div class="cookie-category-top">
+                            <div class="cookie-category-title">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <span>Analytics &amp; Performance</span>
+                            </div>
+                            <label class="cookie-switch">
+                                <input type="checkbox" id="cookieAnalyticsToggle">
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        <p>Allows us to analyze visitor usage, measure page loading speeds, and optimize user experience across Dubai and international portals.</p>
+                    </div>
+                    <div class="cookie-category-card">
+                        <div class="cookie-category-top">
+                            <div class="cookie-category-title">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <span>Marketing &amp; Personalization</span>
+                            </div>
+                            <label class="cookie-switch">
+                                <input type="checkbox" id="cookieMarketingToggle">
+                                <span class="cookie-slider"></span>
+                            </label>
+                        </div>
+                        <p>Enables tailored offers, dental package promotions, and WhatsApp patient concierge connectivity.</p>
+                    </div>
+                </div>
+                <div class="cookie-modal-footer">
+                    <button class="btn btn-ghost" id="saveCookiePreferences">Save Preferences</button>
+                    <button class="btn btn-primary" id="acceptAllCookieModal">Accept All</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        document.getElementById('closeCookieModal').addEventListener('click', () => {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        document.getElementById('cookieModalOverlay').addEventListener('click', () => {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        document.getElementById('saveCookiePreferences').addEventListener('click', () => {
+            const analytics = document.getElementById('cookieAnalyticsToggle').checked;
+            const marketing = document.getElementById('cookieMarketingToggle').checked;
+            saveCookieConsent({ analytics, marketing });
+        });
+        document.getElementById('acceptAllCookieModal').addEventListener('click', () => {
+            saveCookieConsent({ analytics: true, marketing: true });
+        });
+    }
+
+    document.getElementById('cookieAnalyticsToggle').checked = !!currentConsent.analytics;
+    document.getElementById('cookieMarketingToggle').checked = !!currentConsent.marketing;
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function initCookieConsent() {
+    const savedConsent = getSavedCookieConsent();
+    if (savedConsent) return; // Consent already granted/saved
+
+    // Inject bottom banner if not present
+    if (!document.getElementById('cookieBanner')) {
+        const banner = document.createElement('div');
+        banner.id = 'cookieBanner';
+        banner.className = 'cookie-banner';
+        banner.innerHTML = `
+            <div class="cookie-banner-inner">
+                <div class="cookie-banner-text">
+                    <div class="cookie-icon-box"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <div>
+                        <h4>We Value Your Privacy</h4>
+                        <p>Muskan Dental uses cookies to enhance your browsing experience, analyze site traffic, and deliver personalized dental care information. Learn more in our <a href="privacy-policy.html">Privacy Policy</a> &amp; <a href="data-use-policy.html">Data Use Policy</a>.</p>
+                    </div>
+                </div>
+                <div class="cookie-banner-actions">
+                    <button class="btn btn-ghost" id="cookieBtnSettings" style="font-size:0.8rem;padding:0.65rem 1.25rem;">Preferences</button>
+                    <button class="btn btn-ghost" id="cookieBtnEssential" style="font-size:0.8rem;padding:0.65rem 1.25rem;">Essential Only</button>
+                    <button class="btn btn-primary" id="cookieBtnAcceptAll" style="font-size:0.8rem;padding:0.65rem 1.35rem;">Accept All</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        document.getElementById('cookieBtnAcceptAll').addEventListener('click', () => {
+            saveCookieConsent({ analytics: true, marketing: true });
+        });
+        document.getElementById('cookieBtnEssential').addEventListener('click', () => {
+            saveCookieConsent({ analytics: false, marketing: false });
+        });
+        document.getElementById('cookieBtnSettings').addEventListener('click', () => {
+            openCookieSettings();
+        });
+
+        // Show with smooth transition after initial load delay
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 1800);
+    }
 }
 
 /* ===== INIT ===== */
@@ -630,6 +827,8 @@ function init() {
     observeReveals(); initPageTransition();
     initFirstVisitPopup();
     initVideoCards();
+    initCookieConsent();
 }
 if (document.readyState !== 'loading') { init(); } else { document.addEventListener('DOMContentLoaded', init); }
+
 

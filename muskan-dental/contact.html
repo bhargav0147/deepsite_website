@@ -41,10 +41,18 @@
                 <a href="contact.html" class="nav-link nav-transparent-text active">Contact</a>
             </nav>
             <div class="nav-cta">
-                <a href="https://wa.me/971501234567" class="btn btn-wa" target="_blank" rel="noopener"><i
-                        class="fa-brands fa-whatsapp"></i></a>
-                <button class="btn btn-primary" data-modal="book">Book Consultation</button>
-                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                <button class="btn btn-primary" data-modal="book">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 7l-7 5 7 5V7z"></path>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                    <span>Video Consultation</span>
+                </button>
+
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -56,7 +64,16 @@
                 href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="blog.html">Blog</a><a
                 href="contact.html">Contact</a></nav>
         <button class="btn btn-primary btn-lg" data-modal="book"
-            style="margin-top:1.5rem;width:100%;justify-content:center">Book Consultation</button>
+            style="margin-top:1.5rem;width:100%;justify-content:center;display:flex;align-items:center;gap:8px;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 7l-7 5 7 5V7z"></path>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+
+            <span>Video Consultation</span>
+        </button>
     </div>
 
     <main id="main" class="page-fade">
@@ -226,8 +243,11 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Musakn Dental. All rights reserved.</p>
-                <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a
-                        href="#">Cookie Policy</a></div>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="data-use-policy.html">Data Use Policy</a>
+                    <a href="javascript:void(0);" onclick="openCookieSettings()">Cookie Settings</a>
+                </div>
             </div>
         </div>
     </footer>
