@@ -537,8 +537,6 @@ function initFirstVisitPopup() {
     const isIndex = path.endsWith('index.html') || path === '/' || path.endsWith('/') || path === '';
     if (!isIndex) return;
 
-    if (getCookie('firstVisitPromoShown')) return;
-
     const popup = document.createElement('div');
     popup.id = 'promoPopup';
     popup.className = 'promo-popup-wrapper';
@@ -546,10 +544,54 @@ function initFirstVisitPopup() {
         <div class="promo-popup-overlay"></div>
         <div class="promo-popup-content">
             <button class="promo-popup-close" aria-label="Close popup"><i class="fa-solid fa-xmark"></i></button>
-            <span class="promo-popup-badge">Limited-Time Free Consultation</span>
-            <h2>Your New Smile Starts Here</h2>
-            <p>Schedule your FREE Dental Implant Consultation and meet our experienced implant specialists. Discover the best treatment options for your smile in a comfortable, stress-free environment.</p>
-            <button class="btn btn-primary btn-lg promo-cta">Book Appointment</button>
+            <span class="promo-popup-badge"><i class="fa-solid fa-plane-departure" style="margin-right:6px"></i>UK Consultation Tour</span>
+            <h2>Face to Face Meeting in UK</h2>
+            <p>Meet our senior dental implant specialists in person across major UK cities. Discuss your smile transformation, get free 3D scan evaluations, and plan your treatment before traveling to Dubai.</p>
+            
+            <div class="promo-schedule-container">
+                <div class="promo-schedule-header">
+                    <i class="fa-solid fa-calendar-days"></i> Upcoming UK Tour Schedule
+                </div>
+                <div class="promo-schedule-table-wrapper">
+                    <table class="promo-schedule-table">
+                        <thead>
+                            <tr>
+                                <th>City &amp; Venue</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> London</div>
+                                    <div class="city-area">Mayfair Medical Suite</div>
+                                </td>
+                                <td><span class="schedule-date">Nov 10 - Nov 12</span></td>
+                                <td><span class="schedule-time">09:00 AM - 06:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Manchester</div>
+                                    <div class="city-area">City Centre Hub</div>
+                                </td>
+                                <td><span class="schedule-date">Nov 14 - Nov 15</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Birmingham</div>
+                                    <div class="city-area">Grand Central Suite</div>
+                                </td>
+                                <td><span class="schedule-date">Nov 17 - Nov 18</span></td>
+                                <td><span class="schedule-time">09:30 AM - 05:30 PM</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg promo-cta"><i class="fa-solid fa-calendar-check" style="margin-right:8px"></i> Book Appointment</button>
         </div>
     `;
 
@@ -561,7 +603,6 @@ function initFirstVisitPopup() {
 
     function closePopup() {
         popup.classList.add('fade-out');
-        setCookie('firstVisitPromoShown', 'true', 30); // 30-day cookie
         setTimeout(() => {
             popup.remove();
         }, 500);
@@ -571,7 +612,7 @@ function initFirstVisitPopup() {
     overlay.addEventListener('click', closePopup);
 
     ctaBtn.addEventListener('click', () => {
-        setCookie('firstVisitPromoShown', 'true', 30);
+        closePopup();
         window.location.href = 'contact.html';
     });
 

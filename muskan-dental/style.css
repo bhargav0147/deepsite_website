@@ -3958,10 +3958,12 @@ h3 {
   background: #fff;
   border: 1.5px solid var(--gl);
   border-radius: 28px;
-  padding: 3.5rem 3rem 3rem;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  padding: 2.75rem 2.25rem 2rem;
+  max-width: 620px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
   text-align: center;
   z-index: 2;
   transform: translateY(30px);
@@ -3969,7 +3971,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .promo-popup-wrapper.active .promo-popup-content {
@@ -4019,12 +4021,12 @@ h3 {
   text-transform: uppercase;
   padding: 0.4rem 1.2rem;
   border-radius: 100px;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 .promo-popup-content h2 {
   font-family: var(--fd);
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: var(--d1);
   line-height: 1.25;
   margin: 0;
@@ -4033,25 +4035,144 @@ h3 {
 
 .promo-popup-content p {
   font-size: 0.9rem;
-  color: var(--g);
+  color: var(--d3);
   line-height: 1.55;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+/* Schedule Table Container */
+.promo-schedule-container {
+  width: 100%;
+  background: var(--light);
+  border: 1px solid var(--gl);
+  border-radius: 18px;
+  padding: 1.15rem 1rem;
+  margin: 0.2rem 0;
+  text-align: left;
+}
+
+.promo-schedule-header {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--d1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.promo-schedule-header i {
+  color: var(--green);
+  font-size: 0.95rem;
+}
+
+.promo-schedule-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.promo-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.promo-schedule-table th {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  font-weight: 700;
+  color: #475569;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1.5px solid var(--gl);
+}
+
+.promo-schedule-table td {
+  padding: 0.65rem 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+}
+
+.promo-schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.promo-schedule-table .city-name {
+  font-weight: 700;
+  color: var(--d1);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.promo-schedule-table .city-name i {
+  color: var(--green);
+  font-size: 0.8rem;
+}
+
+.promo-schedule-table .city-area {
+  font-size: 0.78rem;
+  color: #475569;
+  margin-top: 0.15rem;
+  font-weight: 500;
+}
+
+.promo-schedule-table .schedule-date {
+  font-weight: 700;
+  color: var(--d1);
+  white-space: nowrap;
+}
+
+.promo-schedule-table .schedule-time {
+  font-size: 0.82rem;
+  color: var(--d3);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .promo-popup-content .btn {
   width: 100%;
   justify-content: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .promo-popup-content {
-    padding: 2.5rem 1.75rem 1.75rem;
+    padding: 2.25rem 1.25rem 1.5rem;
+    max-width: 95%;
   }
 
   .promo-popup-content h2 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+  }
+
+  .promo-schedule-table th {
+    display: none;
+  }
+
+  .promo-schedule-table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--gl);
+  }
+
+  .promo-schedule-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .promo-schedule-table td {
+    padding: 0.15rem 0;
+    border: none;
+  }
+
+  .promo-schedule-table .schedule-date,
+  .promo-schedule-table .schedule-time {
+    font-size: 0.8rem;
   }
 }
 
