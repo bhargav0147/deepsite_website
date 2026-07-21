@@ -1358,6 +1358,27 @@ h3 {
   color: var(--green)
 }
 
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ba-grid .ba-slider-wrap {
+  max-width: 100%;
+  margin: 0;
+}
+
+@media(max-width:900px) {
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 700px;
+  }
+}
+
 .ba-slider-wrap {
   max-width: 900px;
   margin: 0 auto

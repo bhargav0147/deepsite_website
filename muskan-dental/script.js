@@ -58,11 +58,11 @@ const PACKAGES = [
     { name: "Single Implant", sub: "One tooth replacement", price: "799", from: "Starting from", popular: true, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning"] },
     { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "6,999", from: "Starting from", popular: false, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
     { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "8,999", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
-    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "7,499", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery","3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
-    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "9,499", from: "Starting from", popular: true, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery","3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "7,499", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "9,499", from: "Starting from", popular: true, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
     { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
     { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: true, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
-    
+
 ];
 
 const GALLERY_ITEMS = [
@@ -85,6 +85,51 @@ const TEAM = [
     { name: "Dr. Tarandeep", role: "Implant Prosthodontist", creds: "Hollywood Smile Expert . 12+ yes", grad: "g-grad-2", image: "./assets/Dr. Tarandeep Team.jpeg" },
     // { name: "Dr. Michael Roberts", role: "Oral & Maxillofacial Surgeon", creds: "UCLA · Board-certified · 18+ yrs", grad: "g-grad-4" },
     // { name: "Dr. Sofia Romano", role: "Prosthodontist", creds: "Univ. of Bologna · 12+ yrs", grad: "g-grad-5" }
+];
+
+const BEFORE_AFTER_ITEMS = [
+    {
+        id: 1,
+        title: "All-on-4 Full Arch Restoration",
+        patient: "48-year-old patient from New York",
+        beforeImg: "assets/b&a/teeth-1-before.png",
+        afterImg: "assets/b&a/teeth-1-after.png"
+    },
+    {
+        id: 2,
+        title: "Porcelain Veneers Smile Makeover",
+        patient: "35-year-old patient from California",
+        beforeImg: "assets/b&a/teeth-2-before.png",
+        afterImg: "assets/b&a/teeth-2-after.png"
+    },
+    {
+        id: 3,
+        title: "All-on-6 Full Arch Rehabilitation",
+        patient: "52-year-old patient from London, UK",
+        beforeImg: "assets/b&a/3-before.png",
+        afterImg: "assets/b&a/3-after.png"
+    },
+    {
+        id: 4,
+        title: "Hollywood Smile & Ceramic Veneers",
+        patient: "29-year-old patient from Manchester, UK",
+        beforeImg: "assets/b&a/4-before.png",
+        afterImg: "assets/b&a/4-after.png"
+    },
+    {
+        id: 5,
+        title: "Zirconia Implant Transformation",
+        patient: "42-year-old patient from Toronto, Canada",
+        beforeImg: "assets/b&a/5-before.png",
+        afterImg: "assets/b&a/5-after.png"
+    },
+    {
+        id: 6,
+        title: "Full Mouth Aesthetic Rehabilitation",
+        patient: "61-year-old patient from Sydney, Australia",
+        beforeImg: "assets/b&a/6-before.png",
+        afterImg: "assets/b&a/6-after.png"
+    }
 ];
 
 /* ===== RENDER: TREATMENTS ===== */
@@ -308,17 +353,45 @@ function renderBlog() {
     }
 }
 
+/* ===== RENDER: BEFORE & AFTER ===== */
+function renderBeforeAfter() {
+    const container = document.getElementById('baContainer');
+    if (!container) return;
+
+    container.innerHTML = BEFORE_AFTER_ITEMS.map((item) => `
+        <div class="ba-slider-wrap" data-reveal-scale>
+            <div class="ba-slider" id="baSlider${item.id}">
+                <div class="ba-img ba-before" style="background:url('${item.beforeImg}') center center / cover no-repeat;">
+                    <div class="ba-label ba-label-before">Before</div>
+                </div>
+                <div class="ba-img ba-after" id="baAfter${item.id}" style="background:url('${item.afterImg}') center center / cover no-repeat;">
+                    <div class="ba-content"></div>
+                    <div class="ba-label ba-label-after">After</div>
+                </div>
+                <div class="ba-handle" id="baHandle${item.id}">
+                    <div class="ba-handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+                </div>
+            </div>
+            <p class="center mt-2" style="color:rgba(255,255,255,.7);font-size:.88rem;font-weight:500;">${item.title} <span style="opacity:.6;font-weight:300;">· ${item.patient}</span></p>
+        </div>
+    `).join('');
+
+    BEFORE_AFTER_ITEMS.forEach(item => {
+        initBASlider('baSlider' + item.id, 'baAfter' + item.id, 'baHandle' + item.id);
+    });
+}
+
 /* ===== BEFORE/AFTER SLIDER ===== */
 function initBASlider(sliderId, afterId, handleId) {
     const slider = document.getElementById(sliderId);
     const after = document.getElementById(afterId);
     const handle = document.getElementById(handleId);
-    if (!slider || !after) return;
+    if (!slider || !after || !handle) return;
 
     // Extract background image from after element (inline or computed)
     const bg = after.style.backgroundImage || window.getComputedStyle(after).backgroundImage;
-    let bgDiv = null;
-    if (bg && bg !== 'none') {
+    let bgDiv = after.querySelector('.ba-after-bg');
+    if (!bgDiv && bg && bg !== 'none') {
         bgDiv = document.createElement('div');
         bgDiv.className = 'ba-after-bg';
         bgDiv.style.backgroundImage = bg;
@@ -338,9 +411,14 @@ function initBASlider(sliderId, afterId, handleId) {
     }
 
     function updateDimensions() {
-        if (bgDiv) {
+        if (bgDiv && slider) {
             bgDiv.style.width = slider.offsetWidth + 'px';
         }
+    }
+
+    if (window.ResizeObserver) {
+        const ro = new ResizeObserver(() => updateDimensions());
+        ro.observe(slider);
     }
 
     let dragging = false;
@@ -864,12 +942,10 @@ function initCookieConsent() {
 /* ===== INIT ===== */
 function init() {
     setTimeout(() => { const p = document.getElementById('preloader'); if (p) p.classList.add('done'); }, 1000);
-    renderTreatments(); renderTestimonials(); renderFAQs(); renderPackages(); renderGallery(); renderTeam(); renderBlog();
+    renderTreatments(); renderTestimonials(); renderFAQs(); renderPackages(); renderGallery(); renderTeam(); renderBlog(); renderBeforeAfter();
     initNavScroll(); initModal(); initForms();
     initGalleryFilter(); initFAQFilter(); initBlogFilter();
     initBASlider('baSliderHome', 'baAfterHome', 'baHandleHome');
-    initBASlider('baSlider1', 'baAfter1', 'baHandle1');
-    initBASlider('baSlider2', 'baAfter2', 'baHandle2');
     observeReveals(); initPageTransition();
     initFirstVisitPopup();
     initVideoCards();
