@@ -1135,7 +1135,7 @@ h3 {
   font-family: var(--fd);
   font-size: 3rem;
   font-weight: 300;
-  color: var(--bt);
+  color: var(--green);
   line-height: 1
 }
 
@@ -2040,7 +2040,7 @@ h3 {
 }
 
 .team-photo {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   background: linear-gradient(135deg, var(--d3), var(--d1));
   display: flex;
   align-items: center;

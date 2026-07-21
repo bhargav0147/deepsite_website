@@ -14,11 +14,11 @@ const TREATMENTS = [
 ];
 
 const TESTIMONIALS = [
-    { name: "John Davidson", loc: "New York, USA", treatment: "All-on-4", rating: 5, text: "From the moment I landed in Dubai, everything was taken care of. The All-on-4 procedure changed my life. I can eat, smile, and laugh without hesitation. The savings compared to US prices were incredible, and the quality was world-class." },
-    { name: "Sarah Mitchell", loc: "Los Angeles, USA", treatment: "Veneers", rating: 5, text: "I was nervous about traveling abroad for dental work, but Musakn Dental exceeded every expectation. The facility is more luxurious than any dentist I've been to in Beverly Hills. My new veneers look absolutely natural." },
-    { name: "Robert Klein", loc: "Houston, USA", treatment: "Full Mouth Rehabilitation", rating: 5, text: "After years of dental issues, Musakn gave me my smile back. The team's expertise and the concierge service made the entire experience stress-free. I saved over 60% compared to quotes in Texas." },
-    { name: "Emily Roberts", loc: "Miami, USA", treatment: "Dental Implants", rating: 5, text: "The technology at Musakn is years ahead of what I've seen in the US. The 3D imaging and planning gave me complete confidence. My implants feel like natural teeth. Worth every penny and the flight." },
-    { name: "David Lambert", loc: "London, UK", treatment: "Smile Makeover", rating: 5, text: "As a private patient in London, I have high standards. Musakn Dental matched and exceeded them. The attention to detail, the luxury environment, and the clinical excellence are unmatched." },
+    { name: "John Davidson", loc: "New York, USA", treatment: "All-on-4", rating: 5, text: "From the moment I landed in Dubai, everything was taken care of. The All-on-4 procedure changed my life. I can eat, smile, and laugh without hesitation. The savings compared to UK prices were incredible, and the quality was world-class." },
+    { name: "Sarah Mitchell", loc: "Los Angeles, USA", treatment: "Veneers", rating: 5, text: "I was nervous about traveling abroad for dental work, but Dr. Bhatti's Implant Center exceeded every expectation. The facility is more luxurious than any dentist I've been to in Beverly Hills. My new veneers look absolutely natural." },
+    { name: "Robert Klein", loc: "Houston, USA", treatment: "Full Mouth Rehabilitation", rating: 5, text: "After years of dental issues, Dr. Bhatti's Implant Center gave me my smile back. The team's expertise and the concierge service made the entire experience stress-free. I saved over 60% compared to quotes in Texas." },
+    { name: "Emily Roberts", loc: "Miami, USA", treatment: "Dental Implants", rating: 5, text: "The technology at Dr. Bhatti's Implant Center is years ahead of what I've seen in the UK. The 3D imaging and planning gave me complete confidence. My implants feel like natural teeth. Worth every penny and the flight." },
+    { name: "David Lambert", loc: "London, UK", treatment: "Smile Makeover", rating: 5, text: "As a private patient in London, I have high standards. Dr. Bhatti's Implant Center matched and exceeded them. The attention to detail, the luxury environment, and the clinical excellence are unmatched." },
     { name: "Aisha Khan", loc: "Toronto, Canada", treatment: "All-on-6", rating: 5, text: "The All-on-6 procedure was seamless. The team explained everything in detail, and the recovery was much easier than I expected. Dubai itself was a beautiful place to recover. Five stars isn't enough." }
 ];
 
@@ -29,35 +29,40 @@ const FAQS = [
     { cat: "Treatment", q: "How do I know which treatment I need?", a: "Book a free virtual consultation. Our specialists will review your dental history, X-rays, and goals to recommend the best treatment plan with transparent pricing." },
     { cat: "Recovery", q: "How long is the recovery after implant surgery?", a: "Most patients return to normal activities within 2-3 days. Mild swelling and discomfort for 3-5 days is normal. Complete osseointegration takes 3-6 months, during which you'll have temporary teeth." },
     { cat: "Recovery", q: "Will I experience pain after the procedure?", a: "Modern techniques and sedation options make the procedure virtually painless. Post-operative discomfort is typically mild and managed with over-the-counter pain medication." },
-    { cat: "Recovery", q: "When can I eat normally after treatment?", a: "For implant procedures, a soft diet is recommended for 1-2 weeks. After All-on-4/6, soft foods for 6-8 weeks. Your dentist will provide a detailed dietary guide." },
-    { cat: "Pricing", q: "How much can I save by getting treatment in Dubai?", a: "UK Patients typically save 40-70% compared to US prices, even after factoring in flights and accommodation. All-on-4 that costs $25,000-$30,000 in the US starts at $9,499 at Musakn." },
-    { cat: "Pricing", q: "What is included in the treatment packages?", a: "Our packages include consultation, 3D imaging, surgery, anesthesia, implants, prosthesis, airport transfers, accommodation, daily clinic transfers, and post-treatment care." },
-    { cat: "Pricing", q: "Do you offer payment plans?", a: "Yes, we offer flexible payment options and accept major credit cards. Our concierge team will discuss all payment options during your consultation." },
-    { cat: "Travel", q: "How long do I need to stay in Dubai?", a: "Most treatments require 5-10 days. All-on-4 typically requires 7 days, single implants 3-5 days, full mouth rehabilitation 10-14 days." },
+    { cat: "Recovery", q: "When can I eat normally after treatment?", a: "For implant procedures, a soft diet is recommended for 2-3 days. After All-on-4/6, soft foods for 2-3 weeks. Your dentist will provide a detailed dietary guide." },
+    { cat: "Pricing", q: "How much can I save by getting treatment in Dubai?", a: "UK Patients typically save 40-70% compared to UK prices, even after factoring in flights and accommodation. All-on-6 for both jaws that costs $24,000-$44,000 in the UK starts at $7,500 at Dr. Bhatti's Implant Center." },
+    { cat: "Pricing", q: "What is included in the treatment packages?", a: "Our packages include consultation, 3D imaging, surgery, anesthesia, implants, prosthesis, airport transfers, accommodation, and post-treatment care." },
+    { cat: "Pricing", q: "Do you accept card payment?", a: "Yes, we offer flexible payment options and accept major credit cards. Our concierge team will discuss all payment options during your consultation." },
+    { cat: "Travel", q: "How long do I need to stay in Dubai?", a: "Most treatments require 5-10 days. All-on-4/6 typically requires 7 days, single implants 3-5 days." },
     { cat: "Travel", q: "Do you help with travel arrangements?", a: "Absolutely. Our VIP concierge team handles flights, accommodation, airport transfers, and leisure activities at special rates." },
-    { cat: "Travel", q: "What about follow-up care when I return home?", a: "We provide virtual follow-up consultations and coordinate with your local US dentist. All packages include post-treatment support via WhatsApp." },
-    { cat: "Safety", q: "Is it safe to get dental treatment in Dubai?", a: "Dubai has world-class healthcare standards with strict regulatory oversight. Our clinic is JCI-accredited and uses FDA-approved materials." },
-    { cat: "Safety", q: "What safety protocols do you follow?", a: "We follow international sterilization protocols, use disposable materials where possible, and maintain JCI accreditation standards." },
-    { cat: "Warranty", q: "Do you offer a warranty on implants?", a: "Yes, we offer a lifetime warranty on all dental implants and prosthetics, covering manufacturing defects and integration failures." },
-    { cat: "Warranty", q: "What happens if there's a complication after I return home?", a: "We provide virtual follow-up support and can coordinate with local dentists. In rare cases requiring revision, we'll work with you to arrange necessary treatment." }
+    { cat: "Travel", q: "What about follow-up care when I return home?", a: "We provide virtual follow-up consultations and coordinate with your local UK dentist. All packages include post-treatment support via WhatsApp." },
+    { cat: "Safety", q: "Is it safe to get dental treatment in Dubai?", a: "Dubai has world-class healthcare standards with strict regulatory oversight. Our clinic is DHA-accredited and uses FDA-approved materials." },
+    { cat: "Safety", q: "What safety protocols do you follow?", a: "We follow international sterilization protocols, use disposable materials where possible, and maintain DHA accreditation standards." },
+    { cat: "Warranty", q: "Do you offer a warranty on implants?", a: "No, we offer a lifetime support on all dental implants and prosthetics, covering manufacturing defects and integration failures." },
+    { cat: "Warranty", q: "What happens if there's a complication after I return home?", a: "We provide virtual follow-up support and can coordinate with our collegue dentists in UK. In rare cases requiring revision, we'll work with you to arrange necessary treatment." }
 ];
 
 const BLOG_POSTS = [
     { title: "The Complete Guide to Dental Implants in Dubai", cat: "Dental Implants", excerpt: "Everything you need to know about getting dental implants in Dubai — from consultation to recovery, costs, and why it's becoming the top choice for UK Patients.", date: "Jan 20, 2025", read: "8 min", icon: "fa-solid fa-tooth", featured: true },
-    { title: "Why Americans Are Choosing Dubai for Dental Tourism", cat: "Dental Tourism", excerpt: "With US dental costs soaring, discover why thousands of Americans are traveling to Dubai for world-class dental care at 40-70% savings.", date: "Jan 15, 2025", read: "6 min", icon: "fa-solid fa-plane-departure" },
+    { title: "Why Europians Are Choosing Dubai for Dental Tourism", cat: "Dental Tourism", excerpt: "With UK dental costs soaring, discover why thousands of Europians are traveling to Dubai for world-class dental care at 40-70% savings.", date: "Jan 15, 2025", read: "6 min", icon: "fa-solid fa-plane-departure" },
     { title: "All-on-4 vs All-on-6: Making the Right Choice", cat: "Dental Implants", excerpt: "A detailed comparison of All-on-4 and All-on-6 treatments. Understand the differences, benefits, and which option is right for your specific case.", date: "Jan 10, 2025", read: "5 min", icon: "fa-solid fa-teeth" },
     { title: "The Art of the Smile Makeover", cat: "Cosmetic Dentistry", excerpt: "How digital smile design technology is revolutionizing cosmetic dentistry. See your new smile before treatment even begins.", date: "Jan 5, 2025", read: "7 min", icon: "fa-solid fa-wand-magic-sparkles" },
     { title: "5 Essential Tips for Implant Aftercare", cat: "Oral Care", excerpt: "Proper aftercare is crucial for implant longevity. Follow these expert tips to ensure your implants last a lifetime.", date: "Dec 28, 2024", read: "4 min", icon: "fa-solid fa-heart-pulse" },
     { title: "Dubai: The World's New Dental Tourism Capital", cat: "Dental Tourism", excerpt: "How Dubai has emerged as the premier destination for dental tourism, combining world-class healthcare with five-star hospitality.", date: "Dec 20, 2024", read: "6 min", icon: "fa-solid fa-city" },
-    { title: "The Latest Technology in Modern Dentistry", cat: "Cosmetic Dentistry", excerpt: "From 3D printing to AI-guided surgery, explore the cutting-edge technologies transforming dental care at Musakn.", date: "Dec 15, 2024", read: "5 min", icon: "fa-solid fa-microchip" }
+    { title: "The Latest Technology in Modern Dentistry", cat: "Cosmetic Dentistry", excerpt: "From 3D printing to AI-guided surgery, explore the cutting-edge technologies transforming dental care at Dr. Bhatti's Implant Center.", date: "Dec 15, 2024", read: "5 min", icon: "fa-solid fa-microchip" }
 ];
 
 const PACKAGES = [
     { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide"] },
-    { name: "Single Implant", sub: "One tooth replacement", price: "1,899", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning", "1-year warranty"] },
-    { name: "All-on-4 Full Arch", sub: "Complete arch restoration", price: "9,499", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
-    { name: "All-on-6 Full Arch", sub: "Enhanced stability", price: "12,999", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
-    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] }
+    { name: "Single Implant", sub: "One tooth replacement", price: "699", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning"] },
+    { name: "Single Implant", sub: "One tooth replacement", price: "799", from: "Starting from", popular: true, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning"] },
+    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "6,999", from: "Starting from", popular: false, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
+    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "8,999", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "7,499", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery","3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "9,499", from: "Starting from", popular: true, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery","3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
+    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
+    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: true, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
+    
 ];
 
 const GALLERY_ITEMS = [
@@ -76,8 +81,8 @@ const GALLERY_ITEMS = [
 ];
 
 const TEAM = [
-    { name: "Dr. Kayyum Bhatti", role: "Senior Implantologist", creds: "All on 4/6 Expert . 15+ yrs", grad: "g-grad-1", image: "./assets/Dr. Kayyum Bhatti image.jpeg" },
-    { name: "Dr. Tarandeep", role: "Implant Prosthodontist", creds: "Hollywood Smile Expert . 12+ yes", grad: "g-grad-2", image: "./assets/Dr. Kayyum Bhatti image.jpeg" },
+    { name: "Dr. Kayyum Bhatti", role: "Senior Implantologist", creds: "All on 4/6 Expert . 15+ yrs", grad: "g-grad-1", image: "./assets/Dr. Kayyum Bhatti Team.jpeg" },
+    { name: "Dr. Tarandeep", role: "Implant Prosthodontist", creds: "Hollywood Smile Expert . 12+ yes", grad: "g-grad-2", image: "./assets/Dr. Tarandeep Team.jpeg" },
     // { name: "Dr. Michael Roberts", role: "Oral & Maxillofacial Surgeon", creds: "UCLA · Board-certified · 18+ yrs", grad: "g-grad-4" },
     // { name: "Dr. Sofia Romano", role: "Prosthodontist", creds: "Univ. of Bologna · 12+ yrs", grad: "g-grad-5" }
 ];
@@ -235,7 +240,7 @@ function renderPackages() {
 <div class="pkg-card${p.popular ? ' popular' : ''}">
     ${p.popular ? '<span class="pkg-badge">Most Popular</span>' : ''}
     <h3>${p.name}</h3><div class="pkg-sub">${p.sub}</div>
-    <div class="pkg-price">${p.price === 'Custom' ? '<span style="font-size:2rem">Custom</span>' : '$' + p.price}</div>
+    <div class="pkg-price">${p.price === 'Custom' ? '<span style="font-size:2rem">Custom</span>' : '£' + p.price}</div>
     <div class="pkg-from">${p.from}</div>
     <ul class="pkg-features">${p.features.map(f => `<li><i class="fa-solid fa-check"></i> ${f}</li>`).join('')}</ul>
     <button class="btn ${p.popular ? 'btn-primary' : 'btn-ghost'}" data-modal="book">Book Consultation</button>
@@ -425,7 +430,7 @@ function initForms() {
         e.preventDefault(); showToast('Message sent! Our team will respond within 24 hours.'); contactForm.reset();
     });
     if (newsletterForm) newsletterForm.addEventListener('submit', e => {
-        e.preventDefault(); showToast('Subscribed! Welcome to the Musakn community.'); newsletterForm.reset();
+        e.preventDefault(); showToast('Subscribed! Welcome to the Dr. Bhatti\'s Implant Center community.'); newsletterForm.reset();
     });
 }
 
