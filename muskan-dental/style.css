@@ -222,7 +222,8 @@ h3 {
   color: #fff;
   letter-spacing: .1em;
   opacity: 0;
-  animation: fadeUp .8s var(--ease) .2s forwards
+  animation: fadeUp .8s var(--ease) .2s forwards;
+  text-align: center;
 }
 
 .pre-bar {
