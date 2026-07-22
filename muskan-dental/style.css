@@ -3596,8 +3596,9 @@ h3 {
 
 .hero-visual {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4/5;
+  width: 120%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
   border-radius: 24px;
   overflow: visible;
   /* allows floating cards to pop out slightly */
@@ -3859,6 +3860,18 @@ h3 {
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES FOR HERO AND USP PACKAGES ===== */
+
+/* =========================
+   Laptop (1025px - 1439px)
+========================= */
+@media (max-width: 1440px) {
+  .hero-visual {
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
 @media (max-width: 1024px) {
   .hero-layout {
     grid-template-columns: 1fr;
@@ -3868,9 +3881,10 @@ h3 {
   }
 
   .hero-visual {
-    max-width: 480px;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 16/9;
   }
 
   .fc-1 {
@@ -3924,8 +3938,47 @@ h3 {
   }
 }
 
+/* =========================
+   Tablet (768px)
+========================= */
+@media (max-width: 768px) {
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-video-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fc-1 {
+    left: 2%;
+  }
+
+  .fc-2 {
+    right: 2%;
+  }
+
+  .fc-3 {
+    left: 5%;
+    bottom: 5%;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-visual {
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: auto;
     height: auto;
     flex-direction: column;
@@ -4706,16 +4759,16 @@ h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.cookie-switch input:checked + .cookie-slider {
+.cookie-switch input:checked+.cookie-slider {
   background-color: var(--green);
 }
 
-.cookie-switch input:disabled + .cookie-slider {
+.cookie-switch input:disabled+.cookie-slider {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.cookie-switch input:checked + .cookie-slider::before {
+.cookie-switch input:checked+.cookie-slider::before {
   transform: translateX(20px);
 }
 

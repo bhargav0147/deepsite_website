@@ -92,15 +92,15 @@ const BEFORE_AFTER_ITEMS = [
         id: 1,
         title: "All-on-4 Full Arch Restoration",
         patient: "48-year-old patient from New York",
-        beforeImg: "assets/b&a/teeth-1-before.png",
-        afterImg: "assets/b&a/teeth-1-after.png"
+        beforeImg: "assets/b&a/1-before.png",
+        afterImg: "assets/b&a/1-after.png"
     },
     {
         id: 2,
         title: "Porcelain Veneers Smile Makeover",
         patient: "35-year-old patient from California",
-        beforeImg: "assets/b&a/teeth-2-before.png",
-        afterImg: "assets/b&a/teeth-2-after.png"
+        beforeImg: "assets/b&a/2-before.png",
+        afterImg: "assets/b&a/2-after.png"
     },
     {
         id: 3,
@@ -131,6 +131,7 @@ const BEFORE_AFTER_ITEMS = [
         afterImg: "assets/b&a/6-after.png"
     }
 ];
+
 
 /* ===== RENDER: TREATMENTS ===== */
 function renderTreatments() {
@@ -354,30 +355,47 @@ function renderBlog() {
 }
 
 /* ===== RENDER: BEFORE & AFTER ===== */
-function renderBeforeAfter() {
-    const container = document.getElementById('baContainer');
+function renderBeforeAfter(containerId = "baContainer", limit = BEFORE_AFTER_ITEMS.length) {
+    const container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = BEFORE_AFTER_ITEMS.map((item) => `
+    const items = BEFORE_AFTER_ITEMS.slice(0, limit);
+
+    container.innerHTML = items.map((item) => `
         <div class="ba-slider-wrap" data-reveal-scale>
-            <div class="ba-slider" id="baSlider${item.id}">
-                <div class="ba-img ba-before" style="background:url('${item.beforeImg}') center center / cover no-repeat;">
+            <div class="ba-slider" id="baSlider${containerId}${item.id}">
+                <div class="ba-img ba-before"
+                    style="background:url('${item.beforeImg}') center/cover no-repeat;">
                     <div class="ba-label ba-label-before">Before</div>
                 </div>
-                <div class="ba-img ba-after" id="baAfter${item.id}" style="background:url('${item.afterImg}') center center / cover no-repeat;">
+
+                <div class="ba-img ba-after"
+                    id="baAfter${containerId}${item.id}"
+                    style="background:url('${item.afterImg}') center/cover no-repeat;">
                     <div class="ba-content"></div>
                     <div class="ba-label ba-label-after">After</div>
                 </div>
-                <div class="ba-handle" id="baHandle${item.id}">
-                    <div class="ba-handle-circle"><i class="fa-solid fa-arrows-left-right"></i></div>
+
+                <div class="ba-handle" id="baHandle${containerId}${item.id}">
+                    <div class="ba-handle-circle">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                    </div>
                 </div>
             </div>
-            <p class="center mt-2" style="color:rgba(255,255,255,.7);font-size:.88rem;font-weight:500;">${item.title} <span style="opacity:.6;font-weight:300;">· ${item.patient}</span></p>
-        </div>
-    `).join('');
 
-    BEFORE_AFTER_ITEMS.forEach(item => {
-        initBASlider('baSlider' + item.id, 'baAfter' + item.id, 'baHandle' + item.id);
+            <p class="center mt-2">
+                ${item.title}
+                <span>· ${item.patient}</span>
+            </p>
+        </div>
+    `).join("");
+
+    items.forEach(item => {
+        initBASlider(
+            `baSlider${containerId}${item.id}`,
+            `baAfter${containerId}${item.id}`,
+            `baHandle${containerId}${item.id}`
+        );
     });
 }
 
@@ -702,15 +720,25 @@ function initFirstVisitPopup() {
 
 /* ===== VIDEO PLAY SYSTEM ===== */
 function initVideoCards() {
+
+    const videos = [
+        "./assets/video/Review Video 1.mp4",
+        "./assets/video/Review Video 2.mp4",
+        "./assets/video/Review Video 3.mp4"
+    ];
+
     document.querySelectorAll('.video-card').forEach((card, idx) => {
-        card.addEventListener('click', function handleCardClick() {
-            // If video is already playing, do nothing
+
+        card.addEventListener('click', function () {
+
             if (card.querySelector('video')) return;
 
             const video = document.createElement('video');
-            video.src = 'assets/video/hero-dental.mp4';
+            video.src = videos[idx];
             video.controls = true;
             video.autoplay = true;
+            video.playsInline = true;
+
             video.style.position = 'absolute';
             video.style.inset = '0';
             video.style.width = '100%';
@@ -719,34 +747,17 @@ function initVideoCards() {
             video.style.zIndex = '10';
             video.style.borderRadius = '20px';
 
-            // Stagger start times to make segment playbacks look unique
-            const startTimes = [0, 5, 10];
-            const startTime = startTimes[idx % startTimes.length];
-
-            video.addEventListener('loadedmetadata', () => {
-                try {
-                    if (startTime < video.duration) {
-                        video.currentTime = startTime;
-                    }
-                } catch (err) {
-                    console.warn("Could not seek video segment:", err);
-                }
-            });
-
             card.appendChild(video);
-            video.focus();
 
-            // Prevent clicking inside video controls or screen from resetting/re-triggering the card click
-            video.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+            video.addEventListener('click', e => e.stopPropagation());
 
-            // Reset state when video ends
             video.addEventListener('ended', () => {
                 video.remove();
             });
         });
+
     });
+
 }
 
 /* ===== COOKIE CONSENT SYSTEM ===== */
@@ -942,7 +953,7 @@ function initCookieConsent() {
 /* ===== INIT ===== */
 function init() {
     setTimeout(() => { const p = document.getElementById('preloader'); if (p) p.classList.add('done'); }, 1000);
-    renderTreatments(); renderTestimonials(); renderFAQs(); renderPackages(); renderGallery(); renderTeam(); renderBlog(); renderBeforeAfter();
+    renderTreatments(); renderTestimonials(); renderFAQs(); renderPackages(); renderGallery(); renderTeam(); renderBlog(); renderBeforeAfter(); renderBeforeAfter("homeBeforeAfter", 2);
     initNavScroll(); initModal(); initForms();
     initGalleryFilter(); initFAQFilter(); initBlogFilter();
     initBASlider('baSliderHome', 'baAfterHome', 'baHandleHome');
