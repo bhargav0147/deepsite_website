@@ -2754,10 +2754,10 @@ h3 {
 
 /* ===== VIDEO TESTI ===== */
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  justify-items: center;
+  justify-content: center;
 }
 
 .video-card {
@@ -2771,6 +2771,9 @@ h3 {
   position: relative;
   cursor: pointer;
   background: linear-gradient(135deg, var(--d3), var(--d1));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .video-card::before {
@@ -2827,7 +2830,8 @@ h3 {
 
 @media(max-width:768px) {
   .video-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     max-width: 320px;
     margin: 0 auto;
     gap: 2rem

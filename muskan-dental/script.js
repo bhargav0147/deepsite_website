@@ -14,12 +14,12 @@ const TREATMENTS = [
 ];
 
 const TESTIMONIALS = [
-    { name: "John Davidson", loc: "New York, USA", treatment: "All-on-4", rating: 5, text: "From the moment I landed in Dubai, everything was taken care of. The All-on-4 procedure changed my life. I can eat, smile, and laugh without hesitation. The savings compared to UK prices were incredible, and the quality was world-class." },
-    { name: "Sarah Mitchell", loc: "Los Angeles, USA", treatment: "Veneers", rating: 5, text: "I was nervous about traveling abroad for dental work, but Dr. Bhatti's Implant Center exceeded every expectation. The facility is more luxurious than any dentist I've been to in Beverly Hills. My new veneers look absolutely natural." },
-    { name: "Robert Klein", loc: "Houston, USA", treatment: "Full Mouth Rehabilitation", rating: 5, text: "After years of dental issues, Dr. Bhatti's Implant Center gave me my smile back. The team's expertise and the concierge service made the entire experience stress-free. I saved over 60% compared to quotes in Texas." },
-    { name: "Emily Roberts", loc: "Miami, USA", treatment: "Dental Implants", rating: 5, text: "The technology at Dr. Bhatti's Implant Center is years ahead of what I've seen in the UK. The 3D imaging and planning gave me complete confidence. My implants feel like natural teeth. Worth every penny and the flight." },
-    { name: "David Lambert", loc: "London, UK", treatment: "Smile Makeover", rating: 5, text: "As a private patient in London, I have high standards. Dr. Bhatti's Implant Center matched and exceeded them. The attention to detail, the luxury environment, and the clinical excellence are unmatched." },
-    { name: "Aisha Khan", loc: "Toronto, Canada", treatment: "All-on-6", rating: 5, text: "The All-on-6 procedure was seamless. The team explained everything in detail, and the recovery was much easier than I expected. Dubai itself was a beautiful place to recover. Five stars isn't enough." }
+    { name: "Mohammad Chunara", loc: "UK", treatment: "All-on-4", rating: 5, text: "I come from the uk for treatment with my mother Very professional and great service. No worries at all. The staff are very nice and welcoming also Dr kayyum’s work is very good the teeth look natural. The receptionist Afzal is also very welcoming and reassuring. Highly recommended." },
+    { name: "Saeed Ahmed Nagdee", loc: "UK", treatment: "All-on-6", rating: 5, text: "Absolutely amazing work from start to finish ..my teeth were in a right state 😬 and I was quoted high price in the UK so decided to go india was recommended dr bhatti by a few friends of mine ..once I'd met kayyum I realised he was the right person to sort my teeth out ..amazing guy and his staff all were friendly and super understanding as I have anxiety with injections but they really put at ease ..if anyone wants there teeth sorted out my advice would be go to Dr bhatti he is the best" },
+    { name: "Fahima Degia", loc: "USA", treatment: "Full Mouth Rehabilitation", rating: 5, text: "My parents have been coming here from America to get there teeth checked and done for the last five years. Dr.Bhatti is an amazing doctor with great service! My parents are super happy with his service, I highly recommend 10/10!" },
+    { name: "Ismail Makda", loc: "", treatment: "Dental Implants", rating: 5, text: "A family friendly place excellent care & service from staff and doctor. Everyone is kind caring and smiling and best The place is always clean and neat." },
+    { name: "Usman Variava", loc: "Canada", treatment: "Teeth Broken", rating: 5, text: "I'm from Canada and got a tooth cap because I broke my tooth in a Bike accident and everything went perfect! Thank you" },
+    { name: "Jamila Kola", loc: "", treatment: "All-on-6", rating: 5, text: "Good experience at the dentist. I have visited this dentist for 10 years +. Good treatment at this surgery and I am happy with my experience and dental implants. Thank you" }
 ];
 
 const FAQS = [
@@ -53,15 +53,15 @@ const BLOG_POSTS = [
 ];
 
 const PACKAGES = [
-    { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide"] },
-    { name: "Single Implant", sub: "One tooth replacement", price: "699", from: "Starting from", popular: false, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning"] },
-    { name: "Single Implant", sub: "One tooth replacement", price: "799", from: "Starting from", popular: true, features: ["Titanium implant fixture", "Custom abutment", "Premium porcelain crown", "Consultation & planning"] },
-    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "6,999", from: "Starting from", popular: false, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
-    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "8,999", from: "Starting from", popular: true, features: ["4 titanium implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night luxury accommodation"] },
-    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "7,499", from: "Starting from", popular: false, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
-    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "9,499", from: "Starting from", popular: true, features: ["6 titanium implants per arch", "Premium zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night luxury accommodation", "VIP concierge service"] },
-    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
-    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: true, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager"] },
+    { name: "Umrah + Dubai + Implant", sub: "Spiritual Journey & Smile Restoration", price: "Custom", from: "Personalized VIP Package", popular: true, features: ["Umrah Visa & Travel Arrangements", "Flights between Dubai & Saudi Arabia", "Luxury hotels in Mecca, Medina & Dubai", "Premium titanium implants in Dubai", "VIP airport transfers & local guide", "Free Breakfast"] },
+    { name: "Single Implant", sub: "One tooth replacement", price: "699", from: "Starting from", popular: false, features: ["Korean implant fixture", "Custom abutment", "Premium Zirconia crown", "Consultation & planning", "3-night 3-star accommodation", "Airport transfers included", "Free Breakfast"] },
+    { name: "Single Implant", sub: "One tooth replacement", price: "799", from: "Starting from", popular: true, features: ["Straumann Neodent implant fixture", "Custom abutment", "Premium Zirconia crown", "Consultation & planning", "5-night 3-star accommodation", "Airport transfers included", "Free Breakfast"] },
+    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "6,999", from: "Starting from", popular: false, features: ["4 Korean implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night 3-star accommodation", "Free Breakfast"] },
+    { name: "All-on-4 Both Jaws", sub: "Complete arch restoration", price: "8,999", from: "Starting from", popular: true, features: ["4 Straumann Neodent implants per arch", "Immediate fixed prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "5-night 3-star accommodation", "Free Breakfast"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "7,499", from: "Starting from", popular: false, features: ["6 Korean implants per arch", "Premium Zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night 3-star accommodation", "VIP concierge service", "Free Breakfast"] },
+    { name: "All-on-6 Both Jaws", sub: "Enhanced stability", price: "9,499", from: "Starting from", popular: true, features: ["6 Straumann Neodent implants per arch", "Premium Zirconia prosthesis", "3D guided surgery", "3D CBCT imaging", "Airport transfers included", "7-night 3-star luxury accommodation", "VIP concierge service", "Free Breakfast"] },
+    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: false, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager", "Airport transfers included", "Free Breakfast"] },
+    { name: "Full Mouth Rehab", sub: "Complete restoration", price: "Custom", from: "Personalized quote", popular: true, features: ["Comprehensive assessment", "Multi-disciplinary treatment", "Premium materials throughout", "Extended luxury stay", "VIP concierge service", "Dedicated case manager", "Airport transfers included", "Free Breakfast"] },
 
 ];
 
@@ -92,39 +92,53 @@ const BEFORE_AFTER_ITEMS = [
         id: 1,
         title: "All-on-4 Full Arch Restoration",
         patient: "48-year-old patient from New York",
+        beforeImg: "assets/b&a/8-before.png",
+        afterImg: "assets/b&a/8-after.png"
+    },
+    {
+        id: 2,
+        title: "Porcelain Veneers Smile Makeover",
+        patient: "35-year-old patient from California",
+        beforeImg: "assets/b&a/7-before.png",
+        afterImg: "assets/b&a/7-after.png"
+    },
+    {
+        id: 3,
+        title: "All-on-4 Full Arch Restoration",
+        patient: "48-year-old patient from New York",
         beforeImg: "assets/b&a/1-before.png",
         afterImg: "assets/b&a/1-after.png"
     },
     {
-        id: 2,
+        id: 4,
         title: "Porcelain Veneers Smile Makeover",
         patient: "35-year-old patient from California",
         beforeImg: "assets/b&a/2-before.png",
         afterImg: "assets/b&a/2-after.png"
     },
     {
-        id: 3,
+        id: 5,
         title: "All-on-6 Full Arch Rehabilitation",
         patient: "52-year-old patient from London, UK",
         beforeImg: "assets/b&a/3-before.png",
         afterImg: "assets/b&a/3-after.png"
     },
     {
-        id: 4,
+        id: 6,
         title: "Hollywood Smile & Ceramic Veneers",
         patient: "29-year-old patient from Manchester, UK",
         beforeImg: "assets/b&a/4-before.png",
         afterImg: "assets/b&a/4-after.png"
     },
     {
-        id: 5,
+        id: 7,
         title: "Zirconia Implant Transformation",
         patient: "42-year-old patient from Toronto, Canada",
         beforeImg: "assets/b&a/5-before.png",
         afterImg: "assets/b&a/5-after.png"
     },
     {
-        id: 6,
+        id: 8,
         title: "Full Mouth Aesthetic Rehabilitation",
         patient: "61-year-old patient from Sydney, Australia",
         beforeImg: "assets/b&a/6-before.png",
@@ -284,7 +298,7 @@ function renderPackages() {
         } else {
             return `
 <div class="pkg-card${p.popular ? ' popular' : ''}">
-    ${p.popular ? '<span class="pkg-badge">Most Popular</span>' : ''}
+    ${p.popular ? '<span class="pkg-badge">Straumann Neodent</span>' : ''}
     <h3>${p.name}</h3><div class="pkg-sub">${p.sub}</div>
     <div class="pkg-price">${p.price === 'Custom' ? '<span style="font-size:2rem">Custom</span>' : '£' + p.price}</div>
     <div class="pkg-from">${p.from}</div>
@@ -519,11 +533,95 @@ function initForms() {
     const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
     if (bookForm) bookForm.addEventListener('submit', e => {
-        e.preventDefault(); showToast('Consultation request received! We\'ll contact you within 24 hours.');
-        bookForm.reset(); document.getElementById('bookModal').classList.remove('open'); document.body.style.overflow = '';
+        e.preventDefault();
+
+        // Retrieve values from the form inputs
+        const name = e.target.querySelector('input[placeholder="John Smith"]')?.value ||
+            document.getElementById('bf-name')?.value || '';
+        const email = e.target.querySelector('input[type="email"]')?.value ||
+            document.getElementById('bf-email')?.value || '';
+        const phone = e.target.querySelector('input[type="tel"]')?.value ||
+            document.getElementById('bf-phone')?.value || '';
+        const date = e.target.querySelector('input[type="date"]')?.value ||
+            document.getElementById('bf-date')?.value || '';
+        const city = e.target.querySelector('#bf-city')?.value ||
+            e.target.querySelector('input[placeholder="e.g. London"]')?.value || '';
+        const country = e.target.querySelector('#bf-country')?.value ||
+            e.target.querySelector('input[placeholder="e.g. United Kingdom"]')?.value || '';
+        const treatment = e.target.querySelector('select')?.value ||
+            document.getElementById('bf-treatment')?.value || '';
+        const message = e.target.querySelector('textarea')?.value ||
+            document.getElementById('bf-message')?.value || '';
+
+        // Construct detailed WhatsApp message
+        let whatsappMessage = `Hello Dr. Bhatti's Implant Center,\n\n`;
+        whatsappMessage += `I would like to request an appointment with the following details:\n\n`;
+        whatsappMessage += `*Full Name:* ${name}\n`;
+        whatsappMessage += `*Email:* ${email}\n`;
+        whatsappMessage += `*Phone:* ${phone}\n`;
+        if (date) {
+            whatsappMessage += `*Preferred Date:* ${date}\n`;
+        }
+        whatsappMessage += `*City Name:* ${city}\n`;
+        whatsappMessage += `*Country Name:* ${country}\n`;
+        whatsappMessage += `*Treatment of Interest:* ${treatment}\n`;
+        if (message) {
+            whatsappMessage += `*Message:* ${message}\n`;
+        }
+
+        // Encode message and prepare WhatsApp link
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappNumber = "447345825620";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        showToast('Redirecting to WhatsApp...');
+
+        // Open WhatsApp redirect url in a new tab
+        window.open(whatsappUrl, '_blank');
+
+        // Reset the form and close the modal
+        bookForm.reset();
+        const bookModal = document.getElementById('bookModal');
+        if (bookModal) bookModal.classList.remove('open');
+        document.body.style.overflow = '';
     });
     if (contactForm) contactForm.addEventListener('submit', e => {
-        e.preventDefault(); showToast('Message sent! Our team will respond within 24 hours.'); contactForm.reset();
+        e.preventDefault();
+
+        // Retrieve values from the contact form inputs
+        const name = document.getElementById('cf-name')?.value || '';
+        const email = document.getElementById('cf-email')?.value || '';
+        const phone = document.getElementById('cf-phone')?.value || '';
+        const city = document.getElementById('cf-city')?.value || '';
+        const country = document.getElementById('cf-country')?.value || '';
+        const treatment = document.getElementById('cf-treatment')?.value || '';
+        const message = document.getElementById('cf-message')?.value || '';
+
+        // Construct detailed WhatsApp message
+        let whatsappMessage = `Hello Dr. Bhatti's Implant Center,\n\n`;
+        whatsappMessage += `I would like to send a message with the following details:\n\n`;
+        whatsappMessage += `*Full Name:* ${name}\n`;
+        whatsappMessage += `*Email:* ${email}\n`;
+        whatsappMessage += `*Phone:* ${phone}\n`;
+        whatsappMessage += `*City Name:* ${city}\n`;
+        whatsappMessage += `*Country Name:* ${country}\n`;
+        whatsappMessage += `*Treatment of Interest:* ${treatment}\n`;
+        if (message) {
+            whatsappMessage += `*Message:* ${message}\n`;
+        }
+
+        // Encode message and prepare WhatsApp link
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappNumber = "447345825620";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        showToast('Redirecting to WhatsApp...');
+
+        // Open WhatsApp redirect url in a new tab
+        window.open(whatsappUrl, '_blank');
+
+        // Reset the form
+        contactForm.reset();
     });
     if (newsletterForm) newsletterForm.addEventListener('submit', e => {
         e.preventDefault(); showToast('Subscribed! Welcome to the Dr. Bhatti\'s Implant Center community.'); newsletterForm.reset();
@@ -640,7 +738,7 @@ function initFirstVisitPopup() {
         <div class="promo-popup-overlay"></div>
         <div class="promo-popup-content">
             <button class="promo-popup-close" aria-label="Close popup"><i class="fa-solid fa-xmark"></i></button>
-            <span class="promo-popup-badge"><i class="fa-solid fa-plane-departure" style="margin-right:6px"></i>UK Consultation Tour</span>
+            <span class="promo-popup-badge"><i class="fa-solid fa-plane-departure" style="margin-right:6px"></i>UK Tour</span>
             <h2>Face to Face Meeting in UK</h2>
             <p>Meet our senior dental implant specialists in person across major UK cities. Discuss your smile transformation, get free 3D scan evaluations, and plan your treatment before traveling to Dubai.</p>
             
@@ -660,27 +758,51 @@ function initFirstVisitPopup() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> London</div>
-                                    <div class="city-area">Mayfair Medical Suite</div>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Blackburn</div>
+                                    <!-- <div class="city-area">Mayfair Medical Suite</div> -->
                                 </td>
-                                <td><span class="schedule-date">Nov 10 - Nov 12</span></td>
-                                <td><span class="schedule-time">09:00 AM - 06:00 PM</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Manchester</div>
-                                    <div class="city-area">City Centre Hub</div>
-                                </td>
-                                <td><span class="schedule-date">Nov 14 - Nov 15</span></td>
+                                <td><span class="schedule-date">7-8-9 Aug-2026</span></td>
                                 <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Birmingham</div>
-                                    <div class="city-area">Grand Central Suite</div>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Batley</div>
+                                    <!-- <div class="city-area">City Centre Hub</div> -->
                                 </td>
-                                <td><span class="schedule-date">Nov 17 - Nov 18</span></td>
-                                <td><span class="schedule-time">09:30 AM - 05:30 PM</span></td>
+                                <td><span class="schedule-date">11-12-13 Aug-2026</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Leicester</div>
+                                    <!-- <div class="city-area">Grand Central Suite</div> -->
+                                </td>
+                                <td><span class="schedule-date">15-16-17 Aug-2026</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Walsall</div>
+                                    <!-- <div class="city-area">City Centre Hub</div> -->
+                                </td>
+                                <td><span class="schedule-date">19 Aug-2026</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> London</div>
+                                    <!-- <div class="city-area">City Centre Hub</div> -->
+                                </td>
+                                <td><span class="schedule-date">22-23 Aug-2026</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="city-name"><i class="fa-solid fa-location-dot"></i> Johannesburg</div>
+                                    <!-- <div class="city-area">Mayfair Medical Suite</div> -->
+                                </td>
+                                <td><span class="schedule-date">25-26-27 Aug-2026</span></td>
+                                <td><span class="schedule-time">10:00 AM - 05:00 PM</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -709,7 +831,11 @@ function initFirstVisitPopup() {
 
     ctaBtn.addEventListener('click', () => {
         closePopup();
-        window.location.href = 'contact.html';
+        const modal = document.getElementById('bookModal');
+        if (modal) {
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
     });
 
     // Show popup strictly after page finishes loading (adds 2.2s delay to clear preloader transition)
@@ -721,11 +847,18 @@ function initFirstVisitPopup() {
 /* ===== VIDEO PLAY SYSTEM ===== */
 function initVideoCards() {
 
-    const videos = [
-        "./assets/video/Review Video 1.mp4",
-        "./assets/video/Review Video 2.mp4",
-        "./assets/video/Review Video 3.mp4"
-    ];
+    const defaultVideos = {
+        testimonial: [
+            "./assets/video/Review Video 1.mp4",
+            "./assets/video/Review Video 2.mp4",
+            "./assets/video/Review Video 3.mp4",
+            "./assets/video/Review Video 4.mp4"
+        ],
+        "before-after": [
+            "./assets/video/Before After Video 1.mp4",
+            "./assets/video/Before After Video 2.mp4",
+        ]
+    };
 
     document.querySelectorAll('.video-card').forEach((card, idx) => {
 
@@ -733,8 +866,17 @@ function initVideoCards() {
 
             if (card.querySelector('video')) return;
 
+            // Get video list based on parent grid video type, defaulting to testimonial
+            const grid = card.closest('[data-video-type]');
+            const videoType = grid ? grid.getAttribute('data-video-type') : 'testimonial';
+            const videosList = defaultVideos[videoType] || defaultVideos.testimonial;
+
+            // Retrieve custom video path from data attribute, fallback to index-based video
+            const videoSrc = card.getAttribute('data-video') || videosList[idx % videosList.length];
+            if (!videoSrc) return;
+
             const video = document.createElement('video');
-            video.src = videos[idx];
+            video.src = videoSrc;
             video.controls = true;
             video.autoplay = true;
             video.playsInline = true;
