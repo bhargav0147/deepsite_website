@@ -90,57 +90,57 @@ const TEAM = [
 const BEFORE_AFTER_ITEMS = [
     {
         id: 1,
-        title: "All-on-4 Full Arch Restoration",
-        patient: "48-year-old patient from New York",
+        title: "All-on-6 Implant Both Jaws",
+        patient: "Bolton, UK",
         beforeImg: "assets/b&a/8-before.png",
         afterImg: "assets/b&a/8-after.png"
     },
     {
         id: 2,
-        title: "Porcelain Veneers Smile Makeover",
-        patient: "35-year-old patient from California",
+        title: "All on 6 Implants Both Jaws",
+        patient: "Leicester, UK",
         beforeImg: "assets/b&a/7-before.png",
         afterImg: "assets/b&a/7-after.png"
     },
     {
         id: 3,
-        title: "All-on-4 Full Arch Restoration",
-        patient: "48-year-old patient from New York",
+        title: "All on 6 Implants Both Jaws",
+        patient: "Bradford, UK",
         beforeImg: "assets/b&a/1-before.png",
         afterImg: "assets/b&a/1-after.png"
     },
     {
         id: 4,
-        title: "Porcelain Veneers Smile Makeover",
-        patient: "35-year-old patient from California",
+        title: "All on 4 Implants Both Jaws",
+        patient: "Navsari, India",
         beforeImg: "assets/b&a/2-before.png",
         afterImg: "assets/b&a/2-after.png"
     },
     {
         id: 5,
-        title: "All-on-6 Full Arch Rehabilitation",
-        patient: "52-year-old patient from London, UK",
+        title: "All on 6 Implants Both Jaws",
+        patient: "London, UK",
         beforeImg: "assets/b&a/3-before.png",
         afterImg: "assets/b&a/3-after.png"
     },
     {
         id: 6,
-        title: "Hollywood Smile & Ceramic Veneers",
-        patient: "29-year-old patient from Manchester, UK",
+        title: "All on 6 Implants Both Jaws",
+        patient: "USA",
         beforeImg: "assets/b&a/4-before.png",
         afterImg: "assets/b&a/4-after.png"
     },
     {
         id: 7,
-        title: "Zirconia Implant Transformation",
-        patient: "42-year-old patient from Toronto, Canada",
+        title: "All on 4 Implants Both Jaws",
+        patient: "Toronto, Canada",
         beforeImg: "assets/b&a/5-before.png",
         afterImg: "assets/b&a/5-after.png"
     },
     {
         id: 8,
-        title: "Full Mouth Aesthetic Rehabilitation",
-        patient: "61-year-old patient from Sydney, Australia",
+        title: "All on 6 Implants Both Jaws",
+        patient: "Navsari, India",
         beforeImg: "assets/b&a/6-before.png",
         afterImg: "assets/b&a/6-after.png"
     }
