@@ -129,9 +129,12 @@
                     </div>
                     <div class="hero-visual">
                         <div class="hero-video-wrapper">
-                            <video class="hero-video" autoplay loop muted playsinline>
+                            <video class="hero-video" id="heroVideo" autoplay loop muted playsinline>
                                 <source src="./assets/video/Sample AI Video.mp4" type="video/mp4">
                             </video>
+                            <button class="video-mute-btn" id="videoMuteBtn" aria-label="Unmute video" title="Click to unmute">
+                                <i class="fa-solid fa-volume-xmark" id="muteIcon"></i>
+                            </button>
                         </div>
                         <div class="floating-card fc-1">
                             <i class="fa-solid fa-circle-check"></i>
@@ -606,6 +609,30 @@
 
     <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
     <script src="script.js"></script>
+    <script>
+        // ===== HERO VIDEO MUTE/UNMUTE TOGGLE =====
+        (function () {
+            var video = document.getElementById('heroVideo');
+            var btn = document.getElementById('videoMuteBtn');
+            var icon = document.getElementById('muteIcon');
+
+            if (!video || !btn || !icon) return;
+
+            btn.addEventListener('click', function () {
+                video.muted = !video.muted;
+
+                if (video.muted) {
+                    icon.className = 'fa-solid fa-volume-xmark';
+                    btn.setAttribute('aria-label', 'Unmute video');
+                    btn.setAttribute('title', 'Click to unmute');
+                } else {
+                    icon.className = 'fa-solid fa-volume-high';
+                    btn.setAttribute('aria-label', 'Mute video');
+                    btn.setAttribute('title', 'Click to mute');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
