@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CHRONOVÉRA - ULTRA-PREMIUM LUXURY WATCH SHOWCASE APPLICATION LOGIC
+   NEPTUNE TIMES - ULTRA-PREMIUM LUXURY WATCH SHOWCASE APPLICATION LOGIC
    Vanilla JavaScript (ES6+) | Zero Libraries
    ========================================================================== */
 

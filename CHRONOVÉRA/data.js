@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CHRONOVÉRA - LUXURY WATCH DATASET & BRAND CATALOG (ALL 17 BRANDS)
+   NEPTUNE TIMES - LUXURY WATCH DATASET & BRAND CATALOG (ALL 17 BRANDS)
    ========================================================================== */
 
 const BRANDS_DATA = [

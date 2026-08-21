@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CHRONOVÉRA - ULTRA-PREMIUM LUXURY WATCH SHOWCASE STYLESHEET
+   NEPTUNE TIMES - ULTRA-PREMIUM LUXURY WATCH SHOWCASE STYLESHEET
    Light Theme Luxury Aesthetic | Fraunces Serif + Plus Jakarta Sans UI
    ========================================================================== */
 
@@ -292,11 +292,12 @@ img {
     }
 }
 
-.preloader-mark {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--color-primary-navy);
+.preloader-logo-img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 14px rgba(7, 26, 51, 0.18));
 }
 
 .preloader-brand {
@@ -377,17 +378,27 @@ img {
 }
 
 .brand-symbol {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--color-primary-navy);
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--color-primary-navy);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(7, 26, 51, 0.1);
+}
+
+.brand-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: transform 0.35s var(--ease-apple);
+}
+
+.nav-brand:hover .brand-logo-img {
+    transform: scale(1.1) rotate(6deg);
 }
 
 .brand-name {
@@ -759,6 +770,7 @@ img.wa-icon-img,
 }
 
 @keyframes floatWatch {
+
     0%,
     100% {
         transform: translateZ(20px) translateY(0px) rotate(0deg);
@@ -2195,6 +2207,7 @@ img.wa-icon-img,
 
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
