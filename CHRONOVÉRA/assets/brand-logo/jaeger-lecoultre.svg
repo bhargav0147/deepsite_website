@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+        <circle cx="60" cy="60" r="56" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="2"/>
+        <path d="M40 32 H80 V40 H64 V80 H56 V40 H40 Z" fill="#071A33"/>
+        <path d="M40 72 H80 V80 H40 Z" fill="#071A33"/>
+        <circle cx="60" cy="24" r="5" fill="#8EA0B5"/>
+        <text x="60" y="96" font-family="sans-serif" font-weight="700" font-size="6" fill="#071A33" text-anchor="middle" letter-spacing="1">JAEGER-LECOULTRE</text>
+    </svg>

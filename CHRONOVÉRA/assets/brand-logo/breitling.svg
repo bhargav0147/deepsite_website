@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+        <circle cx="60" cy="60" r="56" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="2"/>
+        <path d="M60 25 C75 25 95 38 102 44 C90 48 72 48 60 42 C48 48 30 48 18 44 C25 38 45 25 60 25 Z" fill="#071A33"/>
+        <text x="60" y="70" font-family="'Fraunces', serif" font-weight="700" font-size="32" fill="#071A33" text-anchor="middle">B</text>
+        <text x="60" y="88" font-family="sans-serif" font-weight="700" font-size="6" fill="#8EA0B5" text-anchor="middle" letter-spacing="2">BREITLING</text>
+    </svg>

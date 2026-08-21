@@ -1100,7 +1100,7 @@ function init() {
     initGalleryFilter(); initFAQFilter(); initBlogFilter();
     initBASlider('baSliderHome', 'baAfterHome', 'baHandleHome');
     observeReveals(); initPageTransition();
-    initFirstVisitPopup();
+    // initFirstVisitPopup();
     initVideoCards();
     initCookieConsent();
 }

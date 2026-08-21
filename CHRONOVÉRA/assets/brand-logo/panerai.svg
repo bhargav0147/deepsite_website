@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+        <circle cx="60" cy="60" r="56" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="2"/>
+        <text x="60" y="54" font-family="'Fraunces', serif" font-weight="700" font-size="28" fill="#071A33" text-anchor="middle" letter-spacing="2">OP</text>
+        <path d="M34 64 H86 M42 72 H78" stroke="#071A33" stroke-width="3" stroke-linecap="round"/>
+        <text x="60" y="90" font-family="sans-serif" font-weight="700" font-size="7.5" fill="#8EA0B5" text-anchor="middle" letter-spacing="2">PANERAI</text>
+    </svg>
