@@ -222,8 +222,8 @@ const WATCHES_DATA = [
         originalPrice: "$375,000",
         availability: "Private Vault",
         category: "Grand Complication",
-        image: "assets/hero_watch.png",
-        gallery: ["assets/hero_watch.png", "assets/patek_nautilus.png", "assets/vacheron_overseas.png"],
+        image: "assets/watch/patek-philippe/m1/1.jpeg",
+        gallery: ["assets/watch/patek-philippe/m1/1.jpeg", "assets/watch/patek-philippe/m1/2.jpeg", "assets/watch/patek-philippe/m1/3.jpeg", "assets/watch/patek-philippe/m1/4.jpeg", "assets/watch/patek-philippe/m1/5.jpeg", "assets/watch/patek-philippe/m1/6.jpeg", "assets/watch/patek-philippe/m1/7.jpeg"],
         badge: "Hero Masterpiece",
         description: "An extraordinary openwork tourbillon minute repeater showcasing hand-finished gongs, rose gold casing, and a deep celestial blue sunburst sub-dial.",
         specs: {
@@ -248,8 +248,8 @@ const WATCHES_DATA = [
         originalPrice: "$130,000",
         availability: "In Stock",
         category: "Sport Luxury",
-        image: "assets/patek_nautilus.png",
-        gallery: ["assets/patek_nautilus.png", "assets/hero_watch.png"],
+        image: "assets/watch/patek-philippe/m2/136.jpeg",
+        gallery: ["assets/watch/patek-philippe/m2/136.jpeg", "assets/watch/patek-philippe/m2/137.jpeg", "assets/watch/patek-philippe/m2/138.jpeg", "assets/watch/patek-philippe/m2/139.jpeg", "assets/watch/patek-philippe/m2/140.jpeg"],
         badge: "Iconic Collector Item",
         description: "The holy grail of luxury steel sports watches. Features the signature porthole case design and horizontal embossed navy blue sunburst dial.",
         specs: {
@@ -260,6 +260,39 @@ const WATCHES_DATA = [
             waterResistance: "120 Meters",
             dialColor: "Navy Blue Sunburst",
             strap: "Integrated Stainless Steel Bracelet"
+        },
+        featured: true
+    },
+    {
+        id: "chronovera-tourbillon-03",
+        brandId: "patek-philippe",
+        brandName: "Patek Philippe",
+        model: "Grand Complications Perpetual Calendar",
+        reference: "Ref. 5270J-001",
+        price: 295000,
+        priceDisplay: "$295,000",
+        originalPrice: "$325,000",
+        availability: "Private Vault",
+        category: "Grand Complication",
+        image: "assets/watch/patek-philippe/m3/141.jpeg",
+        gallery: [
+            "assets/watch/patek-philippe/m3/141.jpeg",
+            "assets/watch/patek-philippe/m3/142.jpeg",
+            "assets/watch/patek-philippe/m3/143.jpeg",
+            "assets/watch/patek-philippe/m3/147.jpeg",
+            "assets/watch/patek-philippe/m3/148.jpeg",
+            "assets/watch/patek-philippe/m3/149.jpeg"
+        ],
+        badge: "Collector's Masterpiece",
+        description: "A distinguished perpetual calendar chronograph combining traditional Patek Philippe craftsmanship with a refined architectural dial, elegant case proportions, and an exceptional hand-finished movement.",
+        specs: {
+            movement: "Caliber CH 29-535 PS Q (Manual Wind)",
+            powerReserve: "65 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "18K Yellow Gold",
+            waterResistance: "30 Meters",
+            dialColor: "Silvery Opaline",
+            strap: "Hand-stitched Alligator Leather"
         },
         featured: true
     },
@@ -276,8 +309,14 @@ const WATCHES_DATA = [
         originalPrice: "$38,000",
         availability: "In Stock",
         category: "Sport Luxury",
-        image: "assets/rolex_daytona.png",
-        gallery: ["assets/rolex_daytona.png", "assets/hero_watch.png"],
+        image: "assets/watch/rolex/m1/1.png",
+        gallery: [
+            "assets/watch/rolex/m1/1.png",
+            "assets/watch/rolex/m1/2.png",
+            "assets/watch/rolex/m1/3.png",
+            "assets/watch/rolex/m1/4.png",
+            "assets/watch/rolex/m1/5.png"
+        ],
         badge: "High Demand",
         description: "The ultimate racing chronograph. Monobloc Cerachrom bezel in black ceramic paired with a crisp white dial and black sub-dial rings.",
         specs: {
@@ -288,6 +327,101 @@ const WATCHES_DATA = [
             waterResistance: "100 Meters",
             dialColor: "White Panda",
             strap: "Oyster Steel Three-piece Solid Links"
+        },
+        featured: true
+    },
+    {
+        id: "rolex-submariner-124060",
+        brandId: "rolex",
+        brandName: "Rolex",
+        model: "Submariner No-Date",
+        reference: "Ref. 124060",
+        price: 14500,
+        priceDisplay: "$14,500",
+        originalPrice: "$16,000",
+        availability: "In Stock",
+        category: "Dive Luxury",
+        image: "assets/watch/rolex/m2/1.png",
+        gallery: [
+            "assets/watch/rolex/m2/1.png",
+            "assets/watch/rolex/m2/2.png",
+            "assets/watch/rolex/m2/3.png",
+            "assets/watch/rolex/m2/4.png",
+            "assets/watch/rolex/m2/5.png",
+            "assets/watch/rolex/m2/6.png"
+        ],
+        badge: "Iconic Diver",
+        description: "A pure expression of the legendary Submariner. The no-date configuration pairs a robust Oystersteel case with a black Cerachrom bezel and highly legible black dial.",
+        specs: {
+            movement: "Calibre 3230 (Automatic)",
+            powerReserve: "70 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "Oystersteel",
+            waterResistance: "300 Meters",
+            dialColor: "Black",
+            strap: "Oyster Steel Three-piece Solid Links"
+        },
+        featured: true
+    },
+    {
+        id: "rolex-gmt-master-126710blro",
+        brandId: "rolex",
+        brandName: "Rolex",
+        model: "GMT-Master II 'Pepsi'",
+        reference: "Ref. 126710BLRO",
+        price: 24500,
+        priceDisplay: "$24,500",
+        originalPrice: "$27,000",
+        availability: "Limited Edition",
+        category: "Travel Luxury",
+        image: "assets/watch/rolex/m3/1.png",
+        gallery: [
+            "assets/watch/rolex/m3/1.png",
+            "assets/watch/rolex/m3/2.png",
+            "assets/watch/rolex/m3/3.png"
+        ],
+        badge: "Collector Favorite",
+        description: "The legendary GMT-Master II distinguished by its red and blue Cerachrom bezel, iconic 24-hour scale, and practical dual-time functionality for modern travelers.",
+        specs: {
+            movement: "Calibre 3285 (Automatic GMT)",
+            powerReserve: "70 Hours",
+            caseSize: "40.0 mm",
+            caseMaterial: "Oystersteel",
+            waterResistance: "100 Meters",
+            dialColor: "Black",
+            strap: "Jubilee Bracelet"
+        },
+        featured: true
+    },
+    {
+        id: "rolex-datejust-126334",
+        brandId: "rolex",
+        brandName: "Rolex",
+        model: "Datejust 41 Blue Dial",
+        reference: "Ref. 126334",
+        price: 16500,
+        priceDisplay: "$16,500",
+        originalPrice: "$18,500",
+        availability: "In Stock",
+        category: "Classic Luxury",
+        image: "assets/watch/rolex/m4/1.png",
+        gallery: [
+            "assets/watch/rolex/m4/1.png",
+            "assets/watch/rolex/m4/2.png",
+            "assets/watch/rolex/m4/3.png",
+            "assets/watch/rolex/m4/4.png",
+            "assets/watch/rolex/m4/5.png"
+        ],
+        badge: "Timeless Classic",
+        description: "A refined Datejust 41 featuring a vivid blue dial, signature fluted bezel, and elegant Oystersteel and white gold construction for a timeless everyday luxury watch.",
+        specs: {
+            movement: "Calibre 3235 (Automatic)",
+            powerReserve: "70 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "Oystersteel & White Gold",
+            waterResistance: "100 Meters",
+            dialColor: "Bright Blue",
+            strap: "Jubilee Bracelet"
         },
         featured: true
     },
@@ -304,8 +438,8 @@ const WATCHES_DATA = [
         originalPrice: "$54,000",
         availability: "Limited Edition",
         category: "Sport Luxury",
-        image: "assets/ap_royaloak.png",
-        gallery: ["assets/ap_royaloak.png", "assets/vacheron_overseas.png"],
+        image: "assets/watch/audemars-piguet/m1/18-1.jpeg",
+        gallery: ["assets/watch/audemars-piguet/m1/18-2.jpeg", "assets/watch/audemars-piguet/m1/18-3.jpeg", "assets/watch/audemars-piguet/m1/18-4.jpeg", "assets/watch/audemars-piguet/m1/18-5.jpeg", "assets/watch/audemars-piguet/m1/18-6.jpeg", "assets/watch/audemars-piguet/m1/18-7.jpeg", "assets/watch/audemars-piguet/m1/18-8.jpeg"],
         badge: "Editor's Choice",
         description: "Gérald Genta's legendary octagonal design brought to life with silver 'Grande Tapisserie' dial and integrated hand-brushed steel bracelet.",
         specs: {
@@ -316,6 +450,69 @@ const WATCHES_DATA = [
             waterResistance: "50 Meters",
             dialColor: "Silver Grande Tapisserie",
             strap: "Integrated Hand-finished Steel Bracelet"
+        },
+        featured: true
+    },
+    {
+        id: "ap-royal-oak-26420so",
+        brandId: "audemars-piguet",
+        brandName: "Audemars Piguet",
+        model: "Royal Oak Offshore Chronograph",
+        reference: "Ref. 26420SO.OO.A002CA.01",
+        price: 62500,
+        priceDisplay: "$62,500",
+        originalPrice: "$68,000",
+        availability: "In Stock",
+        category: "Sport Luxury",
+        image: "assets/watch/audemars-piguet/m2/16.jpeg",
+        gallery: [
+            "assets/watch/audemars-piguet/m2/16.jpeg",
+            "assets/watch/audemars-piguet/m2/16-1.jpeg",
+            "assets/watch/audemars-piguet/m2/16-2.jpeg",
+            "assets/watch/audemars-piguet/m2/16-3.jpeg"
+        ],
+        badge: "Iconic Chronograph",
+        description: "A bold Royal Oak Offshore chronograph combining the collection's signature octagonal architecture with a high-performance automatic movement, contrasting dial details, and a rugged integrated strap.",
+        specs: {
+            movement: "Calibre 4404 (Automatic)",
+            powerReserve: "70 Hours",
+            caseSize: "43.0 mm",
+            caseMaterial: "Stainless Steel & Titanium",
+            waterResistance: "100 Meters",
+            dialColor: "Black Méga Tapisserie",
+            strap: "Black Rubber Strap"
+        },
+        featured: true
+    },
+    {
+        id: "ap-code-1159st",
+        brandId: "audemars-piguet",
+        brandName: "Audemars Piguet",
+        model: "Code 11.59 Selfwinding Chronograph",
+        reference: "Ref. 26393ST.OO.A348KB.01",
+        price: 58500,
+        priceDisplay: "$58,500",
+        originalPrice: "$64,000",
+        availability: "Private Vault",
+        category: "Luxury Chronograph",
+        image: "assets/watch/audemars-piguet/m3/25-1.jpeg",
+        gallery: [
+            "assets/watch/audemars-piguet/m3/25-1.jpeg",
+            "assets/watch/audemars-piguet/m3/25-2.jpeg",
+            "assets/watch/audemars-piguet/m3/25-3.jpeg",
+            "assets/watch/audemars-piguet/m3/25-4.jpeg",
+            "assets/watch/audemars-piguet/m3/25-5.jpeg"
+        ],
+        badge: "Collector's Selection",
+        description: "A sophisticated Code 11.59 chronograph showcasing Audemars Piguet's contemporary design language with a sculpted case, layered architecture, and finely detailed dial.",
+        specs: {
+            movement: "Calibre 4401 (Automatic)",
+            powerReserve: "70 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "30 Meters",
+            dialColor: "Smoked Blue",
+            strap: "Black Rubber-coated Strap"
         },
         featured: true
     },
@@ -332,8 +529,15 @@ const WATCHES_DATA = [
         originalPrice: null,
         availability: "In Stock",
         category: "High Horology",
-        image: "assets/vacheron_overseas.png",
-        gallery: ["assets/vacheron_overseas.png", "assets/hero_watch.png"],
+        image: "assets/watch/vacheron-constantin/m1/1.jpg",
+        gallery: [
+            "assets/watch/vacheron-constantin/m1/1.jpg",
+            "assets/watch/vacheron-constantin/m1/2.jpg",
+            "assets/watch/vacheron-constantin/m1/3.jpg",
+            "assets/watch/vacheron-constantin/m1/4.jpg",
+            "assets/watch/vacheron-constantin/m1/5.jpg",
+            "assets/watch/vacheron-constantin/m1/6.jpg"
+        ],
         badge: "Best Seller",
         description: "Fluid lines, six-sided bezel evoking the Maltese cross, and an enchanting translucent deep navy blue lacquered dial with quick-change strap system.",
         specs: {
@@ -344,6 +548,68 @@ const WATCHES_DATA = [
             waterResistance: "150 Meters",
             dialColor: "Deep Navy Blue Lacquer",
             strap: "Interchangeable Steel & Blue Rubber Strap"
+        },
+        featured: true
+    },
+    {
+        id: "vacheron-patrimony-85180",
+        brandId: "vacheron-constantin",
+        brandName: "Vacheron Constantin",
+        model: "Patrimony Self-Winding",
+        reference: "Ref. 85180/000R-B515",
+        price: 29500,
+        priceDisplay: "$29,500",
+        originalPrice: null,
+        availability: "Private Vault",
+        category: "High Horology",
+        image: "assets/watch/vacheron-constantin/m2/1.jpeg",
+        gallery: [
+            "assets/watch/vacheron-constantin/m2/1.jpeg",
+            "assets/watch/vacheron-constantin/m2/2.jpeg",
+            "assets/watch/vacheron-constantin/m2/3.jpeg"
+        ],
+        badge: "Classic Elegance",
+        description: "An understated expression of Geneva watchmaking, featuring an ultra-clean dial, slender profile, and refined rose gold case inspired by the timeless Patrimony design.",
+        specs: {
+            movement: "Calibre 2450 Q6/3 (Automatic)",
+            powerReserve: "40 Hours",
+            caseSize: "40.0 mm",
+            caseMaterial: "18K 5N Rose Gold",
+            waterResistance: "30 Meters",
+            dialColor: "Silver Opaline",
+            strap: "Brown Alligator Leather"
+        },
+        featured: true
+    },
+    {
+        id: "vacheron-traditionnelle-87172",
+        brandId: "vacheron-constantin",
+        brandName: "Vacheron Constantin",
+        model: "Traditionnelle Self-Winding",
+        reference: "Ref. 87172/000G-B142",
+        price: 32500,
+        priceDisplay: "$32,500",
+        originalPrice: null,
+        availability: "Limited Edition",
+        category: "High Horology",
+        image: "assets/watch/vacheron-constantin/m3/1.jpeg",
+        gallery: [
+            "assets/watch/vacheron-constantin/m3/1.jpeg",
+            "assets/watch/vacheron-constantin/m3/2.jpeg",
+            "assets/watch/vacheron-constantin/m3/3.jpeg",
+            "assets/watch/vacheron-constantin/m3/4.jpeg",
+            "assets/watch/vacheron-constantin/m3/5.jpeg"
+        ],
+        badge: "Collector's Choice",
+        description: "A sophisticated Traditionnelle timepiece combining classical Geneva aesthetics with a finely finished automatic movement, elegant applied hour markers, and a balanced silver-toned dial.",
+        specs: {
+            movement: "Calibre 2455/2 (Automatic)",
+            powerReserve: "40 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "18K White Gold",
+            waterResistance: "30 Meters",
+            dialColor: "Silver Opaline",
+            strap: "Black Alligator Leather"
         },
         featured: true
     },
@@ -360,8 +626,16 @@ const WATCHES_DATA = [
         originalPrice: "$10,800",
         availability: "In Stock",
         category: "Aviation Chronograph",
-        image: "assets/hero_watch.png",
-        gallery: ["assets/hero_watch.png"],
+        image: "assets/watch/breitling/m1/1.jpg",
+        gallery: [
+            "assets/watch/breitling/m1/1.jpg",
+            "assets/watch/breitling/m1/2.jpg",
+            "assets/watch/breitling/m1/3.jpg",
+            "assets/watch/breitling/m1/4.jpg",
+            "assets/watch/breitling/m1/5.jpg",
+            "assets/watch/breitling/m1/6.jpg",
+            "assets/watch/breitling/m1/7.jpg"
+        ],
         badge: "Aviation Icon",
         description: "The definitive pilot's chronograph equipped with the legendary circular slide rule bezel and blue sunburst dial.",
         specs: {
@@ -372,6 +646,36 @@ const WATCHES_DATA = [
             waterResistance: "30 Meters",
             dialColor: "Ice Blue & Black Sub-dials",
             strap: "Black Alligator Leather"
+        },
+        featured: false
+    },
+    {
+        id: "breitling-superocean-42",
+        brandId: "breitling",
+        brandName: "Breitling",
+        model: "Superocean Automatic 42",
+        reference: "Ref. A17375E71C1A1",
+        price: 5900,
+        priceDisplay: "$5,900",
+        originalPrice: "$6,500",
+        availability: "In Stock",
+        category: "Dive Luxury",
+        image: "assets/watch/breitling/m2/1.jpeg",
+        gallery: [
+            "assets/watch/breitling/m2/1.jpeg",
+            "assets/watch/breitling/m2/2.jpeg",
+            "assets/watch/breitling/m2/3.jpeg"
+        ],
+        badge: "Ocean Ready",
+        description: "A powerful modern dive watch combining Breitling's unmistakable design with a highly legible blue dial, unidirectional bezel, and robust water resistance.",
+        specs: {
+            movement: "Breitling Caliber 17 (Automatic)",
+            powerReserve: "38 Hours",
+            caseSize: "42.0 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "300 Meters",
+            dialColor: "Deep Ocean Blue",
+            strap: "Stainless Steel Bracelet"
         },
         featured: false
     },
@@ -388,8 +692,12 @@ const WATCHES_DATA = [
         originalPrice: "$8,500",
         availability: "In Stock",
         category: "Dress Horology",
-        image: "assets/ap_royaloak.png",
-        gallery: ["assets/ap_royaloak.png"],
+        image: "assets/watch/cartier/m1/1.jpeg",
+        gallery: [
+            "assets/watch/cartier/m1/1.jpeg",
+            "assets/watch/cartier/m1/2.jpeg",
+            "assets/watch/cartier/m1/3.jpeg"
+        ],
         badge: "Parisian Icon",
         description: "The world's first modern wristwatch created in 1904 for aviator Alberto Santos-Dumont with visible bezel screws.",
         specs: {
@@ -400,6 +708,37 @@ const WATCHES_DATA = [
             waterResistance: "100 Meters",
             dialColor: "Opaline Silvered Dial",
             strap: "SmartLink Steel Bracelet"
+        },
+        featured: false
+    },
+    {
+        id: "cartier-tank-must-large",
+        brandId: "cartier",
+        brandName: "Cartier",
+        model: "Tank Must Large Model",
+        reference: "Ref. WSTA0041",
+        price: 5650,
+        priceDisplay: "$5,650",
+        originalPrice: "$6,200",
+        availability: "In Stock",
+        category: "Dress Horology",
+        image: "assets/watch/cartier/m2/1.jpeg",
+        gallery: [
+            "assets/watch/cartier/m2/1.jpeg",
+            "assets/watch/cartier/m2/2.jpeg",
+            "assets/watch/cartier/m2/3.jpeg",
+            "assets/watch/cartier/m2/4.jpeg"
+        ],
+        badge: "Timeless Classic",
+        description: "A refined interpretation of Cartier's iconic Tank design, featuring clean Roman numerals, a rectangular profile, and unmistakable Parisian elegance.",
+        specs: {
+            movement: "Quartz Movement",
+            powerReserve: "Battery Powered",
+            caseSize: "33.7 x 25.5 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "30 Meters",
+            dialColor: "Silvered Opaline",
+            strap: "Black Calfskin Leather"
         },
         featured: false
     },
@@ -416,8 +755,12 @@ const WATCHES_DATA = [
         originalPrice: "$95,000",
         availability: "Private Vault",
         category: "Grand Complication",
-        image: "assets/patek_nautilus.png",
-        gallery: ["assets/patek_nautilus.png"],
+        image: "assets/watch/franck-muller/m1/1.jpeg",
+        gallery: [
+            "assets/watch/franck-muller/m1/1.jpeg",
+            "assets/watch/franck-muller/m1/2.jpeg",
+            "assets/watch/franck-muller/m1/3.jpeg"
+        ],
         badge: "Master Complication",
         description: "Curved tonneau case housing a fully skeletonized hand-brushed tourbillon movement with midnight blue anodized bridges.",
         specs: {
@@ -431,7 +774,37 @@ const WATCHES_DATA = [
         },
         featured: false
     },
+    {
+        id: "franck-muller-crazy-hours",
+        brandId: "franck-muller",
+        brandName: "Franck Muller",
+        model: "Crazy Hours",
+        reference: "Ref. 5850 CH",
+        price: 42500,
+        priceDisplay: "$42,500",
+        originalPrice: "$47,000",
+        availability: "Limited Edition",
+        category: "Luxury Complication",
+        image: "assets/watch/franck-muller/m2/1.jpeg",
+        gallery: [
+            "assets/watch/franck-muller/m2/1.jpeg",
+            "assets/watch/franck-muller/m2/2.jpeg"
+        ],
+        badge: "Avant-Garde Icon",
+        description: "A playful masterpiece from Franck Muller featuring the signature irregular hour arrangement and jumping-hour mechanism within a sculpted tonneau case.",
+        specs: {
+            movement: "Caliber FM 2800 CH (Automatic)",
+            powerReserve: "42 Hours",
+            caseSize: "39.6 x 45.0 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "30 Meters",
+            dialColor: "Multicolor Arabic Numerals",
+            strap: "Hand-sewn Alligator Leather"
+        },
+        featured: false
+    },
 
+    // HUBLOT
     // HUBLOT
     {
         id: "hublot-big-bang-unico",
@@ -444,8 +817,12 @@ const WATCHES_DATA = [
         originalPrice: "$75,000",
         availability: "Limited Edition",
         category: "Avant-Garde",
-        image: "assets/vacheron_overseas.png",
-        gallery: ["assets/vacheron_overseas.png"],
+        image: "assets/watch/hublot/m1/1.jpeg",
+        gallery: [
+            "assets/watch/hublot/m1/1.jpeg",
+            "assets/watch/hublot/m1/2.jpeg",
+            "assets/watch/hublot/m1/3.jpeg"
+        ],
         badge: "Fusion Art",
         description: "Sculpted entirely out of polished blue sapphire crystal, allowing full visibility of the column-wheel flyback movement.",
         specs: {
@@ -456,6 +833,35 @@ const WATCHES_DATA = [
             waterResistance: "50 Meters",
             dialColor: "Skeleton Sapphire",
             strap: "Transparent Blue Structured Rubber"
+        },
+        featured: false
+    },
+    {
+        id: "hublot-spirit-of-big-bang",
+        brandId: "hublot",
+        brandName: "Hublot",
+        model: "Spirit of Big Bang Titanium",
+        reference: "Ref. 601.NX.0173.RX",
+        price: 32500,
+        priceDisplay: "$32,500",
+        originalPrice: "$36,000",
+        availability: "In Stock",
+        category: "Avant-Garde",
+        image: "assets/watch/hublot/m2/1.jpeg",
+        gallery: [
+            "assets/watch/hublot/m2/1.jpeg",
+            "assets/watch/hublot/m2/2.jpeg"
+        ],
+        badge: "Modern Icon",
+        description: "A striking tonneau-shaped chronograph combining Hublot's signature fusion of materials with a lightweight titanium construction and exposed mechanical architecture.",
+        specs: {
+            movement: "HUB4700 Automatic Chronograph",
+            powerReserve: "50 Hours",
+            caseSize: "42.0 mm",
+            caseMaterial: "Titanium",
+            waterResistance: "100 Meters",
+            dialColor: "Skeletonized Black",
+            strap: "Black Structured Rubber"
         },
         featured: false
     },
@@ -472,8 +878,15 @@ const WATCHES_DATA = [
         originalPrice: "$220,000",
         availability: "Private Vault",
         category: "High Horology",
-        image: "assets/ap_royaloak.png",
-        gallery: ["assets/ap_royaloak.png"],
+        image: "assets/watch/iceout/m1/1.jpg",
+        gallery: [
+            "assets/watch/iceout/m1/1.jpg",
+            "assets/watch/iceout/m1/2.jpeg",
+            "assets/watch/iceout/m1/3.jpg",
+            "assets/watch/iceout/m1/4.jpeg",
+            "assets/watch/iceout/m1/5.jpg",
+            "assets/watch/iceout/m1/6.jpg"
+        ],
         badge: "VVS Custom Vault",
         description: "Bespoke haute joaillerie timepiece handset with 32.5 carats of VVS1 EF color seamless baguette diamonds across case, dial and bracelet.",
         specs: {
@@ -487,8 +900,43 @@ const WATCHES_DATA = [
         },
         featured: true
     },
+    {
+        id: "iceout-nautilus-custom",
+        brandId: "iceout",
+        brandName: "Bespoke Ice-Out",
+        model: "Nautilus Full Diamond Baguette Masterpiece",
+        reference: "Ref. ICE-PN5711-VVS",
+        price: 225000,
+        priceDisplay: "$225,000",
+        originalPrice: "$250,000",
+        availability: "Private Vault",
+        category: "High Horology",
+        image: "assets/watch/iceout/m2/1.jpeg",
+        gallery: [
+            "assets/watch/iceout/m2/1.jpeg",
+            "assets/watch/iceout/m2/2.jpeg",
+            "assets/watch/iceout/m2/3.jpeg",
+            "assets/watch/iceout/m2/4.jpeg",
+            "assets/watch/iceout/m2/5.jpeg",
+            "assets/watch/iceout/m2/6.jpeg",
+            "assets/watch/iceout/m2/7.jpeg"
+        ],
+        badge: "Ultra-Luxe Custom",
+        description: "An extraordinary bespoke Nautilus transformed into a haute joaillerie statement, featuring meticulously matched VVS baguette diamonds covering the case, bezel, dial and integrated bracelet.",
+        specs: {
+            movement: "Caliber 26-330 S C (Automatic)",
+            powerReserve: "45 Hours",
+            caseSize: "40.0 mm",
+            caseMaterial: "18K White Gold & VVS Baguette Diamonds",
+            waterResistance: "120 Meters",
+            dialColor: "Full Diamond Pavé",
+            strap: "Custom Diamond Set White Gold Bracelet"
+        },
+        featured: true
+    },
 
     // IWC
+    // IWC SCHAFFHAUSEN
     {
         id: "iwc-big-pilot-5010",
         brandId: "iwc",
@@ -500,8 +948,14 @@ const WATCHES_DATA = [
         originalPrice: null,
         availability: "In Stock",
         category: "Aviation Chronograph",
-        image: "assets/hero_watch.png",
-        gallery: ["assets/hero_watch.png"],
+        image: "assets/watch/iwc/m1/1.jpeg",
+        gallery: [
+            "assets/watch/iwc/m1/1.jpeg",
+            "assets/watch/iwc/m1/2.jpeg",
+            "assets/watch/iwc/m1/3.jpeg",
+            "assets/watch/iwc/m1/4.jpeg",
+            "assets/watch/iwc/m1/5.jpeg"
+        ],
         badge: "Pilot Standard",
         description: "The quintessential aviator watch featuring an ergonomic 43mm steel case, striking blue dial and oversized conical crown.",
         specs: {
@@ -512,6 +966,37 @@ const WATCHES_DATA = [
             waterResistance: "100 Meters",
             dialColor: "Blue Sunburst Dial",
             strap: "EasX-CHANGE Blue Rubber Strap"
+        },
+        featured: false
+    },
+    {
+        id: "iwc-portugieser-chronograph",
+        brandId: "iwc",
+        brandName: "IWC Schaffhausen",
+        model: "Portugieser Chronograph Silver",
+        reference: "Ref. IW371605",
+        price: 8800,
+        priceDisplay: "$8,800",
+        originalPrice: "$9,750",
+        availability: "In Stock",
+        category: "Dress Chronograph",
+        image: "assets/watch/iwc/m2/1.jpg",
+        gallery: [
+            "assets/watch/iwc/m2/1.jpg",
+            "assets/watch/iwc/m2/2.jpg",
+            "assets/watch/iwc/m2/3.jpg",
+            "assets/watch/iwc/m2/4.jpg"
+        ],
+        badge: "Timeless Chronograph",
+        description: "A refined Portugieser chronograph pairing a clean silver-plated dial with elegant blue hands, balanced sub-dials and a polished stainless steel case.",
+        specs: {
+            movement: "Calibre 69355 (Automatic Chronograph)",
+            powerReserve: "46 Hours",
+            caseSize: "41.0 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "30 Meters",
+            dialColor: "Silver-plated",
+            strap: "Black Alligator Leather"
         },
         featured: false
     },
@@ -528,8 +1013,10 @@ const WATCHES_DATA = [
         originalPrice: "$18,000",
         availability: "In Stock",
         category: "Dress Horology",
-        image: "assets/patek_nautilus.png",
-        gallery: ["assets/patek_nautilus.png", "assets/vacheron_overseas.png"],
+        image: "assets/watch/jaeger-lecoultre/m1/1.jpeg",
+        gallery: [
+            "assets/watch/jaeger-lecoultre/m1/1.jpeg"
+        ],
         badge: "Art Deco Icon",
         description: "Two distinct dials driven by a single mechanical movement inside a swiveling rectangular stainless steel case.",
         specs: {
@@ -540,6 +1027,34 @@ const WATCHES_DATA = [
             waterResistance: "30 Meters",
             dialColor: "Silvered Sunray & Blue Clous de Paris",
             strap: "Fagliano Collection Leather Strap"
+        },
+        featured: false
+    },
+    {
+        id: "jlc-master-ultra-thin",
+        brandId: "jaeger-lecoultre",
+        brandName: "Jaeger-LeCoultre",
+        model: "Master Ultra Thin Moon",
+        reference: "Ref. Q1368480",
+        price: 11800,
+        priceDisplay: "$11,800",
+        originalPrice: "$13,000",
+        availability: "In Stock",
+        category: "Dress Horology",
+        image: "assets/watch/jaeger-lecoultre/m2/1.jpeg",
+        gallery: [
+            "assets/watch/jaeger-lecoultre/m2/1.jpeg"
+        ],
+        badge: "Elegant Classic",
+        description: "A beautifully restrained dress watch featuring an exceptionally slim profile, polished moon-phase display, and refined silver-toned dial.",
+        specs: {
+            movement: "Calibre 925 (Automatic)",
+            powerReserve: "70 Hours",
+            caseSize: "39.0 mm",
+            caseMaterial: "Stainless Steel",
+            waterResistance: "50 Meters",
+            dialColor: "Silvered Grey",
+            strap: "Black Alligator Leather"
         },
         featured: false
     },
@@ -556,10 +1071,22 @@ const WATCHES_DATA = [
         originalPrice: "$8,200",
         availability: "In Stock",
         category: "Sport Luxury",
-        image: "assets/rolex_daytona.png",
-        gallery: ["assets/rolex_daytona.png"],
+
+        image: "assets/watch/omega/m1/1.jpeg",
+
+        gallery: [
+            "assets/watch/omega/m1/1.jpeg",
+            "assets/watch/omega/m1/2.jpeg",
+            "assets/watch/omega/m1/3.jpeg",
+            "assets/watch/omega/m1/4.jpeg",
+            "assets/watch/omega/m1/5.jpeg",
+            "assets/watch/omega/m1/6.jpeg"
+        ],
+
         badge: "Moonwatch Legacy",
+
         description: "Co-Axial Master Chronometer chronograph certified by METAS. Asymmetrical 42mm case with step dial and sapphire crystal back.",
+
         specs: {
             movement: "Calibre 3861 (Manual Wind)",
             powerReserve: "50 Hours",
@@ -569,12 +1096,13 @@ const WATCHES_DATA = [
             dialColor: "Black Step Dial",
             strap: "Five-arched-links-per-row Steel Bracelet"
         },
+
         featured: false
     },
 
     // OFFICINE PANERAI
     {
-        id: "panerai-luminor-marina",
+        id: "panerai-luminor-marina-m1",
         brandId: "panerai",
         brandName: "Officine Panerai",
         model: "Luminor Marina Quaranta Navy",
@@ -584,10 +1112,17 @@ const WATCHES_DATA = [
         originalPrice: null,
         availability: "In Stock",
         category: "Sport Luxury",
-        image: "assets/hero_watch.png",
-        gallery: ["assets/hero_watch.png"],
+
+        image: "assets/watch/panerai/m1/1.jpeg",
+
+        gallery: [
+            "assets/watch/panerai/m1/1.jpeg"
+        ],
+
         badge: "Florentine Diver",
+
         description: "The classic Luminor silhouette with patented safety lock crown lever, deep blue sun-brushed sandwich dial and date display at 3 o'clock.",
+
         specs: {
             movement: "P.900 Calibre (Automatic)",
             powerReserve: "72 Hours (3 Days)",
@@ -597,12 +1132,50 @@ const WATCHES_DATA = [
             dialColor: "Blue Sun-brushed Sandwich Dial",
             strap: "Alligator Dark Blue Strap"
         },
+
+        featured: false
+    },
+
+    {
+        id: "panerai-luminor-marina-m2",
+        brandId: "panerai",
+        brandName: "Officine Panerai",
+        model: "Luminor Marina Quaranta Navy",
+        reference: "Ref. PAM01270",
+        price: 7400,
+        priceDisplay: "$7,400",
+        originalPrice: null,
+        availability: "In Stock",
+        category: "Sport Luxury",
+
+        image: "assets/watch/panerai/m2/1.jpeg",
+
+        gallery: [
+            "assets/watch/panerai/m2/1.jpeg",
+            "assets/watch/panerai/m2/2.jpeg",
+            "assets/watch/panerai/m2/3.jpeg"
+        ],
+
+        badge: "Florentine Diver",
+
+        description: "The classic Luminor silhouette with patented safety lock crown lever, deep blue sun-brushed sandwich dial and date display at 3 o'clock.",
+
+        specs: {
+            movement: "P.900 Calibre (Automatic)",
+            powerReserve: "72 Hours (3 Days)",
+            caseSize: "40.0 mm",
+            caseMaterial: "AISI 316L Polished Steel",
+            waterResistance: "100 Meters",
+            dialColor: "Blue Sun-brushed Sandwich Dial",
+            strap: "Alligator Dark Blue Strap"
+        },
+
         featured: false
     },
 
     // RICHARD MILLE
     {
-        id: "richard-mille-11-03",
+        id: "richard-mille-11-03-m1",
         brandId: "richard-mille",
         brandName: "Richard Mille",
         model: "RM 11-03 Flyback Chronograph",
@@ -612,10 +1185,20 @@ const WATCHES_DATA = [
         originalPrice: "$290,000",
         availability: "Private Vault",
         category: "Avant-Garde",
-        image: "assets/hero_watch.png",
-        gallery: ["assets/hero_watch.png", "assets/rolex_daytona.png"],
+
+        image: "assets/watch/richard-mille/m1/1.jpeg",
+
+        gallery: [
+            "assets/watch/richard-mille/m1/1.jpeg",
+            "assets/watch/richard-mille/m1/2.jpeg",
+            "assets/watch/richard-mille/m1/3.jpeg",
+            "assets/watch/richard-mille/m1/4.jpeg"
+        ],
+
         badge: "Ultra Rare",
+
         description: "Inspired by Formula 1 aerodynamics. Features variable-geometry rotor, skeletonized grade 5 titanium movement, and annual calendar flyback chronograph.",
+
         specs: {
             movement: "Caliber RMAC3 (Automatic Flyback)",
             powerReserve: "55 Hours",
@@ -625,6 +1208,84 @@ const WATCHES_DATA = [
             dialColor: "Skeletonized Sapphire",
             strap: "Vented Navy Blue Rubber Strap"
         },
+
+        featured: true
+    },
+
+    {
+        id: "richard-mille-11-03-m2",
+        brandId: "richard-mille",
+        brandName: "Richard Mille",
+        model: "RM 11-03 Flyback Chronograph",
+        reference: "Ref. RM11-03 Titanium",
+        price: 265000,
+        priceDisplay: "$265,000",
+        originalPrice: "$290,000",
+        availability: "Private Vault",
+        category: "Avant-Garde",
+
+        image: "assets/watch/richard-mille/m2/1.jpeg",
+
+        gallery: [
+            "assets/watch/richard-mille/m2/1.jpeg",
+            "assets/watch/richard-mille/m2/2.jpeg",
+            "assets/watch/richard-mille/m2/3.jpeg",
+            "assets/watch/richard-mille/m2/4.jpeg"
+        ],
+
+        badge: "Ultra Rare",
+
+        description: "Inspired by Formula 1 aerodynamics. Features variable-geometry rotor, skeletonized grade 5 titanium movement, and annual calendar flyback chronograph.",
+
+        specs: {
+            movement: "Caliber RMAC3 (Automatic Flyback)",
+            powerReserve: "55 Hours",
+            caseSize: "49.9 x 44.5 mm",
+            caseMaterial: "Grade 5 Titanium & Carbon TPT",
+            waterResistance: "50 Meters",
+            dialColor: "Skeletonized Sapphire",
+            strap: "Vented Navy Blue Rubber Strap"
+        },
+
+        featured: true
+    },
+
+    {
+        id: "richard-mille-11-03-m3",
+        brandId: "richard-mille",
+        brandName: "Richard Mille",
+        model: "RM 11-03 Flyback Chronograph",
+        reference: "Ref. RM11-03 Titanium",
+        price: 265000,
+        priceDisplay: "$265,000",
+        originalPrice: "$290,000",
+        availability: "Private Vault",
+        category: "Avant-Garde",
+
+        image: "assets/watch/richard-mille/m3/1.jpeg",
+
+        gallery: [
+            "assets/watch/richard-mille/m3/1.jpeg",
+            "assets/watch/richard-mille/m3/2.jpeg",
+            "assets/watch/richard-mille/m3/3.jpeg",
+            "assets/watch/richard-mille/m3/4.jpeg",
+            "assets/watch/richard-mille/m3/5.jpeg"
+        ],
+
+        badge: "Ultra Rare",
+
+        description: "Inspired by Formula 1 aerodynamics. Features variable-geometry rotor, skeletonized grade 5 titanium movement, and annual calendar flyback chronograph.",
+
+        specs: {
+            movement: "Caliber RMAC3 (Automatic Flyback)",
+            powerReserve: "55 Hours",
+            caseSize: "49.9 x 44.5 mm",
+            caseMaterial: "Grade 5 Titanium & Carbon TPT",
+            waterResistance: "50 Meters",
+            dialColor: "Skeletonized Sapphire",
+            strap: "Vented Navy Blue Rubber Strap"
+        },
+
         featured: true
     },
 
@@ -640,8 +1301,8 @@ const WATCHES_DATA = [
         originalPrice: "$80,000",
         availability: "Private Vault",
         category: "Avant-Garde",
-        image: "assets/ap_royaloak.png",
-        gallery: ["assets/ap_royaloak.png"],
+        image: "assets/watch/roger-dubuis/m1/1.jpeg",
+        gallery: ["assets/watch/roger-dubuis/m1/1.jpeg"],
         badge: "Geneva Seal",
         description: "Architectural star-shaped skeleton bridges crafted in EON gold with Poinçon de Genève certification.",
         specs: {
@@ -658,7 +1319,7 @@ const WATCHES_DATA = [
 
     // TAG HEUER
     {
-        id: "tag-heuer-monaco",
+        id: "tag-heuer-monaco-m1",
         brandId: "tag-heuer",
         brandName: "TAG Heuer",
         model: "Monaco Gulf Special Edition",
@@ -668,10 +1329,21 @@ const WATCHES_DATA = [
         originalPrice: null,
         availability: "In Stock",
         category: "Aviation Chronograph",
-        image: "assets/rolex_daytona.png",
-        gallery: ["assets/rolex_daytona.png"],
+
+        image: "assets/watch/tag-heuer/m1/1.jpg",
+
+        gallery: [
+            "assets/watch/tag-heuer/m1/1.jpg",
+            "assets/watch/tag-heuer/m1/2.jpg",
+            "assets/watch/tag-heuer/m1/3.jpg",
+            "assets/watch/tag-heuer/m1/4.jpg",
+            "assets/watch/tag-heuer/m1/5.jpg"
+        ],
+
         badge: "Racing Legend",
+
         description: "The square-cased racing chronograph worn by Steve McQueen in 'Le Mans', painted with legendary Gulf racing stripes.",
+
         specs: {
             movement: "Heuer 02 Automatic Chronograph",
             powerReserve: "80 Hours",
@@ -681,12 +1353,49 @@ const WATCHES_DATA = [
             dialColor: "Blue Sunray with Gulf Stripes",
             strap: "Blue Calfskin Racing Strap"
         },
+
+        featured: false
+    },
+
+    {
+        id: "tag-heuer-monaco-m2",
+        brandId: "tag-heuer",
+        brandName: "TAG Heuer",
+        model: "Monaco Gulf Special Edition",
+        reference: "Ref. CBL2115.FC6494",
+        price: 7800,
+        priceDisplay: "$7,800",
+        originalPrice: null,
+        availability: "In Stock",
+        category: "Aviation Chronograph",
+
+        image: "assets/watch/tag-heuer/m2/1.jpg",
+
+        gallery: [
+            "assets/watch/tag-heuer/m2/1.jpg",
+            "assets/watch/tag-heuer/m2/2.jpg"
+        ],
+
+        badge: "Racing Legend",
+
+        description: "The square-cased racing chronograph worn by Steve McQueen in 'Le Mans', painted with legendary Gulf racing stripes.",
+
+        specs: {
+            movement: "Heuer 02 Automatic Chronograph",
+            powerReserve: "80 Hours",
+            caseSize: "39.0 x 39.0 mm",
+            caseMaterial: "Fine-brushed Steel",
+            waterResistance: "100 Meters",
+            dialColor: "Blue Sunray with Gulf Stripes",
+            strap: "Blue Calfskin Racing Strap"
+        },
+
         featured: false
     },
 
     // ULYSSE NARDIN
     {
-        id: "ulysse-nardin-freak-x",
+        id: "ulysse-nardin-freak-x-m1",
         brandId: "ulysse-nardin",
         brandName: "Ulysse Nardin",
         model: "Freak X Titanium Blue",
@@ -696,10 +1405,23 @@ const WATCHES_DATA = [
         originalPrice: "$27,000",
         availability: "In Stock",
         category: "High Horology",
-        image: "assets/vacheron_overseas.png",
-        gallery: ["assets/vacheron_overseas.png"],
+
+        image: "assets/watch/ulysse-nardin/m1/1.jpeg",
+
+        gallery: [
+            "assets/watch/ulysse-nardin/m1/1.jpeg",
+            "assets/watch/ulysse-nardin/m1/2.jpeg",
+            "assets/watch/ulysse-nardin/m1/3.jpeg",
+            "assets/watch/ulysse-nardin/m1/4.jpeg",
+            "assets/watch/ulysse-nardin/m1/5.jpeg",
+            "assets/watch/ulysse-nardin/m1/6.jpeg",
+            "assets/watch/ulysse-nardin/m1/7.jpeg"
+        ],
+
         badge: "Silicon Innovation",
+
         description: "The rebel watch with no hands and no dial. The movement itself rotates on its center axis to indicate the hours and minutes.",
+
         specs: {
             movement: "UN-230 Manufacture Flying Carousel",
             powerReserve: "72 Hours",
@@ -709,6 +1431,7 @@ const WATCHES_DATA = [
             dialColor: "Openwork Carousel Architecture",
             strap: "Blue Alligator Leather with Rubber Coating"
         },
+
         featured: false
     }
 ];

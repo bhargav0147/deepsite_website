@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const brandsPageGrid = document.getElementById('brands-page-grid');
 
     const brandFilterSelect = document.getElementById('brand-filter-select');
-    const categoryFilterSelect = document.getElementById('category-filter-select');
     const searchInput = document.getElementById('search-input');
 
     const modalOverlay = document.getElementById('modal-overlay');
@@ -82,20 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.classList.add('custom-cursor-enabled');
 
+        let isInitialized = false;
+
         window.addEventListener('mousemove', (e) => {
             state.cursor.targetX = e.clientX;
             state.cursor.targetY = e.clientY;
 
-            // Instantly update primary dot
-            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-        });
+            if (!isInitialized) {
+                state.cursor.currentX = e.clientX;
+                state.cursor.currentY = e.clientY;
+                isInitialized = true;
+            }
 
-        // Smooth Lerp loop for ring
+            // Instantly update primary dot (GPU accelerated 3D transform)
+            cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        }, { passive: true });
+
+        // Ultra-snappy Lerp loop for ring matching physical mouse speed
         function renderCursorRing() {
-            state.cursor.currentX += (state.cursor.targetX - state.cursor.currentX) * 0.16;
-            state.cursor.currentY += (state.cursor.targetY - state.cursor.currentY) * 0.16;
+            state.cursor.currentX += (state.cursor.targetX - state.cursor.currentX) * 0.45;
+            state.cursor.currentY += (state.cursor.targetY - state.cursor.currentY) * 0.45;
 
-            cursorRing.style.transform = `translate(${state.cursor.currentX}px, ${state.cursor.currentY}px) translate(-50%, -50%)`;
+            cursorRing.style.transform = `translate3d(${state.cursor.currentX}px, ${state.cursor.currentY}px, 0) translate(-50%, -50%)`;
 
             requestAnimationFrame(renderCursorRing);
         }
@@ -473,27 +480,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const filtered = WATCHES_DATA.filter(watch => {
             const matchesBrand = state.selectedBrand === 'all' || watch.brandId === state.selectedBrand;
-            const matchesCategory = state.selectedCategory === 'all' || watch.category === state.selectedCategory;
             const matchesQuery = !state.searchQuery || 
                 watch.model.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 watch.brandName.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
                 watch.reference.toLowerCase().includes(state.searchQuery.toLowerCase());
 
-            return matchesBrand && matchesCategory && matchesQuery;
+            return matchesBrand && matchesQuery;
         });
 
         if (filtered.length === 0) {
             watchesGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 4rem 2rem; background: var(--bg-surface); border-radius: 24px; border: var(--glass-border);">
                     <h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--color-primary-navy); margin-bottom: 0.5rem;">No Timepieces Match Your Search</h3>
-                    <p style="color: var(--color-navy-muted); font-size: 0.95rem;">Please adjust your brand, category, or search filters.</p>
+                    <p style="color: var(--color-navy-muted); font-size: 0.95rem;">Please adjust your brand or search filters.</p>
                 </div>
             `;
             return;
         }
 
         watchesGrid.innerHTML = filtered.map(watch => `
-            <div class="watch-card" data-watch-id="${watch.id}" data-cursor="VIEW">
+            <div class="watch-card" data-watch-id="${watch.id}" data-cursor="VIEW" onclick="openWatchModal('${watch.id}')">
                 <div class="watch-card-image-wrapper">
                     <span class="watch-badge">${watch.badge || watch.category}</span>
                     <span class="watch-availability-dot">
@@ -513,12 +519,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="watch-card-footer">
                         <div class="watch-price-group">
-                            <span class="watch-price-label">Private Price</span>
-                            <span class="watch-price">${watch.priceDisplay}
-                                ${watch.originalPrice ? `<span class="watch-original-price">${watch.originalPrice}</span>` : ''}
-                            </span>
+                            <span class="watch-price-label">Pricing</span>
+                            <span class="watch-price-ask">Ask Price</span>
                         </div>
-                        <button class="btn-view-watch" onclick="openWatchModal('${watch.id}')">View Watch</button>
+                        <button class="btn-view-watch">View Watch</button>
                     </div>
                 </div>
             </div>
@@ -564,13 +568,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        if (categoryFilterSelect) {
-            categoryFilterSelect.addEventListener('change', (e) => {
-                state.selectedCategory = e.target.value;
-                renderWatchesGrid();
-            });
-        }
-
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 state.searchQuery = e.target.value.trim();
@@ -582,10 +579,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 state.selectedBrand = 'all';
-                state.selectedCategory = 'all';
                 state.searchQuery = '';
                 if (brandFilterSelect) brandFilterSelect.value = 'all';
-                if (categoryFilterSelect) categoryFilterSelect.value = 'all';
                 if (searchInput) searchInput.value = '';
                 renderWatchesGrid();
             });
@@ -611,11 +606,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const specsTbody = document.getElementById('modal-specs-tbody');
         const whatsappBtn = document.getElementById('modal-whatsapp-btn');
 
-        if (mainImg) mainImg.src = watch.image;
+        if (mainImg) {
+            mainImg.src = watch.image;
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        }
         if (brandEl) brandEl.textContent = watch.brandName;
         if (titleEl) titleEl.textContent = watch.model;
         if (refEl) refEl.textContent = watch.reference;
-        if (priceEl) priceEl.textContent = watch.priceDisplay;
         if (descEl) descEl.textContent = watch.description;
 
         if (thumbsBox) {
@@ -652,7 +650,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
         thumbEl.classList.add('active');
         const mainImg = document.getElementById('modal-main-img');
-        if (mainImg) mainImg.src = imgSrc;
+        if (mainImg) {
+            mainImg.src = imgSrc;
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        }
     };
 
     function closeWatchModal() {
@@ -675,9 +677,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Amazon & Flipkart Style Interactive Image Hover Zoom
+    function initWatchImageZoom() {
+        const imgBox = document.getElementById('modal-main-img-box');
+        const mainImg = document.getElementById('modal-main-img');
+
+        if (!imgBox || !mainImg) return;
+
+        imgBox.addEventListener('mousemove', (e) => {
+            const rect = imgBox.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            mainImg.style.transformOrigin = `${x}% ${y}%`;
+            mainImg.style.transform = 'scale(2.4)';
+        });
+
+        imgBox.addEventListener('mouseleave', () => {
+            mainImg.style.transformOrigin = 'center center';
+            mainImg.style.transform = 'scale(1)';
+        });
+    }
+
     // WhatsApp Deep Link Helpers
     function generateWhatsAppWatchUrl(brand, model) {
-        const text = `Hi, I am interested in buying the ${brand} ${model}. Please share more details, available pictures, specifications and the best price. Thank you.`;
+        const text = `Hi, I would like to ask for the price of the ${brand} ${model}. Please share details, live pictures, and availability. Thank you.`;
         return `https://wa.me/${WHATSAPP_CONFIG.phoneNumber}?text=${encodeURIComponent(text)}`;
     }
 
@@ -692,4 +716,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilters();
     renderBrandsHomepage();
     renderWatchesGrid();
+    initWatchImageZoom();
 });
