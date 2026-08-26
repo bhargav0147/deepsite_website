@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1117" />
+      <stop offset="100%" stop-color="#1A1838" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#493CEB" />
+      <stop offset="100%" stop-color="#7669FF" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#493CEB" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)" rx="24"/>
+  
+  <!-- Subtle Fog Orbs -->
+  <circle cx="200" cy="150" r="180" fill="#493CEB" opacity="0.18" filter="url(#glow)" />
+  <circle cx="650" cy="350" r="200" fill="#7669FF" opacity="0.15" filter="url(#glow)" />
+  
+  <!-- Dashboard Main Frame (Glassmorphism) -->
+  <rect x="60" y="50" width="680" height="400" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+  
+  <!-- Sidebar Navigation Mock -->
+  <rect x="60" y="50" width="160" height="400" rx="16" fill="rgba(255,255,255,0.03)" />
+  <circle cx="100" cy="90" r="12" fill="url(#purpleGrad)" />
+  <rect x="122" y="85" width="70" height="10" rx="5" fill="rgba(255,255,255,0.8)" />
+  
+  <rect x="90" y="140" width="100" height="8" rx="4" fill="url(#purpleGrad)" />
+  <rect x="90" y="170" width="80" height="8" rx="4" fill="rgba(255,255,255,0.3)" />
+  <rect x="90" y="200" width="90" height="8" rx="4" fill="rgba(255,255,255,0.3)" />
+  <rect x="90" y="230" width="75" height="8" rx="4" fill="rgba(255,255,255,0.3)" />
+  
+  <!-- Main Header Bar -->
+  <rect x="250" y="80" width="220" height="18" rx="9" fill="rgba(255,255,255,0.9)" />
+  <rect x="250" y="108" width="140" height="10" rx="5" fill="rgba(255,255,255,0.4)" />
+  
+  <!-- Metric Card 1 -->
+  <rect x="250" y="140" width="145" height="90" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" />
+  <text x="268" y="170" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">TOTAL ARR</text>
+  <text x="268" y="202" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="bold">$4.2M</text>
+  <path d="M 335 195 Q 350 180, 375 188" fill="none" stroke="#00F2FE" stroke-width="3" />
+
+  <!-- Metric Card 2 -->
+  <rect x="415" y="140" width="145" height="90" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" />
+  <text x="433" y="170" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="12">ACTIVE USERS</text>
+  <text x="433" y="202" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="bold">128.4K</text>
+  
+  <!-- Metric Card 3 -->
+  <rect x="580" y="140" width="135" height="90" rx="12" fill="rgba(73,60,235,0.25)" stroke="url(#purpleGrad)" />
+  <text x="598" y="170" fill="rgba(255,255,255,0.8)" font-family="sans-serif" font-size="12">UPTIME SCORE</text>
+  <text x="598" y="202" fill="#7669FF" font-family="sans-serif" font-size="22" font-weight="bold">99.98%</text>
+
+  <!-- Big Area Chart Window -->
+  <rect x="250" y="250" width="465" height="175" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" />
+  <path d="M 270 380 Q 340 330, 420 350 T 570 290 T 690 280 L 690 400 L 270 400 Z" fill="url(#purpleGrad)" opacity="0.3" />
+  <path d="M 270 380 Q 340 330, 420 350 T 570 290 T 690 280" fill="none" stroke="url(#accentGrad)" stroke-width="4" filter="url(#glow)" />
+  
+  <!-- Floating Badge -->
+  <rect x="540" y="265" width="130" height="32" rx="16" fill="url(#purpleGrad)" />
+  <text x="560" y="286" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold">▲ +44% Scale</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090E17" />
+      <stop offset="100%" stop-color="#151A33" />
+    </linearGradient>
+    <linearGradient id="glowGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#493CEB" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad3)" rx="24"/>
+  
+  <!-- Mobile Device Frame -->
+  <rect x="290" y="60" width="220" height="380" rx="32" fill="#0F1117" stroke="rgba(255,255,255,0.2)" stroke-width="4" />
+  <rect x="302" y="72" width="196" height="356" rx="22" fill="#181B29" />
+  <rect x="370" y="80" width="60" height="10" rx="5" fill="#0F1117" />
+
+  <!-- App UI Elements inside Phone -->
+  <circle cx="400" cy="140" r="28" fill="url(#glowGrad3)" />
+  <path d="M 390 140 H 410 M 400 130 V 150" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  
+  <text x="400" y="195" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold">Aura Health</text>
+  
+  <!-- Pulse Wave Graphic -->
+  <path d="M 320 250 L 350 250 L 365 220 L 380 280 L 395 230 L 410 260 L 425 250 L 480 250" fill="none" stroke="#00E5FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- App Action Buttons -->
+  <rect x="325" y="300" width="150" height="36" rx="18" fill="url(#glowGrad3)" />
+  <text x="400" y="323" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold">Sync Health Telemetry</text>
+
+  <!-- Surrounding Web Dashboard Cards -->
+  <rect x="70" y="120" width="180" height="120" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
+  <text x="90" y="155" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12">HIPAA SECURITY</text>
+  <text x="90" y="185" fill="#00E5FF" font-family="sans-serif" font-size="20" font-weight="bold">100% Compliant</text>
+
+  <rect x="550" y="240" width="180" height="120" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
+  <text x="570" y="275" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12">OFFLINE SYNC</text>
+  <text x="570" y="305" fill="#9B8FFF" font-family="sans-serif" font-size="20" font-weight="bold">Active Engine</text>
+</svg>
